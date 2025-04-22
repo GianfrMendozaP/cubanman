@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 import sys
 import argparse
+import signal
 import essentials_cubanman_server as server
 
 #functions
 
-def start_server():
-    signal.signal(signal.SIGINT, cubanman.close)
-
+def start_server(args):
     #Start listening
-    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, args.buffsize, args.static)
+    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, args.debug)
 
-    socks = [cubanman]
-
+    cubanman.listen()
+    signal.signal(signal.SIGINT, cubanman.close)
     stdin = server.Input()
+    instances = [stdin, cubanman]
 
-    main_loop(socks, stdin)
+    server.main_loop(instances)
 
 
 #Start
@@ -54,7 +54,7 @@ def main():
 
     if args.listen:
 
-        start_server()
+        start_server(args)
 
 if __name__ == '__main__':
     main()
