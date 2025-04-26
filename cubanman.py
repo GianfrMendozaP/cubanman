@@ -9,13 +9,12 @@ import essentials_cubanman_server as server
 def start_server(args):
     #Start listening
     cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, args.debug)
-
-    cubanman.listen()
-    signal.signal(signal.SIGINT, cubanman.close)
     stdin = server.Input()
-    instances = [stdin, cubanman]
+    processes = server.Processes([cubanman, stdin], args.debug)
 
-    server.main_loop(instances)
+    signal.signal(signal.SIGINT, processes.close)
+    cubanman.listen()
+    processes.start()
 
 
 #Start
@@ -52,9 +51,7 @@ def main():
 
     #Magic
 
-    if args.listen:
-
-        start_server(args)
+    if args.listen: start_server(args)
 
 if __name__ == '__main__':
     main()

@@ -39,46 +39,42 @@ class Sock():
         del details
         return conn_sock
 
-    def broadcasting(self, instances:list, msg:str) -> None:
+    def broadcasting(self, instances:list, msg:str, exception:socket.socket=None) -> None:
 
         msgout, msgoutlen = utils.padding(msg, self.enc_format, self.buffsize)
         
         for instance in instances:
-            if instance == self or instance == instances[0]: continue
+            if instance == self or isinstance(instance, Input) or instance == exception: continue
 
-            instance.send(msgoutlen)
+            if not self.static_mode: instance.send(msgoutlen)
+
             instance.send(msgout)
-            if self.debug: print(f'[SERVER] message: "{msg}", was sent')
+
+        if self.debug: print(f'[SERVER] message: "{msg}", was broadcast')
     
     def recv(self, conn:socket.socket, instances:list) -> bool:
 
-        msg_len = conn.recv(self.buffsize).decode(self.enc_format)
-        if not msg_len:
+        data = conn.recv(self.buffsize).decode(self.enc_format)
+        if not data:
             if self.debug: print('[SERVER] a client has disconnected')
             return False
 
         if not self.static_mode:
 
             try:
-                msg = conn.recv(int(msg_len)).decode(self.enc_format)
+                data = conn.recv(int(data)).decode(self.enc_format)
             except ValueError:
                 print('[SERVER] client does not seem to be using static buffer mode. Client will be notified and disconnected')
-                conn.send('from [SERVER] -> Client be disconnected due to a buffer mode incompatibility'.encode(self.enc_format))
+                conn.send('from [SERVER] -> Client will be disconnected due to a buffer mode incompatibility'.encode(self.enc_format))
                 conn.close()
                 return False
 
-            self.broadcasting(instances, msg)
-            print(msg)
-            return True
-
-        self.broadcasting(instances, msg_len)
-        print(msg_len)
+        print(data)
+        self.broadcasting(instances, data, conn)
         return True
 
-    def close(self, *args) -> None:
+    def close(self) -> None:
         self.sock.close()
-        print('[SERVER] keyboard interrupt detected. Ending...')
-        sys.exit(0)
 
 class Input():
 
@@ -93,25 +89,54 @@ class Input():
     def readline() -> str:
         return sys.stdin.readline().strip()
 
-def main_loop(instances:list) -> None:
+    @staticmethod
+    def close() -> None:
+        return None
 
-    while True:
+class Processes:
 
-        ready, _, _ = select.select(instances, [], [])
+    def __init__(self, instances:list, debug:bool = False) -> None:
 
-        for instance in ready:
+        self.instances = instances
+        self.debug = debug
 
-            if instance == instances[1]:
-                instances.append(instances[1].accept())
+    def linker(self):
 
-            elif instance == instances[0]:
-                
-                if len(instances) != 2:
-                    msg = instances[0].readline()
-                    instances[1].broadcasting(instances, msg)
+        for instance in self.instances:
+            if isinstance(instance, Sock):
+                if self.debug: print('[PROCESSES] reference to Sock was found')
+                setattr(self, 'server', instance)
+            if isinstance(instance, Input): 
+                if self.debug: print('[PROCESSES] reference to Input was found')
+                setattr(self, 'stdin', instance)
 
-                else: print(f'unable to send "{stdin_reader.readline()}". No connections yet...')
+    def start(self) -> None:
 
-            else:
-                if instances[1].recv(instance, instances) == False:
-                    instances.remove(instance)
+        self.linker()
+
+        if self.debug: print('[PROCESSES] starting main loop')
+
+        while True:
+
+            ready, _, _ = select.select(self.instances, [], [])
+
+            for instance in ready:
+
+                if instance == self.server:
+                    self.instances.append(self.server.accept())
+
+                elif instance == self.stdin:
+                    msg = self.stdin.readline()
+                    self.server.broadcasting(self.instances, msg)
+
+                else:
+                    if self.server.recv(instance, self.instances) == False:
+                        self.instances.remove(instance)
+    
+    def close(self, *args):
+        print('\nkeyboard interrupt received, ending ...')
+        
+        for instance in self.instances:
+            instance.close()
+
+        sys.exit(0)
