@@ -6,17 +6,15 @@
 
 - Client mode (not yet)
 - Server mode
-- Different types of buffer (static, fixed)
-- Encryption (not yet)
+- Types of buffer (static, fixed)
+- Encryption
 
-<h3>Last Update</h3>
+<h3>Notes on Last Update</h3>
 
-<h4>04/25/2025</h4>
+<h4>05/11/2025</h4>
 
-- A few redundances in essntials-cubanman-server.py were removed
-- The main loop now is part of a class, this makes for the possibility of creating multiple servers
-- Better debug output
-
+- SSL/TLS layes was added, including a server certificate, certificate chain, and ca bundle (client side).
+- Theres's a little bug when on server side using ssl/tls encryption, If ncat is being use as a client, --trustfile flag won't allow to connect to the server.
 <h3>Credits</h3>
 
 - Giafranco Mendoza // creator

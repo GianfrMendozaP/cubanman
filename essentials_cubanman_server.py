@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 import socket
+import ssl
 import select
 import sys
 import utils_cubanman as utils
 
 class Sock():
     
-    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, debug:bool = False):
+    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int = 0, debug:bool = False):
 
         self.addr = addr
         self.port = port
@@ -14,8 +15,35 @@ class Sock():
         self.enc_format = enc_format
         self.buffsize = buffsize
         self.static_mode = static_mode
+        self.encryption = encryption
         self.debug = debug
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
+
+        if self.encryption != 0: self.encrypt()
+
+    def encrypt(self):
+
+        setattr(self, 'context', None)
+
+        match self.encryption:
+
+            case 1:
+                self.context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+                self.context.load_cert_chain(certfile='./certificates/ca-chain.pem', keyfile='certificates/cubanman.key.pem')
+                #self.sock = context.wrap(sock=self.sock, server_side=True)
+                return None
+
+            case 2:
+                self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_1_SERVER)
+                self.context.load_cert_chain(certfile='./certificates/ca-chain.pem', keyfile='certificates/cubanman.key.pem')
+                #self.sock = context.wrap(sock=self.sock, server_side=True)
+                return None
+
+            case 3:
+                self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_2_SERVER)
+                self.context.load_cert_chain(certfile='./certificates/ca-chain.pem', keyfile='certificates/cubanman.key.pem')
+                #self.sock = context.wrap(sock=self.sock, server_side=True)
+                return None
 
     def listen(self) -> None:
 
@@ -35,6 +63,9 @@ class Sock():
 
     def accept(self) -> socket.socket:
         conn_sock, details = self.sock.accept()
+        if self.encryption != 0: 
+            conn_sock = self.context.wrap_socket(conn_sock, server_side=True)
+            if self.debug: print('[SERVER] SSL-layer was set')
         if self.debug: print(f'[SERVER] connection accepted {details}')
         del details
         return conn_sock
@@ -132,6 +163,7 @@ class Processes:
                 else:
                     if self.server.recv(instance, self.instances) == False:
                         self.instances.remove(instance)
+
     
     def close(self, *args):
         print('\nkeyboard interrupt received, ending ...')
