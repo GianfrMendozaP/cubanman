@@ -7,7 +7,7 @@ import utils_cubanman as utils
 
 class Sock():
     
-    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int = 0, debug:bool = False):
+    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_key:str=None, debug:bool=False):
 
         self.addr = addr
         self.port = port
@@ -16,6 +16,9 @@ class Sock():
         self.buffsize = buffsize
         self.static_mode = static_mode
         self.encryption = encryption
+        self.ca_bundle = ca_bundle
+        self.ca_chain = ca_chain
+        self.ca_key = ca_key
         self.debug = debug
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
 
@@ -29,21 +32,12 @@ class Sock():
 
             case 1:
                 self.context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-                self.context.load_cert_chain(certfile='./certificates/ca-chain.pem', keyfile='certificates/cubanman.key.pem')
-                #self.sock = context.wrap(sock=self.sock, server_side=True)
-                return None
-
             case 2:
                 self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_1_SERVER)
-                self.context.load_cert_chain(certfile='./certificates/ca-chain.pem', keyfile='certificates/cubanman.key.pem')
-                #self.sock = context.wrap(sock=self.sock, server_side=True)
-                return None
-
             case 3:
                 self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_2_SERVER)
-                self.context.load_cert_chain(certfile='./certificates/ca-chain.pem', keyfile='certificates/cubanman.key.pem')
-                #self.sock = context.wrap(sock=self.sock, server_side=True)
-                return None
+
+        self.context.load_cert_chain(certfile=self.ca_chain, keyfile=self.ca_key)
 
     def listen(self) -> None:
 
@@ -126,7 +120,7 @@ class Input():
 
 class Processes:
 
-    def __init__(self, instances:list, debug:bool = False) -> None:
+    def __init__(self, instances:list, debug:bool=False) -> None:
 
         self.instances = instances
         self.debug = debug
@@ -137,7 +131,7 @@ class Processes:
             if isinstance(instance, Sock):
                 if self.debug: print('[PROCESSES] reference to Sock was found')
                 setattr(self, 'server', instance)
-            if isinstance(instance, Input): 
+            elif isinstance(instance, Input): 
                 if self.debug: print('[PROCESSES] reference to Input was found')
                 setattr(self, 'stdin', instance)
 

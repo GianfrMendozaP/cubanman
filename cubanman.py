@@ -18,7 +18,7 @@ def start_server(args):
 
 
     #Start listening
-    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, whichEnc(args) , args.debug)
+    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, whichEnc(args), args.tls_chain, args.tls_key , args.debug)
 
     stdin = server.Input()
     processes = server.Processes([cubanman, stdin], args.debug)
@@ -42,6 +42,10 @@ def parse() -> dict:
 
     parser.add_argument('-bs', '--buffsize', nargs='?', type=int, default=12, help="Define the buffsize to be used when sending and receiving data")
 
+    parser.add_argument('-f', '--format', nargs='?', type=str, default='utf-8', help='Format to be used when encoding strings. example: utf-8')
+
+    parser.add_argument('-cn', '--client-count', nargs='?', type=int, help='Define the client-socket limit. The default is 1', default=1)
+
     parser.add_argument('-stc' , '--static', action='store_true', help='Define buffer mode (static // fixed:default)')
 
     parser.add_argument('--tls', action='store_true', dest='tls', help='Use tls encryption')
@@ -50,9 +54,11 @@ def parse() -> dict:
 
     parser.add_argument('--tls1.2', action='store_true', dest='tls1v2', help='Use tls1.2 encryption')
 
-    parser.add_argument('-f', '--format', nargs='?', type=str, default='utf-8', help='Format to be used when encoding strings. example: utf-8')
+    parser.add_argument('--tls-bundle', nargs='?', help='Specify CA bundle to be used when verifying the server CA chain', default='./certificates/cubanman.cert.pem')
 
-    parser.add_argument('-cn', '--client-count', nargs='?', type=int, help='Define the client-socket limit. The default is 1', default=1)    
+    parser.add_argument('--tls-chain', nargs='?', help='Specify CA chain to be used when listening', default='./certificates/cubanman.cert.pem')
+
+    parser.add_argument('--tls-key', nargs='?', help='Specify private key to be used when listening', default='./certificates/cubanman.key.pem')
 
 
     args = parser.parse_args()
