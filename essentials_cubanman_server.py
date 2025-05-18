@@ -16,7 +16,6 @@ class Sock():
         self.buffsize = buffsize
         self.static_mode = static_mode
         self.encryption = encryption
-        self.ca_bundle = ca_bundle
         self.ca_chain = ca_chain
         self.ca_key = ca_key
         self.debug = debug
@@ -30,12 +29,9 @@ class Sock():
 
         match self.encryption:
 
-            case 1:
-                self.context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-            case 2:
-                self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_1_SERVER)
-            case 3:
-                self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_2_SERVER)
+            case 1:self.context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+            case 2:self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_1_SERVER)
+            case 3:self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_2_SERVER)
 
         self.context.load_cert_chain(certfile=self.ca_chain, keyfile=self.ca_key)
 
@@ -57,8 +53,14 @@ class Sock():
 
     def accept(self) -> socket.socket:
         conn_sock, details = self.sock.accept()
-        if self.encryption != 0: 
-            conn_sock = self.context.wrap_socket(conn_sock, server_side=True)
+
+        if self.encryption != 0:
+            try: conn_sock = self.context.wrap_socket(conn_sock, server_side=True)
+            except ssl.SSLError as e:
+                print(f'[SERVER] unable to stablish connection with {details}')
+                if self.debug: print(f'cubanman: {e}')
+                return None
+
             if self.debug: print('[SERVER] SSL-layer was set')
         if self.debug: print(f'[SERVER] connection accepted {details}')
         del details
@@ -148,7 +150,11 @@ class Processes:
             for instance in ready:
 
                 if instance == self.server:
-                    self.instances.append(self.server.accept())
+                    conn = self.server.accept()
+                    
+                    match conn:
+                        case None: continue
+                        case _: self.instances.append(conn)
 
                 elif instance == self.stdin:
                     msg = self.stdin.readline()

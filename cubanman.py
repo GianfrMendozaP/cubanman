@@ -1,30 +1,41 @@
 #!/usr/bin/python3
-import sys
 import argparse
 import signal
 import essentials_cubanman_server as server
+import essentials_cubanman_client as client
 
 #functions
 
-def start_server(args):
+def whichEnc(args:dict) -> int:
 
-    def whichEnc(args:dict) -> int:
+    if args.tls: return 1
+    if args.tls1v1: return 2
+    if args.tls1v2: return 3
+    return 0
 
-        if args.tls: return 1
-        if args.tls1v1: return 2
-        if args.tls1v2: return 3
+def set_server(args):
 
-        return 0
-
-
-    #Start listening
     cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, whichEnc(args), args.tls_chain, args.tls_key , args.debug)
-
     stdin = server.Input()
     processes = server.Processes([cubanman, stdin], args.debug)
 
     signal.signal(signal.SIGINT, processes.close)
     cubanman.listen()
+    processes.start()
+
+def set_client(args):
+
+    if args.stls:
+        args.verify_ca = True
+        args.verify_hostname = True
+        args.tls = True
+    
+    cubanman = client.Sock(args.interface[0], int(args.port), args.format, int(args.buffsize), args.static, whichEnc(args), args.verify_hostname, args.verify_ca, args.tls_bundle, args.hostname, args.debug)
+    stdin = client.Input()
+    processes = client.Processes([cubanman, stdin], args.debug)
+
+    signal.signal(signal.SIGINT, processes.close)
+    cubanman.connect()
     processes.start()
 
 def parse() -> dict:
@@ -60,6 +71,14 @@ def parse() -> dict:
 
     parser.add_argument('--tls-key', nargs='?', help='Specify private key to be used when listening', default='./certificates/cubanman.key.pem')
 
+    parser.add_argument('--verify-hostname', action='store_true', help="Check the name of the host against the cert's. ONLY use in combination with --verify-ca; alternatively use -fv or --fully-verify")
+
+    parser.add_argument('--verify-ca', action='store_true', help="Verify the host's certificate against the ca-bundle")
+
+    parser.add_argument('--stls', action='store_true', help="ONLY use as client. stls, short for secure tls, enables tls communications and full verification (ca-chain and hostname)")
+
+    parser.add_argument('--hostname', nargs='?', default=None, help='Specify the hostname of the server. ONLY as a client')
+
 
     args = parser.parse_args()
 
@@ -75,7 +94,8 @@ def main():
 
     #Magic
 
-    if args.listen: start_server(args)
+    if args.listen: set_server(args)
+    else: set_client(args)
 
 if __name__ == '__main__':
     main()
