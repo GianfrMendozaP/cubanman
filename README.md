@@ -4,17 +4,21 @@
 
 <h3>Functionalities</h3>
 
-- Client mode (not yet)
+- Client mode
 - Server mode
-- Types of buffer (static, fixed)
 - Encryption
+- Types of buffer (static, fixed)
+- Proxy mode (not yet)
 
 <h3>Notes on Last Update</h3>
 
-<h4>05/11/2025</h4>
+<h4>05/18/2025</h4>
 
-- SSL/TLS layes was added, including a server certificate, certificate chain, and ca bundle (client side).
-- Theres's a little bug when on server side using ssl/tls encryption, If ncat is being use as a client, --trustfile flag won't allow to connect to the server.
+- SSL/TLS layes was completely debugged.
+- Certificate and Key use is fully functional
+- Client mode is up and running
+- Enhanced Debug output
+
 <h3>Credits</h3>
 
 - Giafranco Mendoza // creator
