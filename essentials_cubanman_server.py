@@ -4,10 +4,11 @@ import ssl
 import select
 import sys
 import utils_cubanman as utils
+import essentials_cubanman_proxy as proxy
 
 class Sock():
     
-    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_key:str=None, debug:bool=False):
+    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_bundle:str=None, ca_key:str=None, proxy:bool=False, debug:bool=False):
 
         self.addr = addr
         self.port = port
@@ -17,8 +18,10 @@ class Sock():
         self.static_mode = static_mode
         self.encryption = encryption
         self.ca_chain = ca_chain
+        self.ca_bundle = ca_bundle
         self.ca_key = ca_key
         self.debug = debug
+        self.proxy = proxy
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
 
         if self.encryption != 0: self.encrypt()
@@ -81,10 +84,17 @@ class Sock():
     
     def recv(self, conn:socket.socket, instances:list) -> bool:
 
-        data = conn.recv(self.buffsize).decode(self.enc_format)
+        data = conn.recv(self.buffsize)
+
         if not data:
             if self.debug: print('[SERVER] a client has disconnected')
             return False
+
+        if self.proxy:
+            self.proxyIt(data, conn)
+            return True
+
+        data = data.decode(self.enc_format)
 
         if not self.static_mode:
 
@@ -97,8 +107,23 @@ class Sock():
                 return False
 
         print(data)
+
         self.broadcasting(instances, data, conn)
         return True
+
+    def proxyIt(self, data, conn) -> None:
+
+        #FIGURING OUT HOW TO DEAL WITH CHUNKED TRANSFER ENCODING
+        #MIGHT HAVE TO PASS CONN TO PROXY MODULE
+        #HTTP PROXY WORKS BUT IT'S TOO SLOW
+
+        web, port, req = proxy.manage_request(data, self.debug)
+        client = proxy.Sock(web, port, req, self.encryption, self.ca_bundle, self.buffsize, self.debug)
+        response = client.cycle()
+        if conn.send(response) == 0:
+            print('[SERVER] Unable to send response...')
+            return None
+        print(f'[SERVER] Response was sent to {conn}: {response}')
 
     def close(self) -> None:
         self.sock.close()
@@ -156,7 +181,7 @@ class Processes:
                         case None: continue
                         case _: self.instances.append(conn)
 
-                elif instance == self.stdin:
+                elif instance == self.stdin and not self.server.proxy:
                     msg = self.stdin.readline()
                     self.server.broadcasting(self.instances, msg)
 

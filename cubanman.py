@@ -13,9 +13,25 @@ def whichEnc(args:dict) -> int:
     if args.tls1v2: return 3
     return 0
 
+def ifProxy(args:dict) -> None:
+    if args.proxy:
+        args.static = True
+        if args.buffsize < 1024:
+            args.buffsize = 1024
+
+def ifStls(args:dict) -> None:
+    if args.stls:
+        args.verify_ca = True
+        args.verify_hostname = True
+        args.tls = True
+
 def set_server(args):
 
-    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, whichEnc(args), args.tls_chain, args.tls_key , args.debug)
+    ifProxy(args)
+
+    if args.debug : print(f'ARGUMENTS: {args}')
+
+    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key, args.proxy, args.debug)
     stdin = server.Input()
     processes = server.Processes([cubanman, stdin], args.debug)
 
@@ -25,10 +41,9 @@ def set_server(args):
 
 def set_client(args):
 
-    if args.stls:
-        args.verify_ca = True
-        args.verify_hostname = True
-        args.tls = True
+    ifStls(args)
+    
+    if args.debug : print(f'ARGUMENTS: {args}')
     
     cubanman = client.Sock(args.interface[0], int(args.port), args.format, int(args.buffsize), args.static, whichEnc(args), args.verify_hostname, args.verify_ca, args.tls_bundle, args.hostname, args.debug)
     stdin = client.Input()
@@ -48,6 +63,8 @@ def parse() -> dict:
     parser.add_argument('-p', '--port', nargs='?', help='Define a port. The default is 15000', type=int, default=15000)
 
     parser.add_argument('-l', '--listen', help='Listening mode', action='store_true')
+
+    parser.add_argument('--proxy', action='store_true', help='HTTP proxy mode')
 
     parser.add_argument('-d', '--debug', action='store_true', help='Show debug output.')
 
@@ -79,10 +96,7 @@ def parse() -> dict:
 
     parser.add_argument('--hostname', nargs='?', default=None, help='Specify the hostname of the server. ONLY as a client')
 
-
     args = parser.parse_args()
-
-    if args.debug : print(f'ARGUMENTS: {args}')
 
     return args
 
@@ -91,6 +105,7 @@ def parse() -> dict:
 def main():
 
     args = parse()
+
 
     #Magic
 
