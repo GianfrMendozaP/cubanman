@@ -22,13 +22,22 @@ class Sock():
         self.ca_key = ca_key
         self.debug = debug
         self.proxy = proxy
+        self.context = None
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
 
         if self.encryption != 0: self.encrypt()
 
-    def encrypt(self):
+    @staticmethod
+    def settimeout(conn, value) -> None:
+        conn.settimeout(value)
 
-        setattr(self, 'context', None)
+    def fileno(self) -> int:
+        return self.sock.fileno()
+
+    def close(self) -> None:
+        self.sock.close()
+
+    def encrypt(self):
 
         match self.encryption:
 
@@ -42,17 +51,14 @@ class Sock():
 
         try:
             self.sock.bind((self.addr, self.port))
-            if self.debug: print(f'[SERVER] socket was bound to {self.addr} {self.port}')
+            if self.debug: print(f'[SERVER] |BINDING| socket was bound to {self.addr} {self.port}')
 
         except OSError:
-            print('Conflict when binding address to socket. Maybe address is already being used')
+            print('[SERVER] |ERROR| Conflict when binding address to socket. Maybe address is already being used')
             sys.exit(1)
 
         self.sock.listen(self.client_count)
-        if self.debug: print('[SERVER] listening for connections')
-
-    def fileno(self) -> int:
-        return self.sock.fileno()
+        if self.debug: print('[SERVER] |LISTENING| listening for connections')
 
     def accept(self) -> socket.socket:
         conn_sock, details = self.sock.accept()
@@ -60,13 +66,16 @@ class Sock():
         if self.encryption != 0:
             try: conn_sock = self.context.wrap_socket(conn_sock, server_side=True)
             except ssl.SSLError as e:
-                print(f'[SERVER] unable to stablish connection with {details}')
+                print(f'[SERVER] |ERROR| Unable to stablish connection with {details}')
                 if self.debug: print(f'cubanman: {e}')
                 return None
 
-            if self.debug: print('[SERVER] SSL-layer was set')
-        if self.debug: print(f'[SERVER] connection accepted {details}')
+            if self.debug: print('[SERVER] |SSL| SSL-layer was set')
+        if self.debug: print(f'[SERVER] |CONNECTION| connection accepted {details}')
         del details
+
+        self.settimeout(conn_sock, 10)
+
         return conn_sock
 
     def broadcasting(self, instances:list, msg:str, exception:socket.socket=None) -> None:
@@ -87,7 +96,7 @@ class Sock():
         data = conn.recv(self.buffsize)
 
         if not data:
-            if self.debug: print('[SERVER] a client has disconnected')
+            if self.debug: print('[SERVER] |DISCONNECTION| a client has disconnected')
             return False
 
         if self.proxy:
@@ -101,7 +110,7 @@ class Sock():
             try:
                 data = conn.recv(int(data)).decode(self.enc_format)
             except ValueError:
-                print('[SERVER] client does not seem to be using static buffer mode. Client will be notified and disconnected')
+                print('[SERVER] |ERROR| client does not seem to be using static buffer mode. Client will be notified and disconnected')
                 conn.send('from [SERVER] -> Client will be disconnected due to a buffer mode incompatibility'.encode(self.enc_format))
                 conn.close()
                 return False
@@ -120,13 +129,12 @@ class Sock():
         web, port, req = proxy.manage_request(data, self.debug)
         client = proxy.Sock(web, port, req, self.encryption, self.ca_bundle, self.buffsize, self.debug)
         response = client.cycle()
-        if conn.send(response) == 0:
-            print('[SERVER] Unable to send response...')
-            return None
-        print(f'[SERVER] Response was sent to {conn}: {response}')
 
-    def close(self) -> None:
-        self.sock.close()
+        try: conn.send(response)
+        except TimeoutError:
+            print('[SERVER] |ERROR| Unable to send response... Timeout')
+            return None
+        print(f'[SERVER] |RESPONSE| Response was sent to {conn}: {response}')
 
 class Input():
 

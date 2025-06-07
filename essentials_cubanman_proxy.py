@@ -1,34 +1,5 @@
 import socket
 
-def manage_request(request:bytes, debug:bool) -> tuple:
-
-    if debug: print(f'[SERVER] request: {request}')
-
-    request_lines = request.split(b'\n')
-
-    url = request_lines[0].split()[1]
-    if debug: print(f'[SERVER] url: {url}')
-
-    url = fTemp(url)
-    if debug: print(f'[SERVER] temp: {url}')
-
-    portP = fPort(url)
-    rsrP = fRsr(url)
-
-    if portP == -1 or portP > rsrP:
-        port = 80
-        webserver = url[:rsrP]
-
-    else:
-        port = int((url[portP+1:])[:(rsrP-portP)-1])
-        webserver = url[:portP]
-
-    if debug:
-        print(f'[SERVER] webserver: {webserver}')
-        print(f'[SERVER] port: {port}')
-
-    return (webserver, port, request)
-
 def fPort(url:bytes) -> bytes:
     portP = url.find(b':')
     return portP
@@ -43,6 +14,35 @@ def fRsr(url:bytes) -> bytes:
     if resourceP == -1: return len(url)
     else: return resourceP
 
+def manage_request(request:bytes, debug:bool) -> tuple:
+
+    if debug: print(f'[PROXY] |REQUEST|: {request}')
+
+    request_lines = request.split(b'\n')
+
+    url = request_lines[0].split()[1]
+    if debug: print(f'[PROXY] |URL|: {url}')
+
+    url = fTemp(url)
+    if debug: print(f'[PROXY] |TEMP|: {url}')
+
+    portP = fPort(url)
+    rsrP = fRsr(url)
+
+    if portP == -1 or portP > rsrP:
+        port = 80
+        webserver = url[:rsrP]
+
+    else:
+        port = int((url[portP+1:])[:(rsrP-portP)-1])
+        webserver = url[:portP]
+
+    if debug:
+        print(f'[PROXY] |WEBSERVER|: {webserver}')
+        print(f'[PROXY] |PORT|: {port}')
+
+    return (webserver, port, request)
+
 class Sock():
 
     def __init__(self, webserver:bytes, port:int, request:bytes, encryption:int, ca_bundle:str, buffsize:int=1024, debug:bool=False):
@@ -54,6 +54,8 @@ class Sock():
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
         self.buffsize = buffsize
         self.debug = debug
+        self.contentLength = 0
+        self.dataLen = 0
 
     def encrypt(self):
         pass
@@ -62,17 +64,17 @@ class Sock():
 
         try:
             self.sock.connect((self.web, self.port))
-            if self.debug: print(f'[SERVER] Connection stablished with {self.web}')
+            if self.debug: print(f'[PROXY] |CONNECTION| Connection stablished with {self.web}')
             self.settimeout(5)
             #self.blocking(False)
             return True
 
         except OSError as e:
-            print(f'[SERVER] unable to stablish a connection with {str(self.web)}: {e}')
+            print(f'[PROXY] |ERROR| unable to stablish a connection with {str(self.web)}: {e}')
             return False
 
     def send(self):
-        if self.debug: print(f'[SERVER] --> {self.req} --> {self.web}')
+        #if self.debug: print(f'[SERVER] --> {self.req} --> {self.web}')
         self.sock.send(self.req)
 
     def recv(self) -> bytes:
@@ -82,25 +84,63 @@ class Sock():
 
         response = b''
 
-        if self.debug: print(f'[SERVER] Now receiving data from {self.web}')
+        if self.debug: print(f'[PROXY] |RECEIVING| data from {self.web}')
         while True:
             try:
                 data = self.sock.recv(self.buffsize)
             except TimeoutError:
-                print(f'[SERVER] No data was received from {self.web}')
+                print(f'[PROXY] No data was received from {self.web}')
                 break
 
-            if len(data) != 0:
-                response += data
-            else: break
+            response += data
+            print(f'[PROXY] |INCOMPLETE RESPONSE|: {response}')
+            if self.isComplete(response): break
 
         setattr(self, 'response', response)
+
+    def isComplete(self, response:bytes) -> bool:
+
+        headerStart = response.find(b'Content-Length')
+
+        if headerStart != -1:
+
+            #'Content-Length: ' is 16 characters
+            headerStart += 16
+            splitResponse = response.split(b'\r\n\r\n')
+            headerEnd = splitResponse[0][(headerStart):].find(b'\r\n')
+            contentLength = int(splitResponse[0][headerStart:][:headerEnd])
+            if self.debug: print(f'[PROXY] |RESPONSE| Content-Length: {contentLength}')
+            if not len(splitResponse[1]) == contentLength: 
+
+                self.contentLength = contentLength
+                self.dataLen = len(splitResponse[1])
+                return False
+            if self.debug: print('[PROXY] |RESPONSE| complete!')
+            return True
+
+
+        elif self.dataLen != 0 and self.contentLength != 0:
+
+            self.dataLen += len(response)
+            if self.dataLen == self.contentLength: return True
+            return False
+
+        else:
+            #temporary!!!!!
+            #EVALUATE CHUNKS OF DATA!!!!!!
+            print('chunked transfer encoding.....')
+            return True
+
+
+
+
 
     def cycle(self) -> bytes:
         if self.connect():
             self.send()
             self.recv()
-            return self.close()
+            self.close()
+            return self.response
 
     def settimeout(self,s:int):
         self.sock.settimeout(s)
@@ -110,8 +150,7 @@ class Sock():
 
     def close(self):
         self.sock.close()
-        if self.debug: print('[SERVER] proxy socket was closed...')
-        return self.response
+        if self.debug: print('[PROXY] |CLOSING| Proxy socket was closed...')
 
 
 

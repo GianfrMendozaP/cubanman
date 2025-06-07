@@ -60,7 +60,7 @@ def parse() -> dict:
 
     parser.add_argument('interface', nargs=1, help='Define an address', type=str)
 
-    parser.add_argument('-p', '--port', nargs='?', help='Define a port. The default is 15000', type=int, default=15000)
+    parser.add_argument('-p', '--port', nargs='?', help='Define a port. The default is 15000', type=int, default=8888)
 
     parser.add_argument('-l', '--listen', help='Listening mode', action='store_true')
 
@@ -109,7 +109,7 @@ def main():
 
     #Magic
 
-    if args.listen: set_server(args)
+    if args.listen or args.proxy: set_server(args)
     else: set_client(args)
 
 if __name__ == '__main__':
