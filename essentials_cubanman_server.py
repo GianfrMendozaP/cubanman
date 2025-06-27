@@ -4,11 +4,10 @@ import ssl
 import select
 import sys
 import utils_cubanman as utils
-import essentials_cubanman_proxy as proxy
 
 class Sock():
     
-    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_bundle:str=None, ca_key:str=None, proxy:bool=False, debug:bool=False):
+    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_bundle:str=None, ca_key:str=None, debug:bool=False):
 
         self.addr = addr
         self.port = port
@@ -21,7 +20,6 @@ class Sock():
         self.ca_bundle = ca_bundle
         self.ca_key = ca_key
         self.debug = debug
-        self.proxy = proxy
         self.context = None
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
 
@@ -99,10 +97,6 @@ class Sock():
             if self.debug: print('[SERVER] |DISCONNECTION| a client has disconnected')
             return False
 
-        if self.proxy:
-            self.proxyIt(data, conn)
-            return True
-
         data = data.decode(self.enc_format)
 
         if not self.static_mode:
@@ -119,22 +113,6 @@ class Sock():
 
         self.broadcasting(instances, data, conn)
         return True
-
-    def proxyIt(self, data, conn) -> None:
-
-        #FIGURING OUT HOW TO DEAL WITH CHUNKED TRANSFER ENCODING
-        #MIGHT HAVE TO PASS CONN TO PROXY MODULE
-        #HTTP PROXY WORKS BUT IT'S TOO SLOW
-
-        web, port, req = proxy.manage_request(data, self.debug)
-        client = proxy.Sock(web, port, req, self.encryption, self.ca_bundle, self.buffsize, self.debug)
-        response = client.cycle()
-
-        try: conn.send(response)
-        except TimeoutError:
-            print('[SERVER] |ERROR| Unable to send response... Timeout')
-            return None
-        print(f'[SERVER] |RESPONSE| Response was sent to {conn}: {response}')
 
 class Input():
 
@@ -189,7 +167,7 @@ class Processes:
                         case None: continue
                         case _: self.instances.append(conn)
 
-                elif instance == self.stdin and not self.server.proxy:
+                elif instance == self.stdin:
                     msg = self.stdin.readline()
                     self.server.broadcasting(self.instances, msg)
 

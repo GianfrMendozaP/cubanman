@@ -3,35 +3,14 @@ import argparse
 import signal
 import essentials_cubanman_server as server
 import essentials_cubanman_client as client
-
-#functions
-
-def whichEnc(args:dict) -> int:
-
-    if args.tls: return 1
-    if args.tls1v1: return 2
-    if args.tls1v2: return 3
-    return 0
-
-def ifProxy(args:dict) -> None:
-    if args.proxy:
-        args.static = True
-        if args.buffsize < 1024:
-            args.buffsize = 1024
-
-def ifStls(args:dict) -> None:
-    if args.stls:
-        args.verify_ca = True
-        args.verify_hostname = True
-        args.tls = True
+import essentials_cubanman_proxy as proxy
+import utils_cubanman as tools
 
 def set_server(args):
 
-    ifProxy(args)
-
     if args.debug : print(f'ARGUMENTS: {args}')
 
-    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key, args.proxy, args.debug)
+    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key, args.debug)
     stdin = server.Input()
     processes = server.Processes([cubanman, stdin], args.debug)
 
@@ -41,17 +20,27 @@ def set_server(args):
 
 def set_client(args):
 
-    ifStls(args)
+    tools.ifStls(args)
     
     if args.debug : print(f'ARGUMENTS: {args}')
     
-    cubanman = client.Sock(args.interface[0], int(args.port), args.format, int(args.buffsize), args.static, whichEnc(args), args.verify_hostname, args.verify_ca, args.tls_bundle, args.hostname, args.debug)
+    cubanman = client.Sock(args.interface[0], int(args.port), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.verify_hostname, args.verify_ca, args.tls_bundle, args.hostname, args.debug)
     stdin = client.Input()
     processes = client.Processes([cubanman, stdin], args.debug)
 
     signal.signal(signal.SIGINT, processes.close)
     cubanman.connect()
     processes.start()
+
+def set_proxy(args):
+    tools.ifProxy(args)
+
+    server = proxy.Proxy_server(args.interface[0], args.port, args.buffsize, args.debug)
+    cubanman = proxy.Processes([server], args.debug)
+
+    signal.signal(signal.SIGINT, cubanman.close)
+
+    cubanman.start()
 
 def parse() -> dict:
 
@@ -109,7 +98,8 @@ def main():
 
     #Magic
 
-    if args.listen or args.proxy: set_server(args)
+    if args.listen: set_server(args)
+    elif args.proxy: set_proxy(args)
     else: set_client(args)
 
 if __name__ == '__main__':
