@@ -1,0 +1,711 @@
+
+[DEBUG|cubanman|main|95|] 2025-08-15T22:17:54-0400: ----------------------------------------------------------
+[INFO|essentials_cubanman_proxy|listen|180|] 2025-08-15T22:17:54-0400: binding proxy_server to 127.0.0.1 8888
+[INFO|essentials_cubanman_proxy|listen|190|] 2025-08-15T22:17:54-0400: proxy_server is listening for connections
+[DEBUG|essentials_cubanman_proxy|start|228|] 2025-08-15T22:17:54-0400: starting main loop
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:17:55-0400: proxy_server accepted a connection: sock-140241171489472 <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44744)>:('127.0.0.1', 44744)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:17:55-0400: proxy_server setting a 15 second timeout on sock-140241171489472
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:17:55-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:17:55-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:55-0400: bws_sock 140241171489472 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:55-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:55-0400: setting connection status of bws_sock 140241171489472 and proxy_sock 140241171489376
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489376 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489376 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489376 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489376 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:55-0400: Content-Length: 90
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:55-0400: about http msg: datalength: 90 | totalLength: 90 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489376 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489376 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:55-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:55-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:17:55-0400: proxy_server accepted a connection: sock-140241171489664 <socket.socket fd=7, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44758)>:('127.0.0.1', 44758)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:17:55-0400: proxy_server setting a 15 second timeout on sock-140241171489664
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:17:55-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:17:55-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:17:55-0400: proxy_server accepted a connection: sock-140241171489760 <socket.socket fd=9, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44774)>:('127.0.0.1', 44774)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:17:55-0400: proxy_server setting a 15 second timeout on sock-140241171489760
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:17:55-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:17:55-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:55-0400: bws_sock 140241171489664 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:55-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:55-0400: setting connection status of bws_sock 140241171489664 and proxy_sock 140241171489568
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489568 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489568 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489568 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489568 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:55-0400: Content-Length: 8
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:55-0400: about http msg: datalength: 8 | totalLength: 8 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489568 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489568 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:55-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:55-0400: bws_sock 140241171489760 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:55-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:55-0400: setting connection status of bws_sock 140241171489760 and proxy_sock 140241171489952
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489952 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489952 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489952 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:55-0400: proxy_sock 140241171489952 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 8
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 8 | totalLength: 8 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489952 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489952 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:56-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:17:56-0400: proxy_server accepted a connection: sock-140241171489856 <socket.socket fd=11, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44788)>:('127.0.0.1', 44788)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:17:56-0400: proxy_server setting a 15 second timeout on sock-140241171489856
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:17:56-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:17:56-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:56-0400: bws_sock 140241171489856 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:56-0400: setting connection status of bws_sock 140241171489856 and proxy_sock 140241171490048
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490048 connecting to b'push.services.mozilla.com' on 443
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490048 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490048 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490048 receiving data from b'push.services.mozilla.com'
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:17:56-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490048 setting connection status to 0
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490048 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:56-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:17:56-0400: deleting and removing 140241171490048 and its reference sock 140241171489856
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490048 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:17:56-0400: closing bws_sock 140241171489856
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:56-0400: bws_sock 140241171489664 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:56-0400: setting connection status of bws_sock 140241171489664 and proxy_sock 140241171489568
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489568 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:56-0400: bws_sock 140241171489760 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:56-0400: setting connection status of bws_sock 140241171489760 and proxy_sock 140241171489952
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489952 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489568 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 8
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 8 | totalLength: 8 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489568 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489568 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:56-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489952 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 8
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 8 | totalLength: 8 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489952 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:56-0400: proxy_sock 140241171489952 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:56-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:17:56-0400: proxy_server accepted a connection: sock-140241171490528 <socket.socket fd=11, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44798)>:('127.0.0.1', 44798)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:17:56-0400: proxy_server setting a 15 second timeout on sock-140241171490528
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:17:56-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:17:56-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:17:56-0400: proxy_server accepted a connection: sock-140241171489856 <socket.socket fd=13, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44802)>:('127.0.0.1', 44802)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:17:56-0400: proxy_server setting a 15 second timeout on sock-140241171489856
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:17:56-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:17:56-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:56-0400: bws_sock 140241171490528 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:56-0400: setting connection status of bws_sock 140241171490528 and proxy_sock 140241171490432
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490432 connecting to b'o.pki.goog' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490432 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490432 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490432 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 471
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 471 | totalLength: 471 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490432 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490432 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:56-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:17:56-0400: proxy_server accepted a connection: sock-140241171490048 <socket.socket fd=15, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44808)>:('127.0.0.1', 44808)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:17:56-0400: proxy_server setting a 15 second timeout on sock-140241171490048
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:17:56-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:17:56-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:56-0400: bws_sock 140241171489856 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:56-0400: setting connection status of bws_sock 140241171489856 and proxy_sock 140241171490144
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490144 connecting to b'o.pki.goog' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490144 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490144 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490144 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 471
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 471 | totalLength: 471 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490144 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490144 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:56-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:17:56-0400: bws_sock 140241171490048 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:17:56-0400: setting connection status of bws_sock 140241171490048 and proxy_sock 140241171490336
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490336 connecting to b'o.pki.goog' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490336 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490336 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490336 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:17:56-0400: Content-Length: 471
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:17:56-0400: about http msg: datalength: 471 | totalLength: 471 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490336 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:17:56-0400: proxy_sock 140241171490336 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:17:56-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:17:56-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:01-0400: proxy_server accepted a connection: sock-140241171490720 <socket.socket fd=17, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 44810)>:('127.0.0.1', 44810)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:01-0400: proxy_server setting a 15 second timeout on sock-140241171490720
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:01-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:01-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:01-0400: bws_sock 140241171490720 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:01-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:01-0400: setting connection status of bws_sock 140241171490720 and proxy_sock 140241171490624
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:01-0400: proxy_sock 140241171490624 connecting to b'push.services.mozilla.com' on 443
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:01-0400: proxy_sock 140241171490624 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:01-0400: proxy_sock 140241171490624 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:01-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:01-0400: proxy_sock 140241171490624 receiving data from b'push.services.mozilla.com'
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:01-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:01-0400: proxy_sock 140241171490624 setting connection status to 0
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:01-0400: proxy_sock 140241171490624 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:01-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:01-0400: success
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:01-0400: deleting and removing 140241171490624 and its reference sock 140241171490720
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:01-0400: proxy_sock 140241171490624 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:01-0400: closing bws_sock 140241171490720
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:05-0400: bws_sock 140241171489856 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:05-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:05-0400: setting connection status of bws_sock 140241171489856 and proxy_sock 140241171490144
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:18:05-0400: a client has disconnected from proxy_server: sock-140241171656208
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:05-0400: deleting and removing 140241171489856 and its reference sock 140241171490144
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:05-0400: closing bws_sock 140241171489856
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:05-0400: proxy_sock 140241171490144 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:05-0400: bws_sock 140241171490528 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:05-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:05-0400: setting connection status of bws_sock 140241171490528 and proxy_sock 140241171490432
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:18:05-0400: a client has disconnected from proxy_server: sock-140241171656272
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:05-0400: deleting and removing 140241171490528 and its reference sock 140241171490432
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:05-0400: closing bws_sock 140241171490528
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:05-0400: proxy_sock 140241171490432 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:05-0400: bws_sock 140241171490048 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:05-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:05-0400: setting connection status of bws_sock 140241171490048 and proxy_sock 140241171490336
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:18:05-0400: a client has disconnected from proxy_server: sock-140241171656336
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:05-0400: deleting and removing 140241171490048 and its reference sock 140241171490336
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:05-0400: closing bws_sock 140241171490048
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:05-0400: proxy_sock 140241171490336 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:05-0400: bws_sock 140241171489472 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:05-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:05-0400: setting connection status of bws_sock 140241171489472 and proxy_sock 140241171489376
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:18:05-0400: a client has disconnected from proxy_server: sock-140241171558096
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:05-0400: deleting and removing 140241171489472 and its reference sock 140241171489376
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:05-0400: closing bws_sock 140241171489472
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:05-0400: proxy_sock 140241171489376 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:05-0400: bws_sock 140241171489664 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:05-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:05-0400: setting connection status of bws_sock 140241171489664 and proxy_sock 140241171489568
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:18:05-0400: a client has disconnected from proxy_server: sock-140241171654800
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:05-0400: deleting and removing 140241171489664 and its reference sock 140241171489568
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:05-0400: closing bws_sock 140241171489664
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:05-0400: proxy_sock 140241171489568 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:05-0400: bws_sock 140241171489760 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:05-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:05-0400: setting connection status of bws_sock 140241171489760 and proxy_sock 140241171489952
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:18:05-0400: a client has disconnected from proxy_server: sock-140241171655696
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:05-0400: deleting and removing 140241171489760 and its reference sock 140241171489952
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:05-0400: closing bws_sock 140241171489760
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:05-0400: proxy_sock 140241171489952 was closed...
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:11-0400: proxy_server accepted a connection: sock-140241171489760 <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 48516)>:('127.0.0.1', 48516)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:11-0400: proxy_server setting a 15 second timeout on sock-140241171489760
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:11-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:11-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:11-0400: bws_sock 140241171489760 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:11-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:11-0400: setting connection status of bws_sock 140241171489760 and proxy_sock 140241171489472
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:11-0400: proxy_sock 140241171489472 connecting to b'push.services.mozilla.com' on 443
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:11-0400: proxy_sock 140241171489472 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:11-0400: proxy_sock 140241171489472 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:11-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:11-0400: proxy_sock 140241171489472 receiving data from b'push.services.mozilla.com'
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:11-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:11-0400: proxy_sock 140241171489472 setting connection status to 0
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:11-0400: proxy_sock 140241171489472 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:11-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:11-0400: success
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:11-0400: deleting and removing 140241171489472 and its reference sock 140241171489760
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:11-0400: proxy_sock 140241171489472 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:11-0400: closing bws_sock 140241171489760
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:16-0400: proxy_server accepted a connection: sock-140241171490624 <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 57490)>:('127.0.0.1', 57490)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:16-0400: proxy_server setting a 15 second timeout on sock-140241171490624
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:16-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:16-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:16-0400: bws_sock 140241171490624 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:16-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:16-0400: setting connection status of bws_sock 140241171490624 and proxy_sock 140241171490720
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:16-0400: proxy_sock 140241171490720 connecting to b'httpforever.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:16-0400: proxy_sock 140241171490720 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:16-0400: proxy_sock 140241171490720 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:16-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:16-0400: proxy_sock 140241171490720 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:17-0400: about http msg: datalength: 614 | totalLength: b'-1' | megType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:17-0400: proxy_sock 140241171490720 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:17-0400: proxy_sock 140241171490720 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:17-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:17-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:17-0400: bws_sock 140241171490624 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:17-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:17-0400: setting connection status of bws_sock 140241171490624 and proxy_sock 140241171490720
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:17-0400: proxy_sock 140241171490720 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:17-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:17-0400: proxy_sock 140241171490720 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:17-0400: Content-Length: 1010
+[WARNING|utils_cubanman_proxy|recv|127|] 2025-08-15T22:18:27-0400: timeout. no data was received from: sock140241171490720
+http-msg: b'HTTP/1.1 200 OK\r\nServer: nginx/1.18.0 (Ubuntu)\r\nDate: Sat, 16 Aug 2025 02:18:17 GMT\r\nContent-Type: application/javascript\r\nContent-Length: 1010\r\nLast-Modified: Wed, 16 Nov 2022 20:59:49 GMT\r\nConnection: keep-alive\r\nETag: "63754f45-3f2"\r\nReferrer-Policy: strict-origin-when-cross-origin\r\nX-Content-Type-Options: nosniff\r\nFeature-Policy: accelerometer \'none\'; camera \'none\'; geolocation \'none\'; gyroscope \'none\'; magnetometer \'none\'; microphone \'none\'; payment \'none\'; usb \'none\'\r\nContent-Security-Policy: default-src \'self\'; script-src cdnjs.cloudflare.com \'self\' \'report-sha256\'; style-src cdnjs.cloudflare.com \'self\' fonts.googleapis.com \'unsafe-inline\'; font-src fonts.googleapis.com fonts.gstatic.com cdnjs.cloudflare.com; frame-ancestors \'none\'; report-uri https://scotthelme.report-uri.com/r/d/csp/enforce\r\nAccept-Ranges: bytes\r\n\r\n!function(e){skel.init({reset:"full",breakpoints:{global:{range:"*",href:"css/style.min.css",containers:"75em",grid:{gutters:["3em",0]}},wide:{range:"-1680",href:"css/style-wide.min.css",grid:{gutters:["2.5em",0]}},normal:{range:"-1280",href:"css/style-normal.min.css",containers:"65em",grid:{gutters:["2em",0]},viewport:{scalable:!1}},narrow:{range:"-980",href:"css/style-narrow.min.css",containers:"90%"},narrower:{range:"-840",href:"css/style-narrower.min.css",containers:"90%!",grid:{collapse:!0}},mobile:{range:"-736",href:"css/style-mobile.min.css",containers:"100%!"},mobilep:{range:"-480",href:"css/style-mobilep.min.css"}},plugins:{layers:{config:{mode:function(){return skel.vars.isMobile?"transform":"position"}}}}}),e(function(){var s=e(window),n=(e("body"),e("#header")),r=e("#banner");!skel.vars.isMobile&&n.hasClass("alt")&&r.length>0&&s.on("load",function(){r.scrollwatch({delay:0,range:1,anchor:"top",on:function(){n.addClass("alt reveal")},off:function(){n.removeClass("alt")}})})})}(jQuery);'
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:27-0400: proxy_sock 140241171490720 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:27-0400: proxy_sock 140241171490720 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:27-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:27-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:27-0400: bws_sock 140241171490624 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:27-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:27-0400: setting connection status of bws_sock 140241171490624 and proxy_sock 140241171490720
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:27-0400: proxy_sock 140241171490720 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:27-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:27-0400: proxy_server accepted a connection: sock-140241171489760 <socket.socket fd=7, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46862)>:('127.0.0.1', 46862)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:27-0400: proxy_server setting a 15 second timeout on sock-140241171489760
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:27-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:27-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:27-0400: bws_sock 140241171489760 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:27-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:27-0400: setting connection status of bws_sock 140241171489760 and proxy_sock 140241171489472
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:27-0400: proxy_sock 140241171489472 connecting to b'httpforever.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:27-0400: proxy_sock 140241171489472 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:27-0400: proxy_sock 140241171489472 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:27-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:27-0400: proxy_sock 140241171489472 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:27-0400: Content-Length: 99
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:27-0400: about http msg: datalength: 99 | totalLength: 99 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:27-0400: proxy_sock 140241171489472 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:27-0400: proxy_sock 140241171489472 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:27-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:27-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:27-0400: proxy_server accepted a connection: sock-140241171483520 <socket.socket fd=9, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46868)>:('127.0.0.1', 46868)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:27-0400: proxy_server setting a 15 second timeout on sock-140241171483520
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:27-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:27-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:27-0400: proxy_sock 140241171490720 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:27-0400: Content-Length: 17874
+[WARNING|utils_cubanman_proxy|recv|127|] 2025-08-15T22:18:37-0400: timeout. no data was received from: sock140241171490720
+http-msg: b'HTTP/1.1 200 OK\r\nServer: nginx/1.18.0 (Ubuntu)\r\nDate: Sat, 16 Aug 2025 02:18:27 GMT\r\nContent-Type: text/css\r\nContent-Length: 17874\r\nLast-Modified: Wed, 16 Nov 2022 20:59:48 GMT\r\nConnection: keep-alive\r\nETag: "63754f44-45d2"\r\nReferrer-Policy: strict-origin-when-cross-origin\r\nX-Content-Type-Options: nosniff\r\nFeature-Policy: accelerometer \'none\'; camera \'none\'; geolocation \'none\'; gyroscope \'none\'; magnetometer \'none\'; microphone \'none\'; payment \'none\'; usb \'none\'\r\nContent-Security-Policy: default-src \'self\'; script-src cdnjs.cloudflare.com \'self\' \'report-sha256\'; style-src cdnjs.cloudflare.com \'self\' fonts.googleapis.com \'unsafe-inline\'; font-src fonts.googleapis.com fonts.gstatic.com cdnjs.cloudflare.com; frame-ancestors \'none\'; report-uri https://scotthelme.report-uri.com/r/d/csp/enforce\r\nAccept-Ranges: bytes\r\n\r\n@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,900);blockquote,em,i{font-style:italic}.select-wrapper,header p,sub,sup{position:relative}.table-wrapper,pre{-webkit-overflow-scrolling:touch;overflow-x:auto}#header nav>ul>li a,h1,h2,h3,h4,h5,h6{letter-spacing:.05em;text-indent:-.05em}body{background:#fff}body,input,select,textarea{color:grey;font-family:"Source Sans Pro",Helvetica,sans-serif;font-size:13pt;font-weight:400;line-height:1.65em}a{-moz-transition:color .2s ease-in-out;-webkit-transition:color .2s ease-in-out;-o-transition:color .2s ease-in-out;-ms-transition:color .2s ease-in-out;transition:color .2s ease-in-out;color:#87b885;text-decoration:underline}a:hover{color:#87b885!important;text-decoration:none}b,strong{color:#555;font-weight:600}p{margin:0 0 2em}h1,h2,h3,h4,h5,h6{color:#555;font-weight:900;line-height:1em;margin:0 0 1em;text-transform:uppercase}h2,h3,h4,h5,h6{line-height:1.5em}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:inherit;text-decoration:none}h2{font-size:1.75em}h3{font-size:1.35em}h4{font-size:1.1em}h5{font-size:.9em}h6{font-size:.7em}sub,sup{font-size:.8em}sub{top:.5em}sup{top:-.5em}code,pre{background:#f0f0f0;font-family:monospace;font-size:.9em}hr{border:0;border-bottom:solid 1px #ddd;margin:2em 0}hr.major{margin:3em 0}blockquote,pre{margin:0 0 2em}blockquote{border-left:solid 4px #ddd;padding:.5em 0 .5em 2em}pre{line-height:1.75em;padding:1em 1.5em}code{margin:0 .25em;padding:.25em .65em}.icon:before,.select-wrapper:before,input[type=checkbox]+label:before,input[type=radio]+label:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:FontAwesome;font-style:normal;text-transform:none!important}.align-left{text-align:left}.align-center{text-align:center}.align-right{text-align:right}.icon.major,.select-wrapper:before,article.special,header.major,section.special{text-align:center}header p{color:#aaa;margin:0 0 1.5em}header h2+p{font-size:1.25em;line-height:1.5em;margin-top:-1em}header h3+p{font-size:1.1em;line-height:1.5em;margin-top:-.85em}header h4+p,header h5+p,header h6+p{font-size:.9em;line-height:1.5em;margin-top:-.75em}header.major{margin:0 auto 4em;max-width:56.25em}header.major>:first-child{white-space:nowrap}header.major>:first-child:after,header.major>:first-child:before{background-image:url(images/header-major-on-light.svg);background-repeat:no-repeat;content:\'\';display:inline-block;height:20px;width:150px}header.major>:first-child:before{background-position:center right;margin-right:1em}header.major>:first-child:after{-moz-transform:scaleX(-1);-webkit-transform:scaleX(-1);-o-transform:scaleX(-1);-ms-transform:scaleX(-1);transform:scaleX(-1);background-position:center left;margin-left:1em}header.major p{color:grey;font-size:1.1em;line-height:1.65em;margin:0 auto}form{margin:0 0 2em}label{color:#555;display:block;font-size:.9em;font-weight:900;margin:0 0 1em}input[type=text],input[type=password],input[type=email],select,textarea{-moz-appearance:none;-webkit-appearance:none;-o-appearance:none;-ms-appearance:none;appearance:none;border:0;border:1px solid #ddd;border-radius:0;color:inherit;display:block;outline:0;padding:0 1em;text-decoration:none;width:100%}.icon.major,input[type=radio]+label:before{border-radius:100%}input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,select:invalid,textarea:invalid{box-shadow:none}input[type=text]:focus,input[type=password]:focus,input[type=email]:focus,select:focus,textarea:focus{border-color:#87b885;box-shadow:0 0 0 1px #87b885}.select-wrapper{text-decoration:none;display:block}.select-wrapper:before{font-weight:400;content:\'\\f078\';color:#ddd;display:block;height:2.75em;line-height:2.75em;pointer-events:none;position:absolute;right:0;top:0;width:2.75em}.select-wrapper select::-ms-expand{display:none}input[type=text],input[type=password],input[type=email],select{height:2.75em}textarea{padding:.75em 1em}input[type=checkbox],input[type=radio]{-moz-appearance:none;-webkit-appearance:none;-o-appearance:none;-ms-appearance:none;appearance:none;display:block;float:left;margin-right:-2em;opacity:0;width:1em;z-index:-1}input[type=checkbox]+label,input[type=radio]+label{text-decoration:none;color:grey;cursor:pointer;display:inline-block;font-size:1em;font-weight:400;padding-left:2.4em;padding-right:.75em;position:relative}.icon.major,ul.actions,ul.icons,ul.menu{cursor:default}input[type=checkbox]+label:before,input[type=radio]+label:before{font-weight:400;background:#f0f0f0;content:\'\';display:inline-block;height:1.65em;left:0;line-height:1.58125em;position:absolute;text-align:center;top:0;width:1.65em}.icon,.image{position:relative}input[type=checkbox]:checked+label:before,input[type=radio]:checked+label:before{background:#596571;color:#fff;content:\'\\f00c\'}input[type=checkbox]:focus+label:before,input[type=radio]:focus+label:before{box-shadow:0 0 0 2px #87b885}::-webkit-input-placeholder{color:#aaa!important;opacity:1}:-moz-placeholder{color:#aaa!important;opacity:1}::-moz-placeholder{color:#aaa!important;opacity:1}:-ms-input-placeholder{color:#aaa!important;opacity:1}.formerize-placeholder{color:#aaa!important;opacity:1}.box{background:#fff;box-shadow:0 2px 0 0 rgba(0,0,0,.1);margin-bottom:2em;padding:2.25em}.box>:last-child,.box>:last-child>:last-child,.box>:last-child>:last-child>:last-child{margin-bottom:0}.box.special{padding:3em 2.25em}.box.alt{background:0 0;box-shadow:none;padding:0}.icon{text-decoration:none;border-bottom:none}.icon:before{font-weight:400}.icon>.label{display:none}.icon.major{background-image:-moz-linear-gradient(45deg,rgba(0,0,0,.1) 50%,rgba(0,0,0,0) 0);background-image:-webkit-linear-gradient(45deg,rgba(0,0,0,.1) 50%,rgba(0,0,0,0) 0);background-image:-o-linear-gradient(45deg,rgba(0,0,0,.1) 50%,rgba(0,0,0,0) 0);background-image:-ms-linear-gradient(45deg,rgba(0,0,0,.1) 50%,rgba(0,0,0,0) 0);background-image:linear-gradient(45deg,rgba(0,0,0,.1) 50%,rgba(0,0,0,0) 0);background-color:#87b885;color:#fff;display:block;height:4.5em;line-height:4.5em;margin:0 auto 2em;width:4.5em}.image.fit,ol,ul{margin:0 0 2em}.icon.major:before{font-size:32px}.icon.major.alt{background-color:#596571;color:#fff}.image{border:0;display:inline-block}.image img,.image.fit{display:block}.image.left{float:left;padding:0 1.5em 1em 0;top:.25em}.image.right{float:right;padding:0 0 1em 1.5em;top:.25em}.image.fit{width:100%}.image.fit img{display:block;width:100%}ul.actions li,ul.icons li,ul.menu li{display:inline-block}ol{list-style:decimal;padding-left:1.25em}ol li{padding-left:.25em}ul{list-style:disc;padding-left:1em}#header nav>ul,.dropotron,ul.actions,ul.alt,ul.icons,ul.menu{list-style:none}ul li{padding-left:.5em}ul.alt{padding-left:0}ul.alt li{border-top:solid 1px #ddd;padding:.5em 0}ul.alt li:first-child{border-top:0;padding-top:0}ul.icons{padding-left:0}ul.icons li{padding:0 1em 0 0}ul.icons li:last-child{padding-right:0}ul.icons li .icon:before{font-size:2em}ul.labeled-icons{list-style:none;padding-left:0;text-align:left}ul.labeled-icons li{border-top:solid 1px #ddd;padding:1.25em 0 1.25em 2.75em;position:relative}ul.labeled-icons li:first-child{border-top:0;padding-top:0}ul.labeled-icons li:first-child .icon{top:0}ul.labeled-icons li a{color:inherit;text-decoration:none}ul.labeled-icons li .icon{background-color:grey;border-radius:100%;color:#fff;cursor:default;font-size:1em;height:1.75em;left:0;line-height:1.75em;position:absolute;text-align:center;top:1.25em;width:1.75em}ul.labeled-icons li .icon:before{font-size:16px}ul.labeled-icons li .icon.fa-twitter{background-color:#4eafdc}ul.labeled-icons li .icon.fa-facebook{background-color:#456bc9}ul.labeled-icons li .icon.fa-linkedin{background-color:#0291d9}ul.menu{padding-left:0}ul.menu li{border-left:solid 1px #ddd;line-height:1em;margin:0 0 0 1em;padding:0 0 0 1em}ul.actions.fit li>*,ul.actions.vertical li>*{margin-bottom:0}ul.menu li:first-child{border-left:0;margin-left:0;padding-left:0}ul.actions{padding-left:0}ul.actions li{padding:0 1em 0 0;vertical-align:middle}ul.actions li:last-child{padding-right:0}ul.actions.small li{padding:0 .5em 0 0}ul.actions.vertical li{display:block;padding:1em 0 0}ul.actions.vertical li:first-child{padding-top:0}ul.actions.vertical.small li{padding:.5em 0 0}ul.actions.vertical.small li:first-child{padding-top:0}ul.actions.fit{display:table;margin-left:-1em;padding:0;table-layout:fixed;width:calc(100% + 1em)}ul.actions.fit li{display:table-cell;padding:0 0 0 1em}ul.actions.fit.small{margin-left:-.5em;width:calc(100% + .5em)}dl,table{margin:0 0 2em}ul.actions.fit.small li{padding:0 0 0 .5em}table{width:100%}table tbody tr:nth-child(2n+1){background-color:#f0f0f0}table td{padding:.75em}table th{color:#555;font-size:.9em;font-weight:900;padding:0 .75em .75em;text-align:left}table thead{border-bottom:solid 2px #ddd}table tfoot{border-top:solid 2px #ddd}table.alt{border-collapse:separate}table.alt tbody tr td{border:1px solid #ddd;border-left-width:0;border-top-width:0}table.alt tbody tr td:first-child{border-left-width:1px}table.alt tbody tr:first-child td{border-top-width:1px}table.alt thead{border-bottom:0}table.alt tfoot{border-top:0}.button,input[type=reset],input[type=button],input[type=submit]{-moz-appearance:none;-webkit-appearance:none;-o-appearance:none;-ms-appearance:none;appearance:none;-moz-transition:background-color .2s ease-in-out,color .2s ease-in-out;-webkit-transition:background-color .2s ease-in-out,color .2s ease-in-out;-o-transition:background-color .2s ease-in-out,color .2s ease-in-out;-ms-transition:background-color .2s ease-in-out,color .2s ease-in-out;transition:background-color .2s ease-in-out,color .2s ease-in-out;background-color:#87b885;border:0;border-radius:0;color:#fff!important;cursor:pointer;display:inline-block;font-weight:900;height:3em;letter-spacing:.05em;line-height:3em;padding:0 1.75em;text-align:center;text-decoration:none;text-indent:-.05em;text-transform:uppercase;white-space:nowrap}.button:hover,input[type=reset]:hover,input[type=button]:hover,input[type=submit]:hover{background-color:#94c190;color:#fff!important}.button:active,input[type=reset]:active,input[type=button]:active,input[type=submit]:active{background-color:#77AF75}.button.icon,input[type=reset].icon,input[type=button].icon,input[type=submit].icon{padding-left:1.35em}.button.icon:before,input[type=reset].icon:before,input[type=button].icon:before,input[type=submit].icon:before{margin-right:.5em}.button.fit,input[type=reset].fit,input[type=button].fit,input[type=submit].fit{display:block;margin:0 0 1em;width:100%}.button.small,input[type=reset].small,input[type=button].small,input[type=submit].small{font-size:.8em;height:2.475em;line-height:2.475em}.button.big,input[type=reset].big,input[type=button].big,input[type=submit].big{font-size:1.25em;height:2.475em;line-height:2.475em}#header h1,#header nav{height:inherit;line-height:inherit;position:absolute;top:0}.button.alt,input[type=reset].alt,input[type=button].alt,input[type=submit].alt{background-color:transparent;box-shadow:inset 0 0 0 2px #ddd;color:#555!important}.button.alt:hover,input[type=reset].alt:hover,input[type=button].alt:hover,input[type=submit].alt:hover{background-color:#f0f0f0}.button.alt:active,input[type=reset].alt:active,input[type=button].alt:active,input[type=submit].alt:active{background-color:#ddd}.button.alt.icon:before,input[type=reset].alt.icon:before,input[type=button].alt.icon:before,input[type=submit].alt.icon:before{color:#aaa}.button.special,input[type=reset].special,input[type=button].special,input[type=submit].special{background-color:#87b885;color:#fff!important}.button.special:hover,input[type=reset].special:hover,input[type=button].special:hover,input[type=submit].special:hover{background-color:#94c190}.button.special:active,input[type=reset].special:active,input[type=button].special:active,input[type=submit].special:active{background-color:#77AF75}.button.disabled,.button:disabled,input[type=reset].disabled,input[type=reset]:disabled,input[type=button].disabled,input[type=button]:disabled,input[type=submit].disabled,input[type=submit]:disabled{background-color:grey!important;box-shadow:none!important;color:#fff!important;cursor:default;opacity:.25}.wrapper{padding:6em 0}.wrapper.style1{background:#f5f5f5}.wrapper.style2{background:#87b885;color:#edf4ec}.wrapper.style2 b,.wrapper.style2 h2,.wrapper.style2 h3,.wrapper.style2 h4,.wrapper.style2 h5,.wrapper.style2 h6,.wrapper.style2 label,.wrapper.style2 strong,.wrapper.style2 th{color:#fff}.wrapper.style2 header p{color:#edf4ec}.wrapper.style2 header.major>:first-child:after,.wrapper.style2 header.major>:first-child:before{background-image:url(images/header-major-on-dark.svg)}.wrapper.style2 .box{background:#94c190}.wrapper.style2 .button,.wrapper.style2 input[type=reset],.wrapper.style2 input[type=button],.wrapper.style2 input[type=submit]{color:#87b885!important;background:#fff}.wrapper.style2 .button.alt,.wrapper.style2 input[type=reset].alt,.wrapper.style2 input[type=button].alt,.wrapper.style2 input[type=submit].alt{background-color:transparent;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);color:#fff!important}.wrapper.style2 .button.alt:hover,.wrapper.style2 input[type=reset].alt:hover,.wrapper.style2 input[type=button].alt:hover,.wrapper.style2 input[type=submit].alt:hover{background-color:rgba(255,255,255,.15)}.wrapper.style2 .button.alt:active,.wrapper.style2 input[type=reset].alt:active,.wrapper.style2 input[type=button].alt:active,.wrapper.style2 input[type=submit].alt:active{background-color:rgba(255,255,255,.25)}.wrapper.style2 .button.alt.icon:before,.wrapper.style2 input[type=reset].alt.icon:before,.wrapper.style2 input[type=button].alt.icon:before,.wrapper.style2 input[type=submit].alt.icon:before{color:#dbe9da}.wrapper.style3{background:#fff}#skel-layers-wrapper{padding-top:3em}body.landing #skel-layers-wrapper{padding-top:0}@-moz-keyframes reveal-header{0%{top:-5em}100%{top:0}}@-webkit-keyframes reveal-header{0%{top:-5em}100%{top:0}}@-o-keyframes reveal-header{0%{top:-5em}100%{top:0}}@-ms-keyframes reveal-header{0%{top:-5em}100%{top:0}}@keyframes reveal-header{0%{top:-5em}100%{top:0}}#header{background:#2F3B47;color:#e2e2e1;cursor:default;height:3.25em;left:0;line-height:3.25em;position:fixed;top:0;width:100%;z-index:10000}#header h1{left:1.25em;margin:0;padding:0}#header h1 a{font-size:1.25em;color:#fff!important}#header nav{right:1.25em;vertical-align:middle}#header nav>ul{margin:0;padding-left:0}#header nav>ul>li{display:inline-block;margin-left:3em;padding-left:0}#header nav>ul>li>ul{display:none}#header nav>ul>li a{color:#fff!important;display:inline-block;font-weight:900;text-decoration:none;text-transform:uppercase}#header nav>ul>li a.icon:before{margin-right:.75em;opacity:.5}#header nav>ul>li.active>a{color:#fff}#header nav>ul>li:first-child{margin-left:0}#header nav>ul>li .button{height:2.25em;line-height:2.25em;margin-bottom:0;padding:0 1.25em;position:relative;top:-.075em;vertical-align:middle}#header.reveal{-moz-animation:reveal-header .5s;-webkit-animation:reveal-header .5s;-o-animation:reveal-header .5s;-ms-animation:reveal-header .5s;animation:reveal-header .5s}#header.alt{-moz-animation:none;-webkit-animation:none;-o-animation:none;-ms-animation:none;animation:none;background:0 0;margin-top:.75em;position:absolute}#header.alt h1{left:2em}#header.alt nav{right:2.5em}#header .container{position:relative}#header .container h1{left:0}#header .container nav{right:0}.dropotron{background:#fff;border:1px solid #e0e0e0;box-shadow:0 .15em .15em 0 rgba(0,0,0,.05);color:grey;margin-top:-.75em;min-width:12em;padding:.75em 0}.dropotron.level-0{font-size:.9em;margin-top:1em}.dropotron.level-0:before{-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);background:#fff;border:0 solid #e0e0e0;border-left-width:1px;border-top-width:1px;content:\'\';display:block;height:1em;left:50%;margin-left:-.5em;position:absolute;top:-.5em;width:1em}.dropotron li{border-top:solid 1px #ddd}.dropotron li>a{-moz-transition:none;-webkit-transition:none;-o-transition:none;-ms-transition:none;transition:none;color:grey!important;text-decoration:none;display:block;padding:.25em .75em}.dropotron li:first-child{border-top:0}.dropotron li.active,.dropotron li:hover{background:#87b885}.dropotron li.active>a,.dropotron li:hover>a{color:#fff!important}#banner{background-color:#324150;background-image:url(images/banner.svg);background-position:25% bottom;background-repeat:repeat-x;background-size:1500px 300px;color:#fff;padding:6em 0 5em;text-align:center}#banner :last-child{margin-bottom:0}#banner h2{color:inherit;font-size:3em;line-height:1.25em;margin:0 0 .5em;padding:0}#banner p{color:#87b885;font-size:2em;margin-bottom:1.75em}#banner .button.alt,#banner input[type=reset].alt,#banner input[type=button].alt,#banner input[type=submit].alt{background-color:transparent;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);color:#fff!important}#banner .button.alt:hover,#banner input[type=reset].alt:hover,#banner input[type=button].alt:hover,#banner input[type=submit].alt:hover{background-color:rgba(255,255,255,.15)}#banner .button.alt:active,#banner input[type=reset].alt:active,#banner input[type=button].alt:active,#banner input[type=submit].alt:active{background-color:rgba(255,255,255,.25)}#banner .button.alt.icon:before,#banner input[type=reset].alt.icon:before,#banner input[type=button].alt.icon:before,#banner input[type=submit].alt.icon:before{color:#dbe9da}#footer{background:#ececec;color:#aaa;padding:.5em 0 1em;text-align:center}#footer .copyright{font-size:.9em;margin:2em 0 0;padding:0}#footer .menu li{border-color:#ccc}#footer .menu a{color:inherit;text-decoration:none}'
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:37-0400: proxy_sock 140241171490720 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:37-0400: proxy_sock 140241171490720 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:37-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:37-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:37-0400: proxy_server accepted a connection: sock-140241171489568 <socket.socket fd=11, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46870)>:('127.0.0.1', 46870)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:37-0400: proxy_server setting a 15 second timeout on sock-140241171489568
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:37-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:37-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:37-0400: bws_sock 140241171483520 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:37-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:37-0400: setting connection status of bws_sock 140241171483520 and proxy_sock 140241171489664
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:37-0400: proxy_sock 140241171489664 connecting to b'httpforever.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:37-0400: proxy_sock 140241171489664 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:37-0400: proxy_sock 140241171489664 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:37-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:37-0400: proxy_sock 140241171489664 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:37-0400: Content-Length: 307
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:37-0400: about http msg: datalength: 307 | totalLength: 307 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:37-0400: proxy_sock 140241171489664 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:37-0400: proxy_sock 140241171489664 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:37-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:37-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:37-0400: proxy_server accepted a connection: sock-140241171491200 <socket.socket fd=13, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 46886)>:('127.0.0.1', 46886)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:37-0400: proxy_server setting a 15 second timeout on sock-140241171491200
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:37-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:37-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:37-0400: bws_sock 140241171489568 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:37-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:37-0400: setting connection status of bws_sock 140241171489568 and proxy_sock 140241171490336
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:37-0400: proxy_sock 140241171490336 connecting to b'httpforever.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:37-0400: proxy_sock 140241171490336 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:37-0400: proxy_sock 140241171490336 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:37-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:37-0400: proxy_sock 140241171490336 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:37-0400: Content-Length: 42
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:37-0400: about http msg: datalength: 42 | totalLength: 42 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:37-0400: proxy_sock 140241171490336 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:37-0400: proxy_sock 140241171490336 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:37-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:37-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:37-0400: proxy_server accepted a connection: sock-140241171489376 <socket.socket fd=15, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58570)>:('127.0.0.1', 58570)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:37-0400: proxy_server setting a 15 second timeout on sock-140241171489376
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:37-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:37-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:37-0400: bws_sock 140241171491200 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:37-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:37-0400: setting connection status of bws_sock 140241171491200 and proxy_sock 140241171491296
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:37-0400: proxy_sock 140241171491296 connecting to b'push.services.mozilla.com' on 443
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491296 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491296 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491296 receiving data from b'push.services.mozilla.com'
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:18:38-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491296 setting connection status to 0
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491296 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:38-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:18:38-0400: deleting and removing 140241171491296 and its reference sock 140241171491200
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491296 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:18:38-0400: closing bws_sock 140241171491200
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:38-0400: proxy_server accepted a connection: sock-140241171491296 <socket.socket fd=13, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58574)>:('127.0.0.1', 58574)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:38-0400: proxy_server setting a 15 second timeout on sock-140241171491296
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:38-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:38-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:38-0400: bws_sock 140241171489376 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:38-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:38-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:38-0400: setting connection status of bws_sock 140241171489376 and proxy_sock 140241171490912
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490912 connecting to b'o.pki.goog' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490912 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490912 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490912 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:38-0400: Content-Length: 280
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:38-0400: about http msg: datalength: 280 | totalLength: 280 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490912 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490912 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:38-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:38-0400: bws_sock 140241171491296 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:38-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:38-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:38-0400: setting connection status of bws_sock 140241171491296 and proxy_sock 140241171491200
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491200 connecting to b'o.pki.goog' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491200 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491200 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491200 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:38-0400: Content-Length: 280
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:38-0400: about http msg: datalength: 280 | totalLength: 280 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491200 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:38-0400: proxy_sock 140241171491200 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:38-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:38-0400: bws_sock 140241171490624 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:38-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:38-0400: setting connection status of bws_sock 140241171490624 and proxy_sock 140241171490720
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490720 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:38-0400: bws_sock 140241171489760 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:38-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:38-0400: setting connection status of bws_sock 140241171489760 and proxy_sock 140241171489472
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:38-0400: proxy_sock 140241171489472 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:38-0400: bws_sock 140241171483520 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:38-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:38-0400: setting connection status of bws_sock 140241171483520 and proxy_sock 140241171489664
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:38-0400: proxy_sock 140241171489664 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:18:38-0400: bws_sock 140241171489568 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:18:38-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:18:38-0400: setting connection status of bws_sock 140241171489568 and proxy_sock 140241171490336
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490336 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:18:38-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:38-0400: proxy_sock 140241171490720 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:38-0400: Content-Length: 457
+[WARNING|utils_cubanman_proxy|recv|127|] 2025-08-15T22:18:48-0400: timeout. no data was received from: sock140241171490720
+http-msg: b'HTTP/1.1 200 OK\r\nServer: nginx/1.18.0 (Ubuntu)\r\nDate: Sat, 16 Aug 2025 02:18:38 GMT\r\nContent-Type: image/svg+xml\r\nContent-Length: 457\r\nLast-Modified: Wed, 16 Nov 2022 20:59:46 GMT\r\nConnection: keep-alive\r\nETag: "63754f42-1c9"\r\nReferrer-Policy: strict-origin-when-cross-origin\r\nX-Content-Type-Options: nosniff\r\nFeature-Policy: accelerometer \'none\'; camera \'none\'; geolocation \'none\'; gyroscope \'none\'; magnetometer \'none\'; microphone \'none\'; payment \'none\'; usb \'none\'\r\nContent-Security-Policy: default-src \'self\'; script-src cdnjs.cloudflare.com \'self\' \'report-sha256\'; style-src cdnjs.cloudflare.com \'self\' fonts.googleapis.com \'unsafe-inline\'; font-src fonts.googleapis.com fonts.gstatic.com cdnjs.cloudflare.com; frame-ancestors \'none\'; report-uri https://scotthelme.report-uri.com/r/d/csp/enforce\r\nAccept-Ranges: bytes\r\n\r\n<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150px" height="20px" viewBox="0 0 150px 20px" zoomAndPan="disable" preserveAspectRatio="none">\r\n\r\n    <style type="text/css"><![CDATA[\r\n\t\tline {\r\n\t\t\tstroke: rgba(255,255,255,0.5);\r\n\t\t\tstroke-width: 1px;\r\n\t\t}\r\n    ]]></style>\r\n    \r\n\t<line x1="0" y1="1" x2="150" y2="1" />\r\n\t<line x1="20" y1="10" x2="150" y2="10" />\r\n\t<line x1="40" y1="19" x2="150" y2="19" />\r\n</svg>'
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:48-0400: proxy_sock 140241171490720 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:48-0400: proxy_sock 140241171490720 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:48-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:48-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:18:48-0400: proxy_server accepted a connection: sock-140241171490144 <socket.socket fd=17, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58588)>:('127.0.0.1', 58588)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:18:48-0400: proxy_server setting a 15 second timeout on sock-140241171490144
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:18:48-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:18:48-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:48-0400: proxy_sock 140241171489472 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:48-0400: Content-Length: 501
+[WARNING|utils_cubanman_proxy|recv|127|] 2025-08-15T22:18:58-0400: timeout. no data was received from: sock140241171489472
+http-msg: b'HTTP/1.1 200 OK\r\nServer: nginx/1.18.0 (Ubuntu)\r\nDate: Sat, 16 Aug 2025 02:18:38 GMT\r\nContent-Type: image/svg+xml\r\nContent-Length: 501\r\nLast-Modified: Wed, 16 Nov 2022 20:59:46 GMT\r\nConnection: keep-alive\r\nETag: "63754f42-1f5"\r\nReferrer-Policy: strict-origin-when-cross-origin\r\nX-Content-Type-Options: nosniff\r\nFeature-Policy: accelerometer \'none\'; camera \'none\'; geolocation \'none\'; gyroscope \'none\'; magnetometer \'none\'; microphone \'none\'; payment \'none\'; usb \'none\'\r\nContent-Security-Policy: default-src \'self\'; script-src cdnjs.cloudflare.com \'self\' \'report-sha256\'; style-src cdnjs.cloudflare.com \'self\' fonts.googleapis.com \'unsafe-inline\'; font-src fonts.googleapis.com fonts.gstatic.com cdnjs.cloudflare.com; frame-ancestors \'none\'; report-uri https://scotthelme.report-uri.com/r/d/csp/enforce\r\nAccept-Ranges: bytes\r\n\r\n<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1500" height="300" viewBox="0 0 1500 300" zoomAndPan="disable">\r\n\r\n    <style type="text/css"><![CDATA[\r\n\t\tpolygon {\r\n\t\t\tfill: rgba(255,255,255,0.035);\r\n\t\t}\r\n    ]]></style>\r\n    \r\n\t<!-- Main -->\r\n\t\t<polygon points="0,0 275,200 400,100 525,200 750,50 1100,250 1500,0 1500,300 0,300" />\r\n\r\n\t<!-- Highlights -->\r\n\t\t<polygon points="0,0 175,300 410,300" />\r\n\t\t<polygon points="750,50 1100,250 900,365" />\r\n\r\n</svg>'
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:18:58-0400: proxy_sock 140241171489472 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:18:58-0400: proxy_sock 140241171489472 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:18:58-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:18:58-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:18:58-0400: proxy_sock 140241171489664 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:18:58-0400: Content-Length: 4286
+[WARNING|utils_cubanman_proxy|recv|127|] 2025-08-15T22:19:08-0400: timeout. no data was received from: sock140241171489664
+http-msg: b'HTTP/1.1 200 OK\r\nServer: nginx/1.18.0 (Ubuntu)\r\nDate: Sat, 16 Aug 2025 02:18:38 GMT\r\nContent-Type: image/x-icon\r\nContent-Length: 4286\r\nLast-Modified: Wed, 16 Nov 2022 20:59:49 GMT\r\nConnection: keep-alive\r\nETag: "63754f45-10be"\r\nReferrer-Policy: strict-origin-when-cross-origin\r\nX-Content-Type-Options: nosniff\r\nFeature-Policy: accelerometer \'none\'; camera \'none\'; geolocation \'none\'; gyroscope \'none\'; magnetometer \'none\'; microphone \'none\'; payment \'none\'; usb \'none\'\r\nContent-Security-Policy: default-src \'self\'; script-src cdnjs.cloudflare.com \'self\' \'report-sha256\'; style-src cdnjs.cloudflare.com \'self\' fonts.googleapis.com \'unsafe-inline\'; font-src fonts.googleapis.com fonts.gstatic.com cdnjs.cloudflare.com; frame-ancestors \'none\'; report-uri https://scotthelme.report-uri.com/r/d/csp/enforce\r\nAccept-Ranges: bytes\r\n\r\n\x00\x00\x01\x00\x01\x00  \x00\x00\x01\x00 \x00\xa8\x10\x00\x00\x16\x00\x00\x00(\x00\x00\x00 \x00\x00\x00@\x00\x00\x00\x01\x00 \x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x00$\xda\x07\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00\x00\xff\x0b\x00$\xda\x07\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x05\x0b\xf6W\x02\x07\xf9\xab\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x00\x00\xff\xc3\x04\x07\xf9\xaa\x05\x0b\xf9V\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x10\x18\xf2?\x01\x03\xfb\xdb\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x02\x03\xfd\xda\x0c\x19\xe9<\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x15\x1a\xf8t\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x07\x0b\xf5k\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1b!\xf5\x83\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1c"\xf5\x84\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x08\n\xfau\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x18\x1e\xf8\x7f\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x06\x08\xfct\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x0c\x11\xf5f\x00\x00\xfe\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x01\x02\xfc\xff\n\x0f\xf4a\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1a\'\xeb\'\x08\r\xf8\xbc\x00\x00\xfe\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xfe\xff\t\x0f\xf5\xb9\x1c1\xd4$\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x19,\xe5(\x10\x1c\xf0m\x19(\xe7\x8b\x08\x0e\xf5\xcf\x00\x00\xff\xff\x03\x06\xfa\xef\x12 \xea\x97\x1a,\xe4\x8f\x1a,\xe4\x8f\x1a,\xe4\x8f\x1a,\xe4\x8f\x1a,\xe4\x8f\x1a,\xe4\x8f\x14!\xec\x98\x05\x07\xfa\xf0\x00\x00\xff\xff\x0b\x16\xec\xcf\x18&\xe6\x8a\x10\x1c\xeel :\xde\'\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x00\x00\xff\x8f\x00\x00\xff\xff\x00\x00\xff\xd7\x00\x00\xff\x17\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x13\x13\xff\x1a\x02\x02\xff\xd9\x00\x00\xff\xff\x07\x15\xe7\x8f\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x00\x00\xfd\x8f\x00\x00\xff\xff\x00\x00\xff\xd7\x00\x00\xff\x17\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x13\x13\xff\x1a\x02\x02\xff\xd9\x00\x00\xff\xff\x07\x15\xe7\x8f\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x05\x0b\xf7\x89\x00\x00\xff\xff\x02\x03\xfc\xdc\x12\x1b\xf5\x1c\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1f/\xe7 \x04\x06\xfc\xdf\x00\x00\xff\xff\r\x16\xee\x88\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x10\x19\xeeo\x00\x01\xfd\xff\x02\x03\xfd\xf1\x10\x17\xf4L\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x16\x1c\xf2Q\x04\x05\xfc\xf5\x01\x02\xfd\xff\x10\x1a\xf2j\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x1a#\xf19\x04\x06\xfb\xea\x00\x00\xff\xff\t\x0f\xf4\xa99s\xa4\x1f\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x189\xc5\x1f\x04\t\xf9\xaa\x00\x00\xff\xff\x03\x05\xfc\xe7\n\x0f\xf92\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xaa\xff\xaa\x03\x06\x0c\xf8\x93\x00\x00\xff\xff\x00\x00\xff\xff\n\x12\xf2\xa4\x17\x1e\xf3B-<\xe1\x118F\xe2\x12\x1d$\xf3E\x06\x0c\xf5\xa5\x00\x00\xff\xff\x00\x00\xff\xff\x08\x0e\xf7\x91\xff\xff\xff\x02\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00->\xdd-\x14\x1e\xf1\xbb\x00\x00\xff\xff\x00\x00\xff\xff\x04\x05\xfd\xec\x03\x05\xfc\xcc\x04\x06\xfb\xce\x06\x07\xfd\xee\x00\x00\xff\xff\x00\x00\xff\xff\x15\x1c\xf6\xb5,?\xe5(\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00/E\xdf0\x06\n\xfa\x99\x03\x05\xfc\xf1\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x00\x00\xff\xff\x04\x06\xfb\xf1\x03\x06\xfb\x953D\xee-\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00m\x91\xb6\x07\x1c#\xf0H\x11\x19\xf5\x84\x07\r\xf5\xa6\x07\x0c\xf7\xa5\x0f\x15\xf5\x82\x1d(\xf0FU\xaa\x7f\x06\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\x00U\xff\x03\x00U\xaa\x03\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\x00\x00\x7f\xfc\x00\x00?\xfc\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xf8\x00\x00?\xfc\x00\x00?\xfc\x00\x00?\xfc\x00\x00?\xff\x00\x00\xff\xff\x8f\xf1\xff\xff\x8f\xf1\xff\xff\x8f\xf1\xff\xff\xcf\xf3\xff\xff\xc7\xe3\xff\xff\xc3\xc3\xff\xff\xe0\x07\xff\xff\xf0\x0f\xff\xff\xfc?\xff\xff\xff\xff\xff\xff\xff\xff\xff'
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:08-0400: proxy_sock 140241171489664 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:08-0400: proxy_sock 140241171489664 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:08-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:08-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:08-0400: proxy_sock 140241171490336 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:08-0400: Content-Length: 451
+[WARNING|utils_cubanman_proxy|recv|127|] 2025-08-15T22:19:18-0400: timeout. no data was received from: sock140241171490336
+http-msg: b'HTTP/1.1 200 OK\r\nServer: nginx/1.18.0 (Ubuntu)\r\nDate: Sat, 16 Aug 2025 02:18:38 GMT\r\nContent-Type: image/svg+xml\r\nContent-Length: 451\r\nLast-Modified: Wed, 16 Nov 2022 20:59:46 GMT\r\nConnection: keep-alive\r\nETag: "63754f42-1c3"\r\nReferrer-Policy: strict-origin-when-cross-origin\r\nX-Content-Type-Options: nosniff\r\nFeature-Policy: accelerometer \'none\'; camera \'none\'; geolocation \'none\'; gyroscope \'none\'; magnetometer \'none\'; microphone \'none\'; payment \'none\'; usb \'none\'\r\nContent-Security-Policy: default-src \'self\'; script-src cdnjs.cloudflare.com \'self\' \'report-sha256\'; style-src cdnjs.cloudflare.com \'self\' fonts.googleapis.com \'unsafe-inline\'; font-src fonts.googleapis.com fonts.gstatic.com cdnjs.cloudflare.com; frame-ancestors \'none\'; report-uri https://scotthelme.report-uri.com/r/d/csp/enforce\r\nAccept-Ranges: bytes\r\n\r\n<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150px" height="20px" viewBox="0 0 150px 20px" zoomAndPan="disable" preserveAspectRatio="none">\r\n\r\n    <style type="text/css"><![CDATA[\r\n\t\tline {\r\n\t\t\tstroke: rgba(0,0,0,0.2);\r\n\t\t\tstroke-width: 1px;\r\n\t\t}\r\n    ]]></style>\r\n    \r\n\t<line x1="0" y1="1" x2="150" y2="1" />\r\n\t<line x1="20" y1="10" x2="150" y2="10" />\r\n\t<line x1="40" y1="19" x2="150" y2="19" />\r\n</svg>'
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490336 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490336 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:18-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171489376 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171489376 and proxy_sock 140241171490912
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490912 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171491296 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171491296 and proxy_sock 140241171491200
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491200 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:18-0400: proxy_server accepted a connection: sock-140241171490240 <socket.socket fd=19, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 58594)>:('127.0.0.1', 58594)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:18-0400: proxy_server setting a 15 second timeout on sock-140241171490240
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:18-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:18-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171490144 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171490144 and proxy_sock 140241171489856
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:18-0400: proxy_sock 140241171489856 connecting to b'o.pki.goog' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:18-0400: proxy_sock 140241171489856 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:18-0400: proxy_sock 140241171489856 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:18-0400: proxy_sock 140241171489856 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 471
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 471 | totalLength: 471 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:18-0400: proxy_sock 140241171489856 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:18-0400: proxy_sock 140241171489856 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:18-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:18-0400: proxy_server accepted a connection: sock-140241171490816 <socket.socket fd=21, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 38662)>:('127.0.0.1', 38662)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:18-0400: proxy_server setting a 15 second timeout on sock-140241171490816
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:18-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:18-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490912 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 471
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 471 | totalLength: 471 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490912 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490912 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:18-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491200 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 471
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 471 | totalLength: 471 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491200 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491200 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:18-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171490240 receiving data
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 83
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 83 | totalLength: 83 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171490240 and proxy_sock 140241171491104
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491104 connecting to b'o.pki.goog' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491104 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491104 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491104 receiving data from b'o.pki.goog'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 471
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 471 | totalLength: 471 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491104 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491104 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:18-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:18-0400: proxy_server accepted a connection: sock-140241171490048 <socket.socket fd=23, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 38678)>:('127.0.0.1', 38678)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:18-0400: proxy_server setting a 15 second timeout on sock-140241171490048
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:18-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:18-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171490816 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171490816 and proxy_sock 140241171491008
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491008 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491008 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491008 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491008 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 90
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 90 | totalLength: 90 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491008 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491008 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:18-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:18-0400: proxy_server accepted a connection: sock-140241171491680 <socket.socket fd=25, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 54112)>:('127.0.0.1', 54112)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:18-0400: proxy_server setting a 15 second timeout on sock-140241171491680
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:18-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:18-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171490816 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:19:18-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171490816 and proxy_sock 140241171491008
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:19:18-0400: a client has disconnected from proxy_server: sock-140241171651280
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:19:18-0400: deleting and removing 140241171490816 and its reference sock 140241171491008
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:18-0400: closing bws_sock 140241171490816
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491008 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171490048 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171490048 and proxy_sock 140241171490432
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490432 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490432 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490432 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490432 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 90
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 90 | totalLength: 90 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490432 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490432 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:18-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:18-0400: proxy_server accepted a connection: sock-140241171491008 <socket.socket fd=21, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 54124)>:('127.0.0.1', 54124)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:18-0400: proxy_server setting a 15 second timeout on sock-140241171491008
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:18-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:18-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171490048 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:19:18-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171490048 and proxy_sock 140241171490432
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:19:18-0400: a client has disconnected from proxy_server: sock-140241171649424
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:19:18-0400: deleting and removing 140241171490048 and its reference sock 140241171490432
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:18-0400: closing bws_sock 140241171490048
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:18-0400: proxy_sock 140241171490432 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171491680 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171491680 and proxy_sock 140241171491488
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491488 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491488 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491488 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491488 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:18-0400: Content-Length: 90
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 90 | totalLength: 90 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491488 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491488 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:18-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:18-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:18-0400: proxy_server accepted a connection: sock-140241171491392 <socket.socket fd=23, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53506)>:('127.0.0.1', 53506)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:18-0400: proxy_server setting a 15 second timeout on sock-140241171491392
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:18-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:18-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171491680 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:19:18-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171491680 and proxy_sock 140241171491488
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:19:18-0400: a client has disconnected from proxy_server: sock-140241171656336
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:19:18-0400: deleting and removing 140241171491680 and its reference sock 140241171491488
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:18-0400: closing bws_sock 140241171491680
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:18-0400: proxy_sock 140241171491488 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:18-0400: bws_sock 140241171491008 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:18-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:18-0400: setting connection status of bws_sock 140241171491008 and proxy_sock 140241171492064
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:18-0400: proxy_sock 140241171492064 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:19-0400: proxy_sock 140241171492064 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:19-0400: proxy_sock 140241171492064 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:19-0400: proxy_sock 140241171492064 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:19-0400: Content-Length: 90
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:19-0400: about http msg: datalength: 90 | totalLength: 90 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:19-0400: proxy_sock 140241171492064 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:19-0400: proxy_sock 140241171492064 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:19-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:19-0400: proxy_server accepted a connection: sock-140241171490528 <socket.socket fd=25, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53510)>:('127.0.0.1', 53510)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:19-0400: proxy_server setting a 15 second timeout on sock-140241171490528
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:19-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:19-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:19-0400: bws_sock 140241171491008 receiving data
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:19:19-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:19-0400: setting connection status of bws_sock 140241171491008 and proxy_sock 140241171492064
+[INFO|essentials_cubanman_proxy|recv|214|] 2025-08-15T22:19:19-0400: a client has disconnected from proxy_server: sock-140241171648976
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:19:19-0400: deleting and removing 140241171491008 and its reference sock 140241171492064
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:19-0400: closing bws_sock 140241171491008
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:19-0400: proxy_sock 140241171492064 was closed...
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:19-0400: bws_sock 140241171491392 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:19-0400: setting connection status of bws_sock 140241171491392 and proxy_sock 140241171489952
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:19-0400: proxy_sock 140241171489952 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:19-0400: proxy_sock 140241171489952 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:19-0400: proxy_sock 140241171489952 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:19-0400: proxy_sock 140241171489952 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:19-0400: Content-Length: 90
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:19-0400: about http msg: datalength: 90 | totalLength: 90 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:19-0400: proxy_sock 140241171489952 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:19-0400: proxy_sock 140241171489952 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:19-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:19-0400: bws_sock 140241171490528 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:19-0400: setting connection status of bws_sock 140241171490528 and proxy_sock 140241171491776
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 connecting to b'push.services.mozilla.com' on 443
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 receiving data from b'push.services.mozilla.com'
+[DEBUG|utils_cubanman_proxy|recv|131|] 2025-08-15T22:19:19-0400: EOF detected... Closing connection
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 setting connection status to 0
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:19-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|delPair|265|] 2025-08-15T22:19:19-0400: deleting and removing 140241171491776 and its reference sock 140241171490528
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:19-0400: closing bws_sock 140241171490528
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:19-0400: proxy_server accepted a connection: sock-140241171491968 <socket.socket fd=21, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53516)>:('127.0.0.1', 53516)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:19-0400: proxy_server setting a 15 second timeout on sock-140241171491968
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:19-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:19-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|accept|194|] 2025-08-15T22:19:19-0400: proxy_server accepted a connection: sock-140241171491680 <socket.socket fd=25, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 53526)>:('127.0.0.1', 53526)
+[DEBUG|essentials_cubanman_proxy|settimeout|167|] 2025-08-15T22:19:19-0400: proxy_server setting a 15 second timeout on sock-140241171491680
+[DEBUG|essentials_cubanman_proxy|accept|198|] 2025-08-15T22:19:19-0400: a 15 second timeout was set on new connection
+[DEBUG|essentials_cubanman_proxy|accept|200|] 2025-08-15T22:19:19-0400: creating proxy and bws sockets
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:19-0400: bws_sock 140241171491968 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:19-0400: setting connection status of bws_sock 140241171491968 and proxy_sock 140241171491584
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491584 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491584 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491584 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491584 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:19-0400: Content-Length: 8
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:19-0400: about http msg: datalength: 8 | totalLength: 8 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491584 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491584 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:19-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|33|] 2025-08-15T22:19:19-0400: bws_sock 140241171491680 receiving data
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | megType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|28|] 2025-08-15T22:19:19-0400: setting connection status of bws_sock 140241171491680 and proxy_sock 140241171491776
+[DEBUG|essentials_cubanman_proxy|connect|125|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|80|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 setting a 10 second timeout
+[DEBUG|essentials_cubanman_proxy|send|99|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 sending data
+[DEBUG|essentials_cubanman_proxy|send|101|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|144|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|man_http_msg|58|] 2025-08-15T22:19:19-0400: Content-Length: 8
+[DEBUG|utils_cubanman_proxy|recv|151|] 2025-08-15T22:19:19-0400: about http msg: datalength: 8 | totalLength: 8 | megType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|91|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|139|] 2025-08-15T22:19:19-0400: proxy_sock 140241171491776 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|39|] 2025-08-15T22:19:19-0400: bws_sock {id(self.sock)} sending data back
+[DEBUG|essentials_cubanman_proxy|send|41|] 2025-08-15T22:19:19-0400: success
+[DEBUG|essentials_cubanman_proxy|close|280|] 2025-08-15T22:19:51-0400: SIGINT signal was detected. ending
+[DEBUG|essentials_cubanman_proxy|close|174|] 2025-08-15T22:19:51-0400: proxy_server is closing
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171490624
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171490720 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171489760
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171489472 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171483520
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171489664 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171489568
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171490336 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171489376
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171490912 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171491296
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171491200 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171490144
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171489856 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171490240
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171491104 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171491392
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171489952 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171491968
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171491584 was closed...
+[DEBUG|essentials_cubanman_proxy|close|56|] 2025-08-15T22:19:51-0400: closing bws_sock 140241171491680
+[DEBUG|essentials_cubanman_proxy|close|88|] 2025-08-15T22:19:51-0400: proxy_sock 140241171491776 was closed...

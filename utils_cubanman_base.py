@@ -5,7 +5,7 @@ def padding(msg:str, Format, buffsize:int) -> tuple:
     stdinlen = stdinlen + (b' ' * (buffsize - len(stdinlen)))
     return(stdin, stdinlen)
 
-def whichEne(args:dict) -> int:
+def whichEnc(args:dict) -> int:
 
     if args.tls: return 1
     if args.tls1v1: return 2

@@ -4,39 +4,36 @@ import signal
 import essentials_cubanman_server as server
 import essentials_cubanman_client as client
 import essentials_cubanman_proxy as proxy
-import utils_cubanman as tools
+import utils_cubanman_base as tools
+import utils_cubanman_logger as logging
 
-def set_server(args):
+def set_server(args, logger):
 
-    if args.debug : print(f'ARGUMENTS: {args}')
-
-    cubanman = server.Sock(args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key, args.debug)
+    cubanman = server.Sock(logger, args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key)
     stdin = server.Input()
-    processes = server.Processes([cubanman, stdin], args.debug)
+    processes = server.Processes(logger, [cubanman, stdin])
 
     signal.signal(signal.SIGINT, processes.close)
     cubanman.listen()
     processes.start()
 
-def set_client(args):
+def set_client(args, logger):
 
-    tools.ifStls(args)
+    tools.ifStls(args)  
     
-    if args.debug : print(f'ARGUMENTS: {args}')
-    
-    cubanman = client.Sock(args.interface[0], int(args.port), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.verify_hostname, args.verify_ca, args.tls_bundle, args.hostname, args.debug)
+    cubanman = client.Sock(logger, args.interface[0], int(args.port), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.verify_hostname, args.verify_ca, args.tls_bundle, args.hostname)
     stdin = client.Input()
-    processes = client.Processes([cubanman, stdin], args.debug)
+    processes = client.Processes(logger, [cubanman, stdin])
 
     signal.signal(signal.SIGINT, processes.close)
     cubanman.connect()
     processes.start()
 
-def set_proxy(args):
+def set_proxy(args, logger):
     tools.ifProxy(args)
 
-    server = proxy.Proxy_server(args.interface[0], args.port, args.buffsize, args.debug)
-    cubanman = proxy.Processes([server], args.debug)
+    server = proxy.Proxy_server(logger, args.interface[0], args.port, args.buffsize, True)
+    cubanman = proxy.Processes(logger, [server])
 
     signal.signal(signal.SIGINT, cubanman.close)
 
@@ -55,7 +52,7 @@ def parse() -> dict:
 
     parser.add_argument('--proxy', action='store_true', help='HTTP proxy mode')
 
-    parser.add_argument('-d', '--debug', action='store_true', help='Show debug output.')
+    parser.add_argument('-v', '--verbosity', action='count', default=0, help='Verbosity level. Max 2 times.')
 
     parser.add_argument('-bs', '--buffsize', nargs='?', type=int, default=12, help="Define the buffsize to be used when sending and receiving data")
 
@@ -94,13 +91,17 @@ def parse() -> dict:
 def main():
 
     args = parse()
+    logger = logging.Logger(appName='cubanman', verbosity=int(args.verbosity), debug=False)
+    logger.cubanman.debug('----------------------------------------------------------')
 
 
     #Magic
 
-    if args.listen: set_server(args)
-    elif args.proxy: set_proxy(args)
-    else: set_client(args)
+    if args.listen: set_server(args, logger)
+    elif args.proxy: set_proxy(args, logger)
+    else: set_client(args, logger)
+
+    logger.stopListener()
 
 if __name__ == '__main__':
     main()

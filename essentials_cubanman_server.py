@@ -3,11 +3,11 @@ import socket
 import ssl
 import select
 import sys
-import utils_cubanman as utils
+import utils_cubanman_base as utils
 
 class Sock():
     
-    def __init__(self, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_bundle:str=None, ca_key:str=None, debug:bool=False):
+    def __init__(self, logger, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_bundle:str=None, ca_key:str=None):
 
         self.addr = addr
         self.port = port
@@ -19,11 +19,18 @@ class Sock():
         self.ca_chain = ca_chain
         self.ca_bundle = ca_bundle
         self.ca_key = ca_key
-        self.debug = debug
         self.context = None
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
+        self.logger = logger
 
         if self.encryption != 0: self.encrypt()
+
+    def __str__(self) -> str:
+        attrs = ''
+        for key, value in vars(self).items():
+            attrs += f'{key}: {value}\n'
+
+        return attrs
 
     @staticmethod
     def settimeout(conn, value) -> None:
@@ -37,47 +44,56 @@ class Sock():
 
     def encrypt(self):
 
+        self.logger.cubanman.info('setting up ssl/tls layer')
+
         match self.encryption:
 
             case 1:self.context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
             case 2:self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_1_SERVER)
             case 3:self.context = ssl.SSLContext(ssl.PROTOCOL_TLS1_2_SERVER)
 
+        self.logger.cubanman.info('loading ca-chain and private key')
         self.context.load_cert_chain(certfile=self.ca_chain, keyfile=self.ca_key)
 
     def listen(self) -> None:
 
         try:
+            self.logger.cubanman.info(f'binding server to {self.addr} {self.port}')
             self.sock.bind((self.addr, self.port))
-            if self.debug: print(f'[SERVER] |BINDING| socket was bound to {self.addr} {self.port}')
 
         except OSError:
-            print('[SERVER] |ERROR| Conflict when binding address to socket. Maybe address is already being used')
+            self.logger.cubanman.error('conflict when binding address to socket. Maybe address is already being used')
             sys.exit(1)
 
+
+        self.logger.cubanman.info('server is listening for connections')
         self.sock.listen(self.client_count)
-        if self.debug: print('[SERVER] |LISTENING| listening for connections')
 
     def accept(self) -> socket.socket:
+        self.logger.cubanman.info('a new connection was received')
         conn_sock, details = self.sock.accept()
+        self.logger.cubanman.debug(f'connection: {conn_sock}:{details}')
 
         if self.encryption != 0:
+            self.logger.cubanman.debug('wrapping connection with ssl/tls encryption')
             try: conn_sock = self.context.wrap_socket(conn_sock, server_side=True)
             except ssl.SSLError as e:
-                print(f'[SERVER] |ERROR| Unable to stablish connection with {details}')
-                if self.debug: print(f'cubanman: {e}')
+                self.logger.cubanman.warning(f'unable to stablish ssl/tls tunnel with connection')
+                self.logger.cubanman.debug(f'cubanman: {e}')
                 return None
 
-            if self.debug: print('[SERVER] |SSL| SSL-layer was set')
-        if self.debug: print(f'[SERVER] |CONNECTION| connection accepted {details}')
+            self.logger.cubanman.debug('ssl/tls layer is set')
+        self.logger.cubanman.info('connection stablished')
         del details
-
+        
+        self.logger.cubanman.debug('setting timeout on socket')
         self.settimeout(conn_sock, 10)
 
         return conn_sock
 
     def broadcasting(self, instances:list, msg:str, exception:socket.socket=None) -> None:
 
+        self.logger.cubanman.debug('getting data and datalen to broadcast')
         msgout, msgoutlen = utils.padding(msg, self.enc_format, self.buffsize)
         
         for instance in instances:
@@ -87,25 +103,29 @@ class Sock():
 
             instance.send(msgout)
 
-        if self.debug: print(f'[SERVER] message: "{msg}", was broadcast')
+        self.logger.cubanman.debug(f'message: "{msg}" /\/\/\ was broadcast\nException: {exception}')
     
     def recv(self, conn:socket.socket, instances:list) -> bool:
 
+        self.logger.cubanman.debug('server is receiving data')
         data = conn.recv(self.buffsize)
 
         if not data:
-            if self.debug: print('[SERVER] |DISCONNECTION| a client has disconnected')
+            self.logger.cubanman.info('a connection was closed')
+            self.logger.cubanman.debug(f'connection: {conn}')
             return False
 
         data = data.decode(self.enc_format)
 
         if not self.static_mode:
+            self.logger.cubanman.debug(f'data: {data}')
 
             try:
                 data = conn.recv(int(data)).decode(self.enc_format)
             except ValueError:
-                print('[SERVER] |ERROR| client does not seem to be using static buffer mode. Client will be notified and disconnected')
-                conn.send('from [SERVER] -> Client will be disconnected due to a buffer mode incompatibility'.encode(self.enc_format))
+                self.logger.cubanman.warning('connection does not seem to be using static buffer mode. connection will be notified and closed')
+                self.logger.cubanman.debug(f'connection: {conn}')
+                conn.send('from [SERVER]: connection will be closed due to a buffer mode incompatibility'.encode(self.enc_format))
                 conn.close()
                 return False
 
@@ -133,26 +153,25 @@ class Input():
 
 class Processes:
 
-    def __init__(self, instances:list, debug:bool=False) -> None:
+    def __init__(self, logger, instances:list) -> None:
 
         self.instances = instances
-        self.debug = debug
+        self.logger = logger
 
     def linker(self):
-
         for instance in self.instances:
             if isinstance(instance, Sock):
-                if self.debug: print('[PROCESSES] reference to Sock was found')
+                self.logger.cubanman.debug('reference to Sock was found')
                 setattr(self, 'server', instance)
             elif isinstance(instance, Input): 
-                if self.debug: print('[PROCESSES] reference to Input was found')
+                self.logger.cubanman.debug('reference to Input was found')
                 setattr(self, 'stdin', instance)
 
     def start(self) -> None:
 
         self.linker()
 
-        if self.debug: print('[PROCESSES] starting main loop')
+        self.logger.cubanman.info('starting to listen')
 
         while True:
 
@@ -178,8 +197,11 @@ class Processes:
     
     def close(self, *args):
         print('\nkeyboard interrupt received, ending ...')
+        self.logger.cubanman.debug('SIGINT signal was received. Ending')
         
         for instance in self.instances:
             instance.close()
 
+        self.logger.cubanman.debug('stopping queue listener')
+        self.logger.stopListener()
         sys.exit(0)
