@@ -210,7 +210,7 @@ class Proxy_server:
         return (bws_sock, proxy_sock)
     
     def recv(self, conn) -> bool:
-
+ 
         data = conn.recv(self.buffsize)
 
         if not data:
@@ -243,7 +243,9 @@ class Processes:
 
                 else:
 
-                    if isinstance(instance, Proxy_sock) and instance.connected():
+                    if isinstance(instance, Proxy_sock):
+
+                        if not instance.connected(): continue
 
                         res = instance.recv()
                         instance.send_back(res)
@@ -263,8 +265,6 @@ class Processes:
                                 instance.go(req)
                             else:
                                 instance.proxyIt(req)
-
-            self.logger.cubanman.debug('list returned by select was completely read')
 
     def delPair(self, sock):
         self.logger.cubanman.debug(f'deleting and removing {id(sock.sock)} and its reference sock {id(sock.ref_sock.sock)}')
