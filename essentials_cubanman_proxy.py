@@ -20,23 +20,24 @@ class Bws_sock:
         self.connection = None
         self.logger = logger
         self.debug = debug
+        self.name = self.__class__.__name__
 
     def fileno(self) -> int:
         return self.sock.fileno()
 
     def set_status(self, connection):
-        self.logger.cubanman.debug(f'setting connection status of bws_sock {id(self.sock)} and proxy_sock {id(self.ref_sock.sock)}')
+        self.logger.cubanman.debug(f'setting connection status of {self.name} {id(self.sock)} and {self.ref_sock.name} {id(self.ref_sock.sock)}')
         self.connection = connection
         self.ref_sock.connection = connection
 
     def recv(self, buffsize):
-        self.logger.cubanman.debug(f'bws_sock {id(self.sock)} receiving data')
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data')
         res, connection = tools.recv(self.sock, buffsize, self.logger, self.debug)
         self.set_status(connection)
         return res
 
     def send(self, res):
-        self.logger.cubanman.debug('bws_sock {id(self.sock)} sending data back')
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data back')
         if self.sock.send(res) == len(res):
             self.logger.cubanman.debug('success')
             return None
@@ -53,7 +54,7 @@ class Bws_sock:
         return self.ref_sock.connected()
 
     def close(self):
-        self.logger.cubanman.debug(f'closing bws_sock {id(self.sock)}')
+        self.logger.cubanman.debug(f'closing {self.name} {id(self.sock)}')
         self.sock.close()
 
 class Proxy_sock:
@@ -70,6 +71,8 @@ class Proxy_sock:
         self.logger = logger
         self.debug = debug
 
+        self.name = self.__class__.__name__
+
     def fileno(self) -> int:
         return self.sock.fileno()
 
@@ -77,7 +80,7 @@ class Proxy_sock:
         pass
 
     def settimeout(self,s:int):
-        self.logger.cubanman.debug(f'proxy_sock {id(self.sock)} setting a {s} second timeout')
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} setting a {s} second timeout')
         self.sock.settimeout(s)
 
     def blocking(self, value:bool):
@@ -85,10 +88,10 @@ class Proxy_sock:
 
     def close(self):
         self.sock.close()
-        self.logger.cubanman.debug(f'proxy_sock {id(self.sock)} was closed...')
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} was closed...')
 
     def set_status(self, connection):
-        self.logger.cubanman.debug(f'proxy_sock {id(self.sock)} setting connection status to {connection}')
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} setting connection status to {connection}')
         self.connection = connection
         self.ref_sock.connection = connection
 
@@ -96,7 +99,7 @@ class Proxy_sock:
         return tools.manage_req(req, self.debug)
 
     def send(self, req):
-        self.logger.cubanman.debug(f'proxy_sock {id(self.sock)} sending data')
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data')
         if self.sock.send(req) == len(req):
             self.logger.cubanman.debug('success')
             return None
@@ -122,13 +125,13 @@ class Proxy_sock:
     def connect(self, webserver, port) -> bool:
 
         try:
-            self.logger.cubanman.debug(f'proxy_sock {id(self.sock)} connecting to {webserver} on {port}')
+            self.logger.cubanman.debug(f'{self.name} {id(self.sock)} connecting to {webserver} on {port}')
             self.sock.connect((webserver, port))
-            self.settimeout(10)
+            self.settimeout(5)
             return True
 
         except OSError as e:
-            self.logger.cubanman.warning(f'FAILURE cubanman: proxy_sock {id(self.sock)} unable to stablish a connection with {self.web}: {e}')
+            self.logger.cubanman.warning(f'FAILURE cubanman: {self.name} {id(self.sock)} unable to stablish a connection with {self.web}: {e}')
             return False
 
         except Exception as e:
@@ -136,12 +139,12 @@ class Proxy_sock:
             return False
 
     def send_back(self, res):
-        self.logger.cubanman.debug(f'proxy_sock {id(self.sock)} sending back response received from server')
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending back response received from server')
         self.ref_sock.send(res)
 
     def recv(self) -> bytes:
 
-        self.logger.cubanman.debug(f'proxy_sock {id(self.sock)} receiving data from {self.web}')
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data from {self.web}')
 
         response, connection = tools.recv(self.sock, self.buffsize, self.logger, self.debug) 
         
@@ -191,18 +194,18 @@ class Proxy_server:
 
     def accept(self) -> socket.socket:
         conn_sock, details = self.sock.accept()
-        self.logger.cubanman.debug(f'proxy_server accepted a connection: sock-{id(conn_sock)} {conn_sock}:{details}')
+        self.logger.cubanman.debug('proxy_server accepted a connection')
         del details
 
-        self.settimeout(conn_sock, 15)
-        self.logger.cubanman.debug('a 15 second timeout was set on new connection')
+        self.settimeout(conn_sock, 5) 
 
-        self.logger.cubanman.debug('creating proxy and bws sockets')
         proxy_sock = Proxy_sock(self.logger, socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM), 0, None, self.buffsize, None, self.debug)
         bws_sock = Bws_sock(self.logger, conn_sock, None, self.debug)
 
         proxy_sock.ref_sock = bws_sock
         bws_sock.ref_sock = proxy_sock
+
+        self.logger.cubanman.debug(f'bws_sock: {id(bws_sock.sock)} | proxy_sock {id(proxy_sock.sock)}')
 
         return (bws_sock, proxy_sock)
     
@@ -240,7 +243,7 @@ class Processes:
 
                 else:
 
-                    if isinstance(instance, Proxy_sock):
+                    if isinstance(instance, Proxy_sock) and instance.connected():
 
                         res = instance.recv()
                         instance.send_back(res)
@@ -260,6 +263,8 @@ class Processes:
                                 instance.go(req)
                             else:
                                 instance.proxyIt(req)
+
+            self.logger.cubanman.debug('list returned by select was completely read')
 
     def delPair(self, sock):
         self.logger.cubanman.debug(f'deleting and removing {id(sock.sock)} and its reference sock {id(sock.ref_sock.sock)}')
