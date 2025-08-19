@@ -15,7 +15,7 @@
 
 <h3>Notes on Last Update</h3>
 
-<h4>05/26/2025</h4>
+<h4>08/19/2025</h4>
 
 - Logging system was implemented (It's configured through code, but it can also be configured via a Json file)
 - Proxy mode was enhanced
