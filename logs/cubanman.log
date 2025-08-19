@@ -1,776 +1,321 @@
 
-[DEBUG|cubanman|main|95|] 2025-08-18T19:42:41-0400: ----------------------------------------------------------
-[INFO|essentials_cubanman_proxy|listen|183|] 2025-08-18T19:42:41-0400: binding proxy_server to 127.0.0.1 8888
-[INFO|essentials_cubanman_proxy|listen|193|] 2025-08-18T19:42:41-0400: proxy_server is listening for connections
-[DEBUG|essentials_cubanman_proxy|start|231|] 2025-08-18T19:42:41-0400: starting main loop
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:42:44-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:42:44-0400: proxy_server setting a 5 second timeout on sock-140546272684512
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:42:44-0400: bws_sock: 140546272684512 | proxy_sock 140546264131968
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:42:44-0400: Bws_sock 140546272684512 receiving data
-[DEBUG|cubanman|main|95|] 2025-08-18T19:43:07-0400: ----------------------------------------------------------
-[DEBUG|cubanman|main|95|] 2025-08-18T19:43:33-0400: ----------------------------------------------------------
-[DEBUG|cubanman|main|95|] 2025-08-18T19:44:04-0400: ----------------------------------------------------------
-[INFO|essentials_cubanman_proxy|listen|183|] 2025-08-18T19:44:04-0400: binding proxy_server to 127.0.0.1 8888
-[INFO|essentials_cubanman_proxy|listen|193|] 2025-08-18T19:44:04-0400: proxy_server is listening for connections
-[DEBUG|essentials_cubanman_proxy|start|231|] 2025-08-18T19:44:04-0400: starting main loop
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:07-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:07-0400: proxy_server setting a 5 second timeout on sock-140189261651040
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:07-0400: bws_sock: 140189261651040 | proxy_sock 140189261650944
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651040 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:07-0400: setting connection status of Bws_sock 140189261651040 and Proxy_sock 140189261650944
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261650944 connecting to b'detectportal.firefox.com' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261650944 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261650944 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261650944 receiving data from b'detectportal.firefox.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 90 | totalLength: 90 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261650944 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261650944 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651040 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:07-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:07-0400: proxy_server setting a 5 second timeout on sock-140189269924672
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:07-0400: bws_sock: 140189269924672 | proxy_sock 140189261651136
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:07-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:07-0400: proxy_server setting a 5 second timeout on sock-140189261651328
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:07-0400: bws_sock: 140189261651328 | proxy_sock 140189261651424
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:07-0400: Bws_sock 140189269924672 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:07-0400: setting connection status of Bws_sock 140189269924672 and Proxy_sock 140189261651136
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 connecting to b'detectportal.firefox.com' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 receiving data from b'detectportal.firefox.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 8 | totalLength: 8 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:07-0400: Bws_sock 140189269924672 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651328 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:07-0400: setting connection status of Bws_sock 140189261651328 and Proxy_sock 140189261651424
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 connecting to b'detectportal.firefox.com' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 receiving data from b'detectportal.firefox.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 8 | totalLength: 8 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651328 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:07-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:07-0400: proxy_server setting a 5 second timeout on sock-140189261651520
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:07-0400: bws_sock: 140189261651520 | proxy_sock 140189261651232
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651520 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:07-0400: setting connection status of Bws_sock 140189261651520 and Proxy_sock 140189261651232
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651232 connecting to b'push.services.mozilla.com' on 443
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651232 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651232 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651232 receiving data from b'push.services.mozilla.com'
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:07-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651232 setting connection status to 0
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651232 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651520 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:07-0400: deleting and removing 140189261651232 and its reference sock 140189261651520
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651232 was closed...
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:07-0400: closing Bws_sock 140189261651520
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:07-0400: Bws_sock 140189269924672 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:07-0400: setting connection status of Bws_sock 140189269924672 and Proxy_sock 140189261651136
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651328 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:07-0400: setting connection status of Bws_sock 140189261651328 and Proxy_sock 140189261651424
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 receiving data from b'detectportal.firefox.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 8 | totalLength: 8 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651424 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651328 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 receiving data from b'detectportal.firefox.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 8 | totalLength: 8 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651136 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:07-0400: Bws_sock 140189269924672 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:07-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:07-0400: proxy_server setting a 5 second timeout on sock-140189261651904
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:07-0400: bws_sock: 140189261651904 | proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:07-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651712 connecting to b'o.pki.goog' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651712 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 471 | totalLength: 471 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:07-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:07-0400: proxy_server setting a 5 second timeout on sock-140189261651808
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:07-0400: bws_sock: 140189261651808 | proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:07-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:07-0400: proxy_server setting a 5 second timeout on sock-140189261651232
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:07-0400: bws_sock: 140189261651232 | proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:07-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:07-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:07-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651616 connecting to b'o.pki.goog' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651616 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:07-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:07-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:08-0400: about http msg: datalength: 471 | totalLength: 471 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:08-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:08-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:08-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:08-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:08-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:08-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:08-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:08-0400: Proxy_sock 140189261652096 connecting to b'o.pki.goog' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:08-0400: Proxy_sock 140189261652096 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:08-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:08-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:08-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:08-0400: about http msg: datalength: 471 | totalLength: 471 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:08-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:08-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:08-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:08-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:10-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:10-0400: proxy_server setting a 5 second timeout on sock-140189261651520
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:10-0400: bws_sock: 140189261651520 | proxy_sock 140189261652000
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:10-0400: Bws_sock 140189261651520 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:10-0400: setting connection status of Bws_sock 140189261651520 and Proxy_sock 140189261652000
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 connecting to b'httpforever.com' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:10-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 1922 | totalLength: b'-1' | msgType: 2 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:10-0400: Bws_sock 140189261651520 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:10-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:10-0400: Bws_sock 140189261651520 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:10-0400: setting connection status of Bws_sock 140189261651520 and Proxy_sock 140189261652000
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:10-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:10-0400: loop of recv completed. dataLength: 612 | totalLength: 1010
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 1010 | totalLength: 1010 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:10-0400: Bws_sock 140189261651520 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:10-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:10-0400: Bws_sock 140189261651520 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:10-0400: setting connection status of Bws_sock 140189261651520 and Proxy_sock 140189261652000
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:10-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:10-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:10-0400: proxy_server setting a 5 second timeout on sock-140189261652288
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:10-0400: bws_sock: 140189261652288 | proxy_sock 140189261652384
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:10-0400: Bws_sock 140189261652288 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:10-0400: setting connection status of Bws_sock 140189261652288 and Proxy_sock 140189261652384
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652384 connecting to b'httpforever.com' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652384 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652384 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:10-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652384 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 99 | totalLength: 99 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652384 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652384 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:10-0400: Bws_sock 140189261652288 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:10-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:10-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:10-0400: proxy_server setting a 5 second timeout on sock-140189261652576
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:10-0400: bws_sock: 140189261652576 | proxy_sock 140189261652672
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:10-0400: loop of recv completed. dataLength: 3274 | totalLength: 17874
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:10-0400: loop of recv completed. dataLength: 7372 | totalLength: 17874
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:10-0400: loop of recv completed. dataLength: 11470 | totalLength: 17874
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:10-0400: loop of recv completed. dataLength: 15568 | totalLength: 17874
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 17874 | totalLength: 17874 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652000 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:10-0400: Bws_sock 140189261651520 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:10-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:10-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:10-0400: proxy_server setting a 5 second timeout on sock-140189261652768
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:10-0400: bws_sock: 140189261652768 | proxy_sock 140189261652864
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:10-0400: Bws_sock 140189261652576 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:10-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:10-0400: setting connection status of Bws_sock 140189261652576 and Proxy_sock 140189261652672
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:10-0400: Proxy_sock 140189261652672 connecting to b'httpforever.com' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 307 | totalLength: 307 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652576 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652768 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261652768 and Proxy_sock 140189261652864
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 connecting to b'httpforever.com' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 42 | totalLength: 42 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652768 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 471 | totalLength: 471 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652576 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261652576 and Proxy_sock 140189261652672
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652288 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261652288 and Proxy_sock 140189261652384
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652384 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652768 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261652768 and Proxy_sock 140189261652864
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651520 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261651520 and Proxy_sock 140189261652000
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652000 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:11-0400: loop of recv completed. dataLength: 621 | totalLength: 4286
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:11-0400: loop of recv completed. dataLength: 2069 | totalLength: 4286
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:11-0400: loop of recv completed. dataLength: 3517 | totalLength: 4286
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 4286 | totalLength: 4286 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652672 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652576 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652000 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 457 | totalLength: 457 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652000 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652000 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651520 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652384 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 501 | totalLength: 501 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652384 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652384 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652288 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 451 | totalLength: 451 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652864 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261652768 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 471 | totalLength: 471 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:11-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:11-0400: proxy_server setting a 5 second timeout on sock-140189261653152
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:11-0400: bws_sock: 140189261653152 | proxy_sock 140189261652480
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:11-0400: Bws_sock 140189261653152 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:11-0400: setting connection status of Bws_sock 140189261653152 and Proxy_sock 140189261652480
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652480 connecting to b'o.pki.goog' on 80
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652480 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652480 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652480 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652480 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652480 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261653152 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:11-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:11-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:11-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:11-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:12-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:12-0400: proxy_server setting a 5 second timeout on sock-140189261653056
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:12-0400: bws_sock: 140189261653056 | proxy_sock 140189261652960
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:12-0400: Bws_sock 140189261653056 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:12-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:12-0400: setting connection status of Bws_sock 140189261653056 and Proxy_sock 140189261652960
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:12-0400: Proxy_sock 140189261652960 connecting to b'push.services.mozilla.com' on 443
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:12-0400: Proxy_sock 140189261652960 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:12-0400: Proxy_sock 140189261652960 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:12-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:12-0400: Proxy_sock 140189261652960 receiving data from b'push.services.mozilla.com'
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:12-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:12-0400: Proxy_sock 140189261652960 setting connection status to 0
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:12-0400: Proxy_sock 140189261652960 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:12-0400: Bws_sock 140189261653056 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:12-0400: success
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:12-0400: deleting and removing 140189261652960 and its reference sock 140189261653056
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:12-0400: Proxy_sock 140189261652960 was closed...
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:12-0400: closing Bws_sock 140189261653056
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:22-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:22-0400: proxy_server setting a 5 second timeout on sock-140189261653344
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:22-0400: bws_sock: 140189261653344 | proxy_sock 140189261652192
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:22-0400: Bws_sock 140189261653344 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:22-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:22-0400: setting connection status of Bws_sock 140189261653344 and Proxy_sock 140189261652192
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:22-0400: Proxy_sock 140189261652192 connecting to b'push.services.mozilla.com' on 443
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:22-0400: Proxy_sock 140189261652192 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:22-0400: Proxy_sock 140189261652192 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:22-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:22-0400: Proxy_sock 140189261652192 receiving data from b'push.services.mozilla.com'
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:22-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:22-0400: Proxy_sock 140189261652192 setting connection status to 0
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:22-0400: Proxy_sock 140189261652192 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:22-0400: Bws_sock 140189261653344 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:22-0400: success
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:22-0400: deleting and removing 140189261652192 and its reference sock 140189261653344
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:22-0400: Proxy_sock 140189261652192 was closed...
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:22-0400: closing Bws_sock 140189261653344
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:26-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:26-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:26-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:26-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:26-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:26-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:26-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:26-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:26-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:26-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:26-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:26-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:26-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:26-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:26-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:26-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:26-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:26-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:26-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:26-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:26-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:26-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:27-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:27-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 278 | totalLength: 278 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:27-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 281 | totalLength: 281 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:27-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 281 | totalLength: 281 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:27-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:27-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:27-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:27-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:27-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:27-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:27-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:27-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261653152 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261653152 and Proxy_sock 140189261652480
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652480 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 278 | totalLength: 278 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652480 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 278 | totalLength: 278 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652480 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652480 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:28-0400: Bws_sock 140189261653152 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651520 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261651520 and Proxy_sock 140189261652000
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652000 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 278 | totalLength: 278 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652000 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 134 | totalLength: b'-1' | msgType: 2 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652000 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652000 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651520 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 278 | totalLength: 278 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261652576 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261652576 and Proxy_sock 140189261652672
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652672 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:28-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:28-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:28-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:28-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:28-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:29-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:29-0400: about http msg: datalength: 278 | totalLength: 278 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:29-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:29-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:29-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:29-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:29-0400: Proxy_sock 140189261652672 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:29-0400: loop of recv completed. dataLength: 621 | totalLength: 4286
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:29-0400: loop of recv completed. dataLength: 3517 | totalLength: 4286
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:29-0400: about http msg: datalength: 4286 | totalLength: 4286 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:29-0400: Proxy_sock 140189261652672 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:29-0400: Proxy_sock 140189261652672 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:29-0400: Bws_sock 140189261652576 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:29-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:36-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:36-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:36-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:36-0400: Proxy_sock 140189261651616 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:36-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:36-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:36-0400: about http msg: datalength: 83 | totalLength: 83 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:36-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:36-0400: Proxy_sock 140189261651712 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:36-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:36-0400: Proxy_sock 140189261651616 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:36-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:36-0400: Proxy_sock 140189261651616 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:36-0400: Proxy_sock 140189261651616 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:36-0400: Bws_sock 140189261651808 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:36-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:36-0400: Proxy_sock 140189261651712 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:36-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:36-0400: Proxy_sock 140189261651712 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:36-0400: Proxy_sock 140189261651712 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:36-0400: Bws_sock 140189261651904 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:36-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:37-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:37-0400: about http msg: datalength: 84 | totalLength: 84 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:37-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:37-0400: Proxy_sock 140189261652096 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:37-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:37-0400: Proxy_sock 140189261652096 receiving data from b'o.pki.goog'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:37-0400: about http msg: datalength: 280 | totalLength: 280 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:37-0400: Proxy_sock 140189261652096 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:37-0400: Proxy_sock 140189261652096 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:37-0400: Bws_sock 140189261651232 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:37-0400: success
-[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T19:44:42-0400: proxy_server accepted a connection
-[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T19:44:42-0400: proxy_server setting a 5 second timeout on sock-140189261653440
-[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T19:44:42-0400: bws_sock: 140189261653440 | proxy_sock 140189261652960
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:42-0400: Bws_sock 140189261653440 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:42-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:42-0400: setting connection status of Bws_sock 140189261653440 and Proxy_sock 140189261652960
-[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T19:44:42-0400: Proxy_sock 140189261652960 connecting to b'push.services.mozilla.com' on 443
-[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T19:44:42-0400: Proxy_sock 140189261652960 setting a 5 second timeout
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:42-0400: Proxy_sock 140189261652960 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:42-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:42-0400: Proxy_sock 140189261652960 receiving data from b'push.services.mozilla.com'
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:42-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:42-0400: Proxy_sock 140189261652960 setting connection status to 0
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:42-0400: Proxy_sock 140189261652960 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:42-0400: Bws_sock 140189261653440 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:42-0400: success
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:42-0400: deleting and removing 140189261652960 and its reference sock 140189261653440
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:42-0400: Proxy_sock 140189261652960 was closed...
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:42-0400: closing Bws_sock 140189261653440
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:46-0400: Bws_sock 140189261651520 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:46-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:46-0400: setting connection status of Bws_sock 140189261651520 and Proxy_sock 140189261652000
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:46-0400: Proxy_sock 140189261652000 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:46-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:46-0400: Proxy_sock 140189261652000 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:46-0400: about http msg: datalength: 134 | totalLength: b'-1' | msgType: 2 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:46-0400: Proxy_sock 140189261652000 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:46-0400: Proxy_sock 140189261652000 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:46-0400: Bws_sock 140189261651520 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:46-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:46-0400: Bws_sock 140189261652576 receiving data
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:46-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:46-0400: setting connection status of Bws_sock 140189261652576 and Proxy_sock 140189261652672
-[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T19:44:46-0400: Proxy_sock 140189261652672 sending data
-[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T19:44:46-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T19:44:46-0400: Proxy_sock 140189261652672 receiving data from b'httpforever.com'
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:46-0400: loop of recv completed. dataLength: 621 | totalLength: 4286
-[DEBUG|utils_cubanman_proxy|recv|150|] 2025-08-18T19:44:46-0400: loop of recv completed. dataLength: 2069 | totalLength: 4286
-[DEBUG|utils_cubanman_proxy|recv|155|] 2025-08-18T19:44:46-0400: about http msg: datalength: 4286 | totalLength: 4286 | msgType: 1 | connectionType: 1
-[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T19:44:46-0400: Proxy_sock 140189261652672 setting connection status to 1
-[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T19:44:46-0400: Proxy_sock 140189261652672 sending back response received from server
-[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T19:44:46-0400: Bws_sock 140189261652576 sending data back
-[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T19:44:46-0400: success
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261653152 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261653152 and Proxy_sock 140189261652480
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261815440
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261653152 and its reference sock 140189261652480
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261653152
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261652480 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261651904 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261651904 and Proxy_sock 140189261651712
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261810704
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261651904 and its reference sock 140189261651712
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261651904
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261651712 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261651808 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261651808 and Proxy_sock 140189261651616
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261809360
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261651808 and its reference sock 140189261651616
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261651808
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261651616 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261651232 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261651232 and Proxy_sock 140189261652096
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261809488
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261651232 and its reference sock 140189261652096
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261651232
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261652096 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261651520 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261651520 and Proxy_sock 140189261652000
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261811536
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261651520 and its reference sock 140189261652000
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261651520
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261652000 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261652288 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261652288 and Proxy_sock 140189261652384
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261808656
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261652288 and its reference sock 140189261652384
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261652288
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261652384 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261652576 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261652576 and Proxy_sock 140189261652672
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261810256
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261652576 and its reference sock 140189261652672
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261652576
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261652672 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261652768 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261652768 and Proxy_sock 140189261652864
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261808080
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261652768 and its reference sock 140189261652864
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261652768
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261652864 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261651040 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261651040 and Proxy_sock 140189261650944
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261698896
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261651040 and its reference sock 140189261650944
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261651040
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261650944 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189269924672 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189269924672 and Proxy_sock 140189261651136
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261811152
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189269924672 and its reference sock 140189261651136
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189269924672
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261651136 was closed...
-[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T19:44:55-0400: Bws_sock 140189261651328 receiving data
-[DEBUG|utils_cubanman_proxy|recv|133|] 2025-08-18T19:44:55-0400: EOF detected... Closing connection
-[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T19:44:55-0400: setting connection status of Bws_sock 140189261651328 and Proxy_sock 140189261651424
-[INFO|essentials_cubanman_proxy|recv|217|] 2025-08-18T19:44:55-0400: a client has disconnected from proxy_server: sock-140189261811664
-[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T19:44:55-0400: deleting and removing 140189261651328 and its reference sock 140189261651424
-[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T19:44:55-0400: closing Bws_sock 140189261651328
-[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T19:44:55-0400: Proxy_sock 140189261651424 was closed...
-[DEBUG|essentials_cubanman_proxy|close|285|] 2025-08-18T19:44:59-0400: SIGINT signal was detected. ending
-[DEBUG|essentials_cubanman_proxy|close|177|] 2025-08-18T19:44:59-0400: proxy_server is closing
+[DEBUG|cubanman|main|95|] 2025-08-18T20:29:46-0400: ----------------------------------------------------------
+[INFO|essentials_cubanman_proxy|listen|183|] 2025-08-18T20:29:46-0400: binding proxy_server to 127.0.0.1 8888
+[INFO|essentials_cubanman_proxy|listen|193|] 2025-08-18T20:29:46-0400: proxy_server is listening for connections
+[DEBUG|essentials_cubanman_proxy|start|231|] 2025-08-18T20:29:46-0400: starting main loop
+[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T20:29:47-0400: proxy_server accepted a connection
+[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T20:29:47-0400: proxy_server setting a 5 second timeout on sock-140521664486592
+[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T20:29:47-0400: bws_sock: 140521664486592 | proxy_sock 140521664486496
+[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T20:29:47-0400: proxy_server accepted a connection
+[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T20:29:47-0400: proxy_server setting a 5 second timeout on sock-140521664486784
+[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T20:29:47-0400: bws_sock: 140521664486784 | proxy_sock 140521664486880
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:47-0400: Bws_sock 140521664486592 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:47-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:47-0400: setting connection status of Bws_sock 140521664486592 and Proxy_sock 140521664486496
+[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T20:29:47-0400: Proxy_sock 140521664486496 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T20:29:47-0400: Proxy_sock 140521664486496 setting a 5 second timeout
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:47-0400: Proxy_sock 140521664486496 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:47-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:47-0400: Proxy_sock 140521664486496 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:47-0400: about http msg: datalength: 8 | totalLength: 8 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:47-0400: Proxy_sock 140521664486496 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:47-0400: Proxy_sock 140521664486496 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:47-0400: Bws_sock 140521664486592 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:47-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:47-0400: Bws_sock 140521664486784 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:47-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:47-0400: setting connection status of Bws_sock 140521664486784 and Proxy_sock 140521664486880
+[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T20:29:47-0400: Proxy_sock 140521664486880 connecting to b'detectportal.firefox.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T20:29:48-0400: Proxy_sock 140521664486880 setting a 5 second timeout
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:48-0400: Proxy_sock 140521664486880 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:48-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:48-0400: Proxy_sock 140521664486880 receiving data from b'detectportal.firefox.com'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:48-0400: about http msg: datalength: 8 | totalLength: 8 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:48-0400: Proxy_sock 140521664486880 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:48-0400: Proxy_sock 140521664486880 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:48-0400: Bws_sock 140521664486784 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:48-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T20:29:50-0400: proxy_server accepted a connection
+[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T20:29:50-0400: proxy_server setting a 5 second timeout on sock-140521664486688
+[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T20:29:50-0400: bws_sock: 140521664486688 | proxy_sock 140521664487072
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:50-0400: Bws_sock 140521664486688 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:50-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:50-0400: setting connection status of Bws_sock 140521664486688 and Proxy_sock 140521664487072
+[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T20:29:50-0400: Proxy_sock 140521664487072 connecting to b'www.columbia.edu' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 setting a 5 second timeout
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:51-0400: about http msg: datalength: 5301 | totalLength: b'-1' | msgType: 2 | connectionType: 0
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 setting connection status to 0
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:51-0400: Bws_sock 140521664486688 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|delPair|270|] 2025-08-18T20:29:51-0400: deleting and removing 140521664487072 and its reference sock 140521664486688
+[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 was closed...
+[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T20:29:51-0400: closing Bws_sock 140521664486688
+[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T20:29:51-0400: proxy_server accepted a connection
+[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T20:29:51-0400: proxy_server setting a 5 second timeout on sock-140521664487360
+[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T20:29:51-0400: bws_sock: 140521664487360 | proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:51-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:51-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:51-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487168 connecting to b'www.columbia.edu' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487168 setting a 5 second timeout
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:51-0400: about http msg: datalength: 48178 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:51-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T20:29:51-0400: proxy_server accepted a connection
+[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T20:29:51-0400: proxy_server setting a 5 second timeout on sock-140521664486688
+[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T20:29:51-0400: bws_sock: 140521664486688 | proxy_sock 140521664487264
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:51-0400: Bws_sock 140521664486688 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:51-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:51-0400: setting connection status of Bws_sock 140521664486688 and Proxy_sock 140521664487264
+[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487264 connecting to b'www.columbia.edu' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487264 setting a 5 second timeout
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487264 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487264 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:51-0400: about http msg: datalength: 2532 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487264 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487264 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:51-0400: Bws_sock 140521664486688 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T20:29:51-0400: proxy_server accepted a connection
+[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T20:29:51-0400: proxy_server setting a 5 second timeout on sock-140521664487456
+[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T20:29:51-0400: bws_sock: 140521664487456 | proxy_sock 140521664487072
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:51-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:51-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:51-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:51-0400: Bws_sock 140521664487456 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:51-0400: about http msg: datalength: 2231 | totalLength: 2231 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:51-0400: setting connection status of Bws_sock 140521664487456 and Proxy_sock 140521664487072
+[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 connecting to b'www.columbia.edu' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 setting a 5 second timeout
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:51-0400: about http msg: datalength: 15986 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:51-0400: Proxy_sock 140521664487072 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:51-0400: Bws_sock 140521664487456 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:51-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:52-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:52-0400: about http msg: datalength: 2468 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:52-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:52-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:52-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:52-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 4567 | totalLength: 4567 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:55-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 5712 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 2435 | totalLength: 2435 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:55-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 13858 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:55-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487456 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:55-0400: setting connection status of Bws_sock 140521664487456 and Proxy_sock 140521664487072
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487072 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487072 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 0 | totalLength: 0 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487072 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487072 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487456 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487456 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:55-0400: setting connection status of Bws_sock 140521664487456 and Proxy_sock 140521664487072
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487072 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 44566 | totalLength: 44566 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487072 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 5909 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487072 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487072 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487456 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 11771 | totalLength: 11771 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:29:55-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:29:55-0400: about http msg: datalength: 0 | totalLength: 0 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:29:55-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:29:55-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:29:55-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:04-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:04-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:04-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:04-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:04-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:04-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:04-0400: about http msg: datalength: 13418 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:04-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:04-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:04-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:04-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:19-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:19-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:19-0400: about http msg: datalength: 2956 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:19-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:19-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:19-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:19-0400: about http msg: datalength: 1739 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:19-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:19-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:19-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:19-0400: Bws_sock 140521664487456 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:19-0400: setting connection status of Bws_sock 140521664487456 and Proxy_sock 140521664487072
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487072 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:19-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:19-0400: Bws_sock 140521664486688 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:19-0400: setting connection status of Bws_sock 140521664486688 and Proxy_sock 140521664487264
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487264 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:19-0400: success
+[DEBUG|essentials_cubanman_proxy|accept|197|] 2025-08-18T20:30:19-0400: proxy_server accepted a connection
+[DEBUG|essentials_cubanman_proxy|settimeout|170|] 2025-08-18T20:30:19-0400: proxy_server setting a 5 second timeout on sock-140521664486976
+[DEBUG|essentials_cubanman_proxy|accept|208|] 2025-08-18T20:30:19-0400: bws_sock: 140521664486976 | proxy_sock 140521664487840
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:19-0400: Bws_sock 140521664486976 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:19-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:19-0400: setting connection status of Bws_sock 140521664486976 and Proxy_sock 140521664487840
+[DEBUG|essentials_cubanman_proxy|connect|128|] 2025-08-18T20:30:19-0400: Proxy_sock 140521664487840 connecting to b'httpforever.com' on 80
+[DEBUG|essentials_cubanman_proxy|settimeout|83|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 setting a 5 second timeout
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 42 | totalLength: 42 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:20-0400: Bws_sock 140521664486976 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 5251 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:20-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487264 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 1445 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487264 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487264 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:20-0400: Bws_sock 140521664486688 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487072 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 1351 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487072 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487072 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:20-0400: Bws_sock 140521664487456 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:20-0400: Bws_sock 140521664487360 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:20-0400: setting connection status of Bws_sock 140521664487360 and Proxy_sock 140521664487168
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487168 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:20-0400: Bws_sock 140521664487456 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:20-0400: setting connection status of Bws_sock 140521664487456 and Proxy_sock 140521664487072
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487072 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:20-0400: Bws_sock 140521664486688 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:20-0400: setting connection status of Bws_sock 140521664486688 and Proxy_sock 140521664487264
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487264 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|34|] 2025-08-18T20:30:20-0400: Bws_sock 140521664486976 receiving data
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 0 | totalLength: b'-1' | msgType: 3 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|29|] 2025-08-18T20:30:20-0400: setting connection status of Bws_sock 140521664486976 and Proxy_sock 140521664487840
+[DEBUG|essentials_cubanman_proxy|send|102|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 sending data
+[DEBUG|essentials_cubanman_proxy|send|104|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487168 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 1905 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487168 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487168 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:20-0400: Bws_sock 140521664487360 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487072 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 1568 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487072 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487072 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:20-0400: Bws_sock 140521664487456 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487264 receiving data from b'www.columbia.edu'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 1538 | totalLength: b'-1' | msgType: 2 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487264 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487264 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:20-0400: Bws_sock 140521664486688 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|recv|147|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 receiving data from b'httpforever.com'
+[DEBUG|utils_cubanman_proxy|recv|160|] 2025-08-18T20:30:20-0400: about http msg: datalength: 457 | totalLength: 457 | msgType: 1 | connectionType: 1
+[DEBUG|essentials_cubanman_proxy|set_status|94|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 setting connection status to 1
+[DEBUG|essentials_cubanman_proxy|send_back|142|] 2025-08-18T20:30:20-0400: Proxy_sock 140521664487840 sending back response received from server
+[DEBUG|essentials_cubanman_proxy|send|40|] 2025-08-18T20:30:20-0400: Bws_sock 140521664486976 sending data back
+[DEBUG|essentials_cubanman_proxy|send|42|] 2025-08-18T20:30:20-0400: success
+[DEBUG|essentials_cubanman_proxy|close|285|] 2025-08-18T20:30:21-0400: SIGINT signal was detected. ending
+[DEBUG|essentials_cubanman_proxy|close|177|] 2025-08-18T20:30:21-0400: proxy_server is closing
+[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T20:30:21-0400: closing Bws_sock 140521664486592
+[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T20:30:21-0400: Proxy_sock 140521664486496 was closed...
+[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T20:30:21-0400: closing Bws_sock 140521664486784
+[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T20:30:21-0400: Proxy_sock 140521664486880 was closed...
+[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T20:30:21-0400: closing Bws_sock 140521664487360
+[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T20:30:21-0400: Proxy_sock 140521664487168 was closed...
+[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T20:30:21-0400: closing Bws_sock 140521664486688
+[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T20:30:21-0400: Proxy_sock 140521664487264 was closed...
+[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T20:30:21-0400: closing Bws_sock 140521664487456
+[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T20:30:21-0400: Proxy_sock 140521664487072 was closed...
+[DEBUG|essentials_cubanman_proxy|close|57|] 2025-08-18T20:30:21-0400: closing Bws_sock 140521664486976
+[DEBUG|essentials_cubanman_proxy|close|91|] 2025-08-18T20:30:21-0400: Proxy_sock 140521664487840 was closed...

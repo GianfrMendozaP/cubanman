@@ -73,8 +73,6 @@ def man_http_msg(response:bytes, logger, status:int=0, debug:bool=False) -> tupl
         length = b'-1'
         status = 3
 
-        print(response)
-
         #logger.cubanman.info(f'[PROXY] |HTTP MSG TYPE| {status}')
         return (length, status, len(splitResponse[1]))
 
@@ -136,18 +134,26 @@ def recv(conn, buffsize, logger, debug:bool=False):
         response += data
 
         if status == 0:
-            totalLength, status, dataLength = man_http_msg(data, logger, status, debug)
+            try:
+                totalLength, status, dataLength = man_http_msg(data, logger, status, debug)
+            except IndexError as e:
+                logger.cubanman.critical(f'IndexError: {e}')
+                raise IndexError(f'cubanman: {e}\nresponse: {response}')
+            except Exception as e:
+                raise Exception(e)
         if status == 1:
             if not starting: dataLength += len(data)
             if dataLength == totalLength: break
         elif status == 2:
-            if data.find(b'\r\n0\r\n\r\n') != -1: break
+            if response.find(b'\r\n0\r\n\r\n') != -1:
+                dataLength = len(response)
+                break
         else: 
             #status == 3:
             break
 
         if starting: starting = False
-        logger.cubanman.debug(f'loop of recv completed. dataLength: {dataLength} | totalLength: {totalLength}')
+        #logger.cubanman.debug(f'loop of recv completed. dataLength: {dataLength} | totalLength: {totalLength}')
 
     #LATER ON IT MIGHT BE BETTER TO EVALUATE THE CONNECTION HEADER WHEN THE RESPONSE TYPE IS BEING DETERMINED
 
