@@ -186,11 +186,15 @@ class Proxy_server:
         except OSError:
             self.logger.cubanman.error('cubanman: conflict when binding address to socket. Maybe address is already being used')
             sys.exit(1)
+            return False
         except Exception as e:
             self.logger.cubanman.error(f'cubanman: {e}')
+            return False
 
         self.sock.listen()
         self.logger.cubanman.info('proxy_server is listening for connections')
+
+        return True
 
     def accept(self) -> socket.socket:
         conn_sock, details = self.sock.accept()
@@ -227,7 +231,7 @@ class Processes:
         self.logger = logger
 
     def start(self) -> None:
-        self.instances[0].listen()
+        if not self.instances[0].listen(): self.close()
         self.logger.cubanman.debug('starting main loop')
 
         while True:

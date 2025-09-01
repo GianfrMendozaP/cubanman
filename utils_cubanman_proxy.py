@@ -42,42 +42,29 @@ def manage_req(request:bytes, debug:bool) -> tuple:
 
     return (webserver, port)
 
-def man_http_msg(response:bytes, logger, status:int=0, debug:bool=False) -> tuple: 
-    length = 0
+def manHttpMsgType(response:bytes) -> int:
 
-    splitResponse = response.split(b'\r\n\r\n', 1)
-    headerStart = splitResponse[0].find(b'Content-Length')
+    headerStart = response.find(b'Content-Length')
+    contentLength = -1
 
     if headerStart != -1:
-
-            #'Content-Length: ' is 16 characters
-        headerStart += 16
-        headerEnd = splitResponse[0][(headerStart):].find(b'\r\n')
-        contentLength = int(splitResponse[0][headerStart:][:headerEnd])
-
-        #logger.cubanman.info(f'{contentLength}, {len(splitResponse[1])}')
-        status = 1
-        #logger.cubanman.info(f'[PROXY] |HTTP MSG TYPE| {status}')
-
-        return (contentLength, status, len(splitResponse[1]))
-
-    elif splitResponse[0].find(b'chunked') != -1:
-        length = b'-1'
-        status = 2
-
-
-        #logger.cubanman.info(f'[PROXY] |HTTP MSG TYPE| {status}')
-        return (length, status, len(splitResponse[1]))
-
+        msgType = 1
+        contentLength = getContentLength(headerStart, response)
+    elif response.find(b'chunked') != -1:
+        msgType = 2
     else:
-        length = b'-1'
-        status = 3
+        msgType = 3
 
-        #logger.cubanman.info(f'[PROXY] |HTTP MSG TYPE| {status}')
-        return (length, status, len(splitResponse[1]))
+    return (msgType, contentLength)
 
+def getContentLength(headerStart:int, response:bytes):
+        headerStart += 16
+        headerEnd = response[(headerStart):].find(b'\r\n')
+        contentLength = int(response[headerStart:][:headerEnd])
 
-def connection_status(response, debug) -> int:
+        return contentLength
+
+def connectionStatus(response, debug=False) -> int:
     #if not in response 1 is default
     # 0 = close
     # 1 = keep-alive
@@ -112,11 +99,11 @@ def connection_status(response, debug) -> int:
 def recv(conn, buffsize, logger, debug:bool=False):
 
     response = b''
-    status = 0
+    msgType = 0
     totalLength = 0
     dataLength = 0
-    connection = 1
-    starting = True
+    connection = None
+    headers = True
 
     while True:
 
@@ -124,8 +111,8 @@ def recv(conn, buffsize, logger, debug:bool=False):
             data = conn.recv(buffsize)
         except TimeoutError:
             logger.cubanman.warning(f'timeout. no data was received from: sock{id(conn)}\nhttp-msg: {response}')
-            logger.cubanman.debug(f'about http msg: datalength: {dataLength} | totalLength: {totalLength} | msgType: {status} | connectionType: {connection}')
-            return (response, connection)
+            logger.cubanman.debug(f'about http msg: datalength: {dataLength} | totalLength: {totalLength} | msgType: {msgType} | connectionType: {connection}')
+            return (response, 0)
 
         if not data: 
             logger.cubanman.debug('EOF detected... Closing connection')
@@ -133,32 +120,31 @@ def recv(conn, buffsize, logger, debug:bool=False):
 
         response += data
 
-        if status == 0:
-            try:
-                totalLength, status, dataLength = man_http_msg(data, logger, status, debug)
-            except IndexError as e:
-                logger.cubanman.critical(f'IndexError: {e}')
-                raise IndexError(f'cubanman: {e}\nresponse: {response}')
-            except Exception as e:
-                raise Exception(e)
-        if status == 1:
-            if not starting: dataLength += len(data)
-            if dataLength == totalLength: break
-        elif status == 2:
-            if response.find(b'\r\n0\r\n\r\n') != -1:
-                dataLength = len(response)
+        if headers:
+
+            splitResponse = response.split(b'\r\n\r\n', 1)
+
+            if len(splitResponse) == 1: continue
+            
+            dataLength = len(splitResponse[1])
+            msgType, totalLength = manHttpMsgType(splitResponse[0])
+            connection = connectionStatus(splitResponse[0])
+
+        match msgType:
+
+            case 1: 
+                if not headers: dataLength += len(data)
+                if dataLength == totalLength: break
+            case 2:
+                if not headers: dataLength += len(data)
+                if response.find(b'\r\n0\r\n\r\n') != -1: break
+            case 3:
+                #msgType 3
                 break
-        else: 
-            #status == 3:
-            break
 
-        if starting: starting = False
-        #logger.cubanman.debug(f'loop of recv completed. dataLength: {dataLength} | totalLength: {totalLength}')
+        if headers: headers = False
 
-    #LATER ON IT MIGHT BE BETTER TO EVALUATE THE CONNECTION HEADER WHEN THE RESPONSE TYPE IS BEING DETERMINED
-
-    connection = connection_status(response, debug)
-    logger.cubanman.debug(f'about http msg: datalength: {dataLength} | totalLength: {totalLength} | msgType: {status} | connectionType: {connection}')
+    logger.cubanman.debug(f'about http msg: datalength: {dataLength} | totalLength: {totalLength} | msgType: {msgType} | connectionType: {connection}')
 
     print(response)
     return (response, connection)
