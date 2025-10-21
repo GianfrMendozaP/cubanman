@@ -8,21 +8,18 @@
 - Server mode
 - Encryption
 - Types of buffer (static, fixed)
-- HTTP/1.1 proxy mode (better if used with buffsize 4096 or higher)
-- HTTP/2 proxy mode (working on)
-- HTTP/3 proxy mode (not yet)
-- HTTPS/* proxy mode (working on)
+- HTTP and HTTPS proxy mode
 
 <h3>Notes on Last Update</h3>
 
-<h4>08/18/2025</h4>
+<h4>10/21/2025</h4>
 
-- [Transport-Endpoint not connected Error] was solved
+- HTTPS support on proxy was added
 
 <h4>Next Update</h4>
 
-- HTTPS mode will be added
-- HTTP/2.0 should be implemented, not fully efficient but just the very first steps into it
+- Optimize HTTP and HTTPS proxy
+- Implement the use of threads on some connections in order to make proxy more efficient
 
 <h3>Credits</h3>
 
