@@ -46,21 +46,21 @@ def parse() -> dict:
 
     parser.add_argument('interface', nargs=1, help='Define an address', type=str)
 
-    parser.add_argument('-p', '--port', nargs='?', help='Define a port. The default is 15000', type=int, default=8888)
+    parser.add_argument('-p', '--port', nargs='?', help='Define a port. The default is 8888', type=int, default=8888)
 
     parser.add_argument('-l', '--listen', help='Listening mode', action='store_true')
 
-    parser.add_argument('--proxy', action='store_true', help='HTTP proxy mode')
+    parser.add_argument('--proxy', action='store_true', help='HTTP/HTTPS proxy mode')
 
     parser.add_argument('-v', '--verbosity', action='count', default=0, help='Verbosity level. Max 2 times.')
 
     parser.add_argument('-bs', '--buffsize', nargs='?', type=int, default=12, help="Define the buffsize to be used when sending and receiving data")
 
-    parser.add_argument('-f', '--format', nargs='?', type=str, default='utf-8', help='Format to be used when encoding strings. example: utf-8')
+    parser.add_argument('--format', nargs='?', type=str, default='utf-8', help='Format to be used when encoding strings. example: utf-8')
 
     parser.add_argument('-cn', '--client-count', nargs='?', type=int, help='Define the client-socket limit. The default is 1', default=1)
 
-    parser.add_argument('-stc' , '--static', action='store_true', help='Define buffer mode (static // fixed:default)')
+    parser.add_argument('--static', action='store_true', help='Define buffer mode (static // fixed:default)')
 
     parser.add_argument('--tls', action='store_true', dest='tls', help='Use tls encryption')
 

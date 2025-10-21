@@ -4,6 +4,7 @@ import ssl
 import select
 import sys
 import utils_cubanman_proxy as tools
+import utils_cubanman_http_headers as http
 
 #STANDARDS FOR THE LOGGING OUTPUT:
 #ALL ACTIONS SHOULD BE ON CONTINUOS PRESENT. E.g: listening, connecting, closing, etc...
@@ -21,6 +22,7 @@ class Bws_sock:
         self.logger = logger
         self.debug = debug
         self.name = self.__class__.__name__
+        self.https = False
 
     def fileno(self) -> int:
         return self.sock.fileno()
@@ -32,9 +34,12 @@ class Bws_sock:
 
     def recv(self, buffsize):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data')
-        res, connection = tools.recv(self.sock, buffsize, self.logger, self.debug)
+        if self.https:
+            return tools.httpsRecv(self.sock, buffsize, self.logger)
+
+        req, connection = tools.recv(self.sock, buffsize, self.logger)
         self.set_status(connection)
-        return res
+        return req
 
     def send(self, res):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data back')
@@ -45,7 +50,7 @@ class Bws_sock:
         self.logger.cubanman.debug('failure')
 
     def go(self, req):
-        self.ref_sock.go(req)
+        return self.ref_sock.go(req)
 
     def proxyIt(self, req):
         self.ref_sock.send(req)
@@ -54,8 +59,8 @@ class Bws_sock:
         return self.ref_sock.connected()
 
     def close(self):
-        self.logger.cubanman.debug(f'closing {self.name} {id(self.sock)}')
         self.sock.close()
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} was closed...')
 
 class Proxy_sock:
 
@@ -68,6 +73,9 @@ class Proxy_sock:
         self.ref_sock = ref_sock
         self.connection = None
         self.web = None
+        self.httpVersion = None
+        self.https = False
+        self.x16 = False
         self.logger = logger
         self.debug = debug
 
@@ -76,14 +84,31 @@ class Proxy_sock:
     def fileno(self) -> int:
         return self.sock.fileno()
 
-    def encrypt(self):
-        pass
+    def setHttpVersion(self, version):
+        self.httpVersion = version
+        self.logger.cubanman.info(f'protocol version was set to {version}')
+
+    def encrypt(self, webserver):
+
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} encrypting connection')
+
+        #setattr(self, 'context', ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT))
+        #sock = self.context.wrap_socket(self.sock, server_hostname = webserver.decode('utf-8'))
+        #self.context.load_verify_locations(tools.certBundle)
+
+        #self.sock = sock
+        self.https = True
+        self.ref_sock.https = True
+        #self.blocking(False) #sock set to non blocking mode Has to be done after connecting
+        #self.logger.cubanman.debug(f'{self.name} {id(self.sock)} encrypted connection')
 
     def settimeout(self,s:int):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} setting a {s} second timeout')
         self.sock.settimeout(s)
 
     def blocking(self, value:bool):
+
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} set blocking mode to {value}')
         self.sock.setblocking(value)
 
     def close(self):
@@ -96,18 +121,24 @@ class Proxy_sock:
         self.ref_sock.connection = connection
 
     def disassemble(self, req) -> tuple:
-        return tools.manage_req(req, self.debug)
+        return http.manage_req(req, self.debug)
 
     def send(self, req):
-        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data')
+        if not self.x16: self.pastFirstx16()
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data to {self.web}')
         if self.sock.send(req) == len(req):
             self.logger.cubanman.debug('success')
             return None
         self.logger.cubanman.debug('failure')
+        return(b'code-10')
 
     def disconnect(self):
         if self.connection == 0: return True
         return False
+
+    def pastFirstx16(self):
+        self.logger.cubanman.debug('first x16 record will be sent')
+        self.x16 = True
 
     def connected(self):
         if self.web == None: 
@@ -116,9 +147,16 @@ class Proxy_sock:
 
     def go(self, req):
         webserver, port = self.disassemble(req)
+
+        firstLine = http.getFirstLine(req)
+        self.setHttpVersion(http.httpVersion(firstLine))
+
+        if http.httpsType(firstLine):
+            self.encrypt(webserver)
         if self.connect(webserver, port):
             self.web = webserver
-            self.send(req)
+            if not self.https: self.send(req)
+            else: self.send_back(http.connectionResponse(self.httpVersion), self.name)
             return True
         return False
 
@@ -127,7 +165,12 @@ class Proxy_sock:
         try:
             self.logger.cubanman.debug(f'{self.name} {id(self.sock)} connecting to {webserver} on {port}')
             self.sock.connect((webserver, port))
+            
+            #if self.https:
+            #    self.blocking(False)
+            #else:
             self.settimeout(5)
+
             return True
 
         except OSError as e:
@@ -138,17 +181,25 @@ class Proxy_sock:
             self.logger.cubanman.warning(f'cubanman: {e}')
             return False
 
-    def send_back(self, res):
-        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending back response received from server')
+    def send_back(self, res, source:str='webserver'):
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending back response received from {source}')
         self.ref_sock.send(res)
 
     def recv(self) -> bytes:
 
+        response = b''
+
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data from {self.web}')
 
-        response, connection = tools.recv(self.sock, self.buffsize, self.logger, self.debug) 
+        if self.https:
+            if not self.x16:
+                self.logger.cubanman.debug('cubanman: code-0')
+                return b'code-0'
+            return tools.httpsRecv(self.sock, self.buffsize, self.logger)
         
-        self.set_status(connection)
+        response, connection = tools.recv(self.sock, self.buffsize, self.logger) 
+        #IN ORDER TO AVOID SSLWANTREADERROR
+        if connection != -1: self.set_status(connection)
 
         return response
 
@@ -252,6 +303,17 @@ class Processes:
                         if not instance.connected(): continue
 
                         res = instance.recv()
+
+                        if res == b'code-20': 
+                            #HERE EVENTUALLY A DISCONNECT FUNCTION WILL BE NEEDED. SENDING A 400 CODE TO THE BROWSER IS PROBABLY BEST
+                            continue #indicates SSLWantReadError
+                        if res == b'code-10':
+                            continue#EVENTUALLY HERE YOU HAVE TO DISCONNECT THE PAIR OF SOCKETS THAT CAUSED THIS
+                        if res == b'code-0':
+                            continue
+                        if res == b'code-50':
+                            self.close()
+
                         instance.send_back(res)
 
                         if instance.disconnect() or not res: 
@@ -266,9 +328,10 @@ class Processes:
 
                             #INSTEAD, JUST CHECK IF THE PROXY_SOCK.SOCK IS CONNECTED TO A WEBSERVER OR NOT
                             if not instance.connected():
-                                instance.go(req)
-                            else:
-                                instance.proxyIt(req)
+                                if not instance.go(req):
+                                    self.delPair(instance)
+                                    continue
+                            else: instance.proxyIt(req)
 
     def delPair(self, sock):
         self.logger.cubanman.debug(f'deleting and removing {id(sock.sock)} and its reference sock {id(sock.ref_sock.sock)}')

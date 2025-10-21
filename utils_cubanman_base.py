@@ -23,3 +23,7 @@ def ifStls(args:dict) -> None:
         args.verify_ca = True
         args.verify_hostname = True
         args.tls = True
+
+def clearLogs() -> None:
+    #WORK ON THIS LATER ON
+    pass
