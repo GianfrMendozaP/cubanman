@@ -65,8 +65,15 @@ def httpsRecv(conn, buffsize, logger, https:bool=False):
 
     response = b''
     dataLength = 0
+    loopCount = 0
 
     while True:
+        loopCount += 1
+        if loopCount == 1000:
+            logger.cubanman.debug('loopCount is 1000')
+        #if loopCount == 50: 
+        #    logger.cubanman.critical('records are not being measured correctly. Ending')
+        #    return b'code-50'
 
         try:
             data = conn.recv(buffsize)
@@ -98,5 +105,5 @@ def httpsRecv(conn, buffsize, logger, https:bool=False):
     kind = response[0] if response else 'disconnect'
     logger.cubanman.info(f'about https msg: messageType: {kind} | datalength: {dataLength}')
 
-    print(response)
+    #print(response)
     return(response)
