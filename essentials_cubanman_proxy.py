@@ -112,6 +112,7 @@ class Proxy_sock:
         self.sock.setblocking(value)
 
     def close(self):
+        self.connection = None
         self.sock.close()
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} was closed...')
 
@@ -124,7 +125,7 @@ class Proxy_sock:
         return http.manage_req(req, self.debug)
 
     def send(self, req):
-        if not self.x16: self.pastFirstx16()
+        if self.https and not self.x16: self.pastFirstx16()
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data to {self.web}')
         if self.sock.send(req) == len(req):
             self.logger.cubanman.debug('success')
@@ -187,7 +188,7 @@ class Proxy_sock:
 
     def recv(self) -> bytes:
 
-        response = b''
+        if self.connection == None: return b'code-0' 
 
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data from {self.web}')
 

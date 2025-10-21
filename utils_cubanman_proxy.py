@@ -75,23 +75,28 @@ def httpsRecv(conn, buffsize, logger, https:bool=False):
             if response == b'': return b'code-10'
             print(f'tls/ssl response: {response}')
             return b'code-50'
+        except OSError as e:
+            logger.cubanman.critical(f'cubanman: {e}')
+            print('socket:', id(conn))
+            return b'code-50'
 
         if not data: break
+          
 
         response += data
+        dataLength += len(data)
         #later on call x16Scan on data, and separate data of the previous x16 from the new x16
         #make sure the first byte starts with x16, if not find it and then split data, make sure
         #no more x16s are sent in tls records, if not it might get tricky
-        bytesLeft = tlsRec.x16Scan(response, showRecords=True)
+        bytesLeft = tlsRec.x16Scan(response)
         
-        dataLength = len(response[5:])
         print(f'bytesLeft: {bytesLeft} | datalength {len(response)}')
         
         if bytesLeft == 0: break
 
 
     kind = response[0] if response else 'disconnect'
-    logger.cubanman.debug(f'about https msg: messageType: {kind} | datalength: {dataLength}')
+    logger.cubanman.info(f'about https msg: messageType: {kind} | datalength: {dataLength}')
 
     print(response)
     return(response)
