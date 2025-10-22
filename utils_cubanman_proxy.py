@@ -65,15 +65,10 @@ def httpsRecv(conn, buffsize, logger, https:bool=False):
 
     response = b''
     dataLength = 0
-    loopCount = 0
+    loop = 0
 
     while True:
-        loopCount += 1
-        if loopCount == 1000:
-            logger.cubanman.debug('loopCount is 1000')
-        #if loopCount == 50: 
-        #    logger.cubanman.critical('records are not being measured correctly. Ending')
-        #    return b'code-50'
+        loop += 1
 
         try:
             data = conn.recv(buffsize)
@@ -97,13 +92,13 @@ def httpsRecv(conn, buffsize, logger, https:bool=False):
         #no more x16s are sent in tls records, if not it might get tricky
         bytesLeft = tlsRec.x16Scan(response)
         
-        print(f'bytesLeft: {bytesLeft} | datalength {len(response)}')
+        print(f'bytesLeft: {bytesLeft} | datalength {len(response)} | loop {loop}')
         
         if bytesLeft == 0: break
 
 
     kind = response[0] if response else 'disconnect'
-    logger.cubanman.info(f'about https msg: messageType: {kind} | datalength: {dataLength}')
+    logger.cubanman.debug(f'about https msg: messageType: {kind} | datalength: {dataLength}')
 
     #print(response)
     return(response)

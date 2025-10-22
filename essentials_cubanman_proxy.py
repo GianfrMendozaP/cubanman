@@ -6,6 +6,9 @@ import sys
 import utils_cubanman_proxy as tools
 import utils_cubanman_http_headers as http
 
+PORTS = [443, 80, 88]
+WEBSERVERS = []
+
 #STANDARDS FOR THE LOGGING OUTPUT:
 #ALL ACTIONS SHOULD BE ON CONTINUOS PRESENT. E.g: listening, connecting, closing, etc...
 #UNLESS IT'S DESCRIPTIVELY NECESSARY TO USE A VERB IN PAST
@@ -43,17 +46,33 @@ class Bws_sock:
 
     def send(self, res):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data back')
-        if self.sock.send(res) == len(res):
-            self.logger.cubanman.debug('success')
-            return None
 
-        self.logger.cubanman.debug('failure')
+        attemps = 2
+        while True:
+            try:
+                bytesSent = self.sock.send(res)
+                #print(bytesSent)
+                break
+            except BrokenPipeError:
+                if attemps == 0: return False #disconnect pair
+                self.logger.cubanman.warning('cubanman: BrokenPipeError was caught. Retrying...')
+            except ConnectionResetError:
+                self.logger.cubanman.warning('cubanman: Browser closed connection.')
+                return False
+            attemps -= 1
+
+        if bytesSent == len(res):
+            self.logger.cubanman.debug('success')
+            return True
+        if bytesSent != 0:
+            return self.send(res[bytesSent:])
+        return False
 
     def go(self, req):
         return self.ref_sock.go(req)
 
-    def proxyIt(self, req):
-        self.ref_sock.send(req)
+    def proxyIt(self, req) -> bool:
+        return self.ref_sock.send(req)
 
     def connected(self) -> bool:
         return self.ref_sock.connected()
@@ -127,11 +146,29 @@ class Proxy_sock:
     def send(self, req):
         if self.https and not self.x16: self.pastFirstx16()
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data to {self.web}')
-        if self.sock.send(req) == len(req):
+
+        attemps = 2
+
+        while True:
+            try:
+                bytesSent = self.sock.send(req)
+                #print(bytesSent)
+                break
+            except BrokenPipeError:
+                if attemps == 0: return False #disconnect pair
+                self.logger.cubanman.warning('cubanman: BrokenPipeError was caught. Retrying...')
+            except ConnectionResetError:
+                self.logger.cubanman.warning('cubanman: webserver closed connection.')
+                return False
+            attemps -= 1
+
+        if bytesSent == len(req):
             self.logger.cubanman.debug('success')
-            return None
-        self.logger.cubanman.debug('failure')
-        return(b'code-10')
+            return True
+        if bytesSent != 0:
+            return self.send(req[bytesSent:])
+        return False
+
 
     def disconnect(self):
         if self.connection == 0: return True
@@ -162,6 +199,10 @@ class Proxy_sock:
         return False
 
     def connect(self, webserver, port) -> bool:
+        #Firewall to avoid banned webservers or ports
+        if port not in PORTS or webserver in WEBSERVERS: 
+            self.logger.cubanman.warning('port or webserver not safe!!!')
+            return False
 
         try:
             self.logger.cubanman.debug(f'{self.name} {id(self.sock)} connecting to {webserver} on {port}')
@@ -170,12 +211,12 @@ class Proxy_sock:
             #if self.https:
             #    self.blocking(False)
             #else:
-            self.settimeout(5)
+            self.settimeout(10)
 
             return True
 
         except OSError as e:
-            self.logger.cubanman.warning(f'FAILURE cubanman: {self.name} {id(self.sock)} unable to stablish a connection with {self.web}: {e}')
+            self.logger.cubanman.warning(f'FAILURE cubanman: {self.name} {id(self.sock)} unable to stablish a connection with {webserver}: {e}')
             return False
 
         except Exception as e:
@@ -184,12 +225,13 @@ class Proxy_sock:
 
     def send_back(self, res, source:str='webserver'):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending back response received from {source}')
-        self.ref_sock.send(res)
+        return self.ref_sock.send(res)
 
     def recv(self) -> bytes:
 
         if self.connection == None: return b'code-0' 
 
+        #print('receiving from', self.web)
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data from {self.web}')
 
         if self.https:
@@ -253,7 +295,7 @@ class Proxy_server:
         self.logger.cubanman.debug('proxy_server accepted a connection')
         del details
 
-        self.settimeout(conn_sock, 5) 
+        self.settimeout(conn_sock, 10) 
 
         proxy_sock = Proxy_sock(self.logger, socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM), 0, None, self.buffsize, None, self.debug)
         bws_sock = Bws_sock(self.logger, conn_sock, None, self.debug)
@@ -311,11 +353,13 @@ class Processes:
                         if res == b'code-10':
                             continue#EVENTUALLY HERE YOU HAVE TO DISCONNECT THE PAIR OF SOCKETS THAT CAUSED THIS
                         if res == b'code-0':
+                            #this code is to be ommited
                             continue
                         if res == b'code-50':
                             self.close()
 
-                        instance.send_back(res)
+                        if not instance.send_back(res):
+                            self.delPair(instance)
 
                         if instance.disconnect() or not res: 
                             self.delPair(instance)
@@ -332,7 +376,8 @@ class Processes:
                                 if not instance.go(req):
                                     self.delPair(instance)
                                     continue
-                            else: instance.proxyIt(req)
+                            else:
+                                if not instance.proxyIt(req): self.delPair(instance)
 
     def delPair(self, sock):
         self.logger.cubanman.debug(f'deleting and removing {id(sock.sock)} and its reference sock {id(sock.ref_sock.sock)}')

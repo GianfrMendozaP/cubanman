@@ -117,6 +117,6 @@ def httpsType(firstLine:bytes) -> bool:
     return False
 
 def connectionResponse(version) -> bytes:
-    res = f'{version} 200 Connection Established\r\nContent-Length: 0\r\n\r\n'
+    res = f'{version} 200 Connection Established\r\nContent-Length: 0\r\n\r\n'.encode('utf-8')
     print(res)
-    return res.encode('utf-8')
+    return res
