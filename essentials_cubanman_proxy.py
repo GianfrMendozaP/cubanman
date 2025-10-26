@@ -347,15 +347,17 @@ class Processes:
 
                         res = instance.recv()
 
-                        if res == b'code-20': 
-                            #HERE EVENTUALLY A DISCONNECT FUNCTION WILL BE NEEDED. SENDING A 400 CODE TO THE BROWSER IS PROBABLY BEST
-                            continue #indicates SSLWantReadError
+                        if res == b'code-20':
+                            #Indicates some type of OSError like ConnectionReset, BrokenPipe, bad FileDescriptor , etc...
+                            self.delPair(instance)
                         if res == b'code-10':
-                            continue#EVENTUALLY HERE YOU HAVE TO DISCONNECT THE PAIR OF SOCKETS THAT CAUSED THIS
+                            #This indicates Timeouts that where caught because the server never sent data: data == b''
+                            continue
                         if res == b'code-0':
-                            #this code is to be ommited
+                            #This indicates necessary omittions in case of expecting an x16 mesage or an SSLWantReadError.
                             continue
                         if res == b'code-50':
+                            #This indicates that cubanman will be shutdown due to an error that needs to be checked.
                             self.close()
 
                         if not instance.send_back(res):

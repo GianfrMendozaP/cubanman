@@ -80,7 +80,7 @@ def httpsRecv(conn, buffsize, logger, https:bool=False):
         except OSError as e:
             logger.cubanman.critical(f'cubanman: {e}')
             print('socket:', id(conn))
-            return b'code-50'
+            return b'code-20'
 
         if not data: break
           
