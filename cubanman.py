@@ -32,7 +32,7 @@ def set_client(args, logger):
 def set_proxy(args, logger):
     tools.ifProxy(args)
 
-    server = proxy.Proxy_server(logger, args.interface[0], args.port, args.buffsize, True)
+    server = proxy.Proxy_server(logger, args.interface[0], args.port, args.buffsize)
     cubanman = proxy.Processes(logger, [server])
 
     signal.signal(signal.SIGINT, cubanman.close)
