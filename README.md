@@ -14,12 +14,12 @@
 
 <h4>10/21/2025</h4>
 
-- HTTPS support on proxy was added
+- Select was replaced by Epoll (much more precise and efficient)
 
 <h4>Next Update</h4>
 
-- Optimize HTTP and HTTPS proxy
-- Implement the use of threads on some connections in order to make proxy more efficient
+- Add threads in order to speed up proxy
+- Optimize proxy send back mechanism
 
 <h3>Credits</h3>
 

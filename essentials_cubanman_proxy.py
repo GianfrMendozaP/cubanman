@@ -45,7 +45,7 @@ class Bws_sock:
 
     def recv(self):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data')
-        
+
         if not self.https:
             data, connection = tools.recv(self.sock, self.buffsize, self.logger)
             if self.connection == None: self.set_status(connection)
@@ -135,13 +135,11 @@ class Proxy_sock(Bws_sock):
         firstLine = http.getFirstLine(req)
         self.setHttpVersion(http.httpVersion(firstLine))
 
-        if http.httpsType(firstLine):
-            self.encrypt(webserver)
+        if http.httpsType(firstLine): self.encrypt(webserver)
         if self.connect(webserver, port):
             self.web = webserver
-            if not self.https: self.send(req)
-            else: self.send_back(http.connectionResponse(self.httpVersion), self.name)
-            return True
+            if not self.https: return self.send(req)
+            return self.send_back(http.connectionResponse(self.httpVersion), self.name)
         return False
 
     def connect(self, webserver, port) -> bool:
@@ -162,7 +160,7 @@ class Proxy_sock(Bws_sock):
 
         self.settimeout(10)
         return True
-    
+
     def send(self, data) -> bool:
         if not self.x16: self.pastFirstx16()
         return super().send(data)
@@ -174,7 +172,7 @@ class Proxy_sock(Bws_sock):
     def recv(self) -> bytes:
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data from {self.web}')
         if self.connection == None: return b'code-0' 
-        
+
         if not self.https:
             data, connection = tools.recv(self.sock, self.buffsize, self.logger)
             self.set_status(connection)
@@ -185,7 +183,7 @@ class Proxy_sock(Bws_sock):
         return tools.httpsRecv(self.sock, self.buffsize, self.logger)
 
 class Proxy_server:
-    
+
     def __init__(self, logger, addr:str, port:int, buffsize:int):
 
         self.addr = addr
@@ -232,34 +230,45 @@ class Proxy_server:
 
 class Processes:
 
-    def __init__(self, logger, instances:list) -> None:
+    def __init__(self, logger, server:socket.socket) -> None:
 
-        self.instances = instances
+        self.fd = server.fileno()
         self.logger = logger
+        self.epoll = select.epoll() 
+        self.clients = {}
+        self.clients[self.fd] = server
 
     def start(self) -> None:
-        if not self.instances[0].listen(): self.close()
-        self.logger.cubanman.debug('starting main loop')
+        if not self.clients[self.fd].listen(): self.close()
+        self.epoll.register(self.fd, select.EPOLLIN)
+        self.logger.cubanman.debug('calling epoll.poll')
 
         while True:
 
-            ready, _, _ = select.select(self.instances, [], [])
+            events = self.epoll.poll()
 
-            for instance in ready:
+            for fd, event in events:
 
-                if instance == self.instances[0]:
-                    bws_client, proxy_sock = self.instances[0].accept()
+                if fd == self.fd:
+                    bws_sock, proxy_sock = self.clients[fd].accept() 
+                    self.clients[bws_sock.fileno()] = bws_sock
+                    self.clients[proxy_sock.fileno()] = proxy_sock
+                    self.epoll.register(bws_sock.fileno(), select.EPOLLIN)
+                    self.epoll.register(proxy_sock.fileno(), select.EPOLLIN)
+                    continue
 
-                    self.instances.extend([bws_client, proxy_sock])
-
-                else:
-
-                    data = instance.recv()
-
+                if event & select.EPOLLIN:
+                    print('EPOLLIN FLAG')
+                    try:
+                        data = self.clients[fd].recv()
+                    except KeyError as e:
+                        self.logger.cubanman.warning(f'cubanman: KeyError:{e}. caused by a socket already deleted. Ignore...')
+                        continue
                     match data:
                         case b'code-20':
                             #Indicates some type of OSError like ConnectionReset, BrokenPipe, bad FileDescriptor , etc...
-                            self.delPair(instance)
+                            self.delPair(self.clients[fd])
+                            continue
                         case b'code-10':
                             #This indicates Timeouts that where caught because the server never sent data: data == b''
                             continue
@@ -269,44 +278,55 @@ class Processes:
                         case b'code-50':
                             #This indicates that cubanman will be shutdown due to an error that needs to be checked.
                             self.close()
+                            return None
 
-                    if not self.doSockets(instance, data): self.delPair(instance)
+                    if not self.doSockets(self.clients[fd], data): self.delPair(self.clients[fd])
+                    continue
 
-    def doSockets(self, instance, data) -> bool:
+                #if event & select.EPOLLHUP:
+                #    print('EPOLLHUP FLAG')
+                #    self.delPair(self.clients[fd])
+
+    def doSockets(self, client, data) -> bool:
         if not data: return False
 
         #if returns False, it signals to delete and remove sockets
-        if isinstance(instance, Proxy_sock):
-            return instance.send_back(data)
-        
-        #then here it's browser_sock
-        if instance.connected():
-            return instance.proxyIt(data)
+        if isinstance(client, Proxy_sock):
+            return client.send_back(data)
 
-        return instance.go(data)
+        #then here it's browser_sock
+        if client.connected():
+            return client.proxyIt(data)
+
+        return client.go(data)
 
 
     def delPair(self, sock):
         self.logger.cubanman.debug(f'deleting and removing {id(sock.sock)} and its reference sock {id(sock.ref_sock.sock)}')
+
+        del self.clients[sock.fileno()]
+        del self.clients[sock.ref_sock.fileno()]
+
+        self.epoll.unregister(sock.fileno())
+        self.epoll.unregister(sock.ref_sock.fileno())
         sock.close()
         sock.ref_sock.close()
-
-        self.instances.remove(sock)
-        self.instances.remove(sock.ref_sock)
 
         del sock.ref_sock
         del sock
 
-                        
 
-    
+
+
     def close(self, *args):
         print('\nkeyboard interrupt received, ending ...')
         self.logger.cubanman.debug('SIGINT signal was detected. ending')
-        
-        for instance in self.instances:
-            instance.close()
 
+        for _, client in self.clients.items():
+            self.epoll.unregister(client.fileno())
+            client.close()
+
+        self.epoll.close()
         self.logger.stopListener()
 
         sys.exit(0)
