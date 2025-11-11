@@ -47,11 +47,11 @@ class Bws_sock:
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data')
 
         if not self.https:
-            data, connection = tools.recv(self.sock, self.buffsize, self.logger)
+            data, connection = tools.recv(self.sock, self.buffsize, self.ref_sock, self.logger)
             if self.connection == None: self.set_status(connection)
             return data
 
-        return tools.httpsRecv(self.sock, self.buffsize, self.logger) 
+        return tools.httpsRecv(self.sock, self.buffsize, self.ref_sock, self.logger) 
 
     def send(self, data):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data')
@@ -158,6 +158,7 @@ class Proxy_sock(Bws_sock):
             self.logger.cubanman.warning(f'cubanman: unexpected ERROR {e}')
             return False
 
+        self.logger.cubanman.debug('success')
         self.settimeout(10)
         return True
 
@@ -174,13 +175,13 @@ class Proxy_sock(Bws_sock):
         if self.connection == None: return b'code-0' 
 
         if not self.https:
-            data, connection = tools.recv(self.sock, self.buffsize, self.logger)
+            data, connection = tools.recv(self.sock, self.buffsize, self.ref_sock, self.logger)
             self.set_status(connection)
             return data
         if not self.x16:
             self.logger.cubanman.debug('cubanman: code-0')
             return b'code-0'
-        return tools.httpsRecv(self.sock, self.buffsize, self.logger)
+        return tools.httpsRecv(self.sock, self.buffsize, self.ref_sock, self.logger)
 
 class Proxy_server:
 
@@ -258,7 +259,6 @@ class Processes:
                     continue
 
                 if event & select.EPOLLIN:
-                    print('EPOLLIN FLAG')
                     try:
                         data = self.clients[fd].recv()
                     except KeyError as e:
@@ -280,8 +280,14 @@ class Processes:
                             self.close()
                             return None
 
-                    if not self.doSockets(self.clients[fd], data): self.delPair(self.clients[fd])
-                    continue
+                        case True:
+                            continue
+                        case False:
+                            self.delPair(self.clients[fd])
+                            continue
+
+                    #if not self.doSockets(self.clients[fd], data): self.delPair(self.clients[fd])
+                    #continue
 
                 #if event & select.EPOLLHUP:
                 #    print('EPOLLHUP FLAG')
@@ -322,11 +328,12 @@ class Processes:
         print('\nkeyboard interrupt received, ending ...')
         self.logger.cubanman.debug('SIGINT signal was detected. ending')
 
-        for _, client in self.clients.items():
-            self.epoll.unregister(client.fileno())
-            client.close()
+        if not self.epoll.closed:
+            for _, client in self.clients.items():
+                self.epoll.unregister(client.fileno())
+                client.close()
 
-        self.epoll.close()
+            self.epoll.close()
         self.logger.stopListener()
 
         sys.exit(0)

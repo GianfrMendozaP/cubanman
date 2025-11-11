@@ -12,14 +12,13 @@
 
 <h3>Notes on Last Update</h3>
 
-<h4>10/21/2025</h4>
+<h4>11/10/2025</h4>
 
-- Select was replaced by Epoll (much more precise and efficient)
+- Now instead of waiting for the whole tls record or http message before sending it, the proxy receives and sends simultaneously
 
 <h4>Next Update</h4>
 
 - Add threads in order to speed up proxy
-- Optimize proxy send back mechanism
 
 <h3>Credits</h3>
 
