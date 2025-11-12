@@ -112,3 +112,45 @@ def httpsRecv(conn, buffsize, ref_sock, logger, https:bool=False):
 
     #print(response)
     #return(response)
+
+
+def dataFilter(data) -> bool:
+    match data:
+        case b'code-20':
+            #Indicates some type of OSError like ConnectionReset, BrokenPipe, bad FileDescriptor , etc...
+            self.delPair(self.clients[fd])
+            return False
+        case b'code-10':
+            #This indicates Timeouts that where caught because the server never sent data: data == b''
+            return False
+        case b'code-0':
+            #This indicates necessary omittions in case of expecting an x16 mesage or an SSLWantReadError.
+            return True
+        case b'code-50':
+            #This indicates that cubanman will be shutdown due to an error that needs to be checked.
+            return False
+        case True:
+            return True
+        case False:
+            return False
+        case _:
+            return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

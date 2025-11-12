@@ -5,6 +5,7 @@ import select
 import sys
 import utils_cubanman_proxy as tools
 import utils_cubanman_http_headers as http
+import threading
 
 PORTS = [443, 80, 88]
 WEBSERVERS = []
@@ -26,9 +27,14 @@ class Bws_sock:
         self.buffsize = buffsize
         self.name = self.__class__.__name__
         self.https = False
+        self.thread = False
 
     def fileno(self) -> int:
         return self.sock.fileno()
+
+    def threaded(self):
+        self.logger.cubanman.debug(f'{self.name} {id(self.sock)} has become a thread')
+        self.thread = True
 
     def blocking(self, value:bool):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} set blocking mode to {value}')
@@ -43,15 +49,27 @@ class Bws_sock:
         self.connection = connection
         self.ref_sock.connection = connection
 
-    def recv(self):
+    def recv(self, event):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data')
 
-        if not self.https:
-            data, connection = tools.recv(self.sock, self.buffsize, self.ref_sock, self.logger)
-            if self.connection == None: self.set_status(connection)
-            return data
+        while True:
+            data = b''
+        
+            if not self.https:
+                data, connection = tools.recv(self.sock, self.buffsize, self.ref_sock, self.logger)
+                if self.connection == None: self.set_status(connection)
+            else:
+                data =  tools.httpsRecv(self.sock, self.buffsize, self.ref_sock, self.logger) 
 
-        return tools.httpsRecv(self.sock, self.buffsize, self.ref_sock, self.logger) 
+            if not self.thread: return data
+
+            if not tools.dataFilter(data):
+                event.set()
+                self.close()
+                break
+
+        #here the lock should release
+        #maybe ill need another flag to see if cleaning thread is already working
 
     def send(self, data):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data')
@@ -105,8 +123,8 @@ class Proxy_sock(Bws_sock):
         self.https = False
         self.x16 = False
         self.logger = logger
-
         self.name = self.__class__.__name__
+        self.thread = False
 
     def setHttpVersion(self, version):
         self.httpVersion = version
@@ -170,18 +188,14 @@ class Proxy_sock(Bws_sock):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending back response received from {source}')
         return self.ref_sock.send(data)
 
-    def recv(self) -> bytes:
+    def recv(self, event) -> bytes:
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data from {self.web}')
         if self.connection == None: return b'code-0' 
-
-        if not self.https:
-            data, connection = tools.recv(self.sock, self.buffsize, self.ref_sock, self.logger)
-            self.set_status(connection)
-            return data
         if not self.x16:
             self.logger.cubanman.debug('cubanman: code-0')
             return b'code-0'
-        return tools.httpsRecv(self.sock, self.buffsize, self.ref_sock, self.logger)
+        
+        return super().recv(event)
 
 class Proxy_server:
 
@@ -231,13 +245,20 @@ class Proxy_server:
 
 class Processes:
 
-    def __init__(self, logger, server:socket.socket) -> None:
+    def __init__(self, logger, server:socket.socket, threadLimit:int=-1) -> None:
 
         self.fd = server.fileno()
         self.logger = logger
         self.epoll = select.epoll() 
         self.clients = {}
         self.clients[self.fd] = server
+        self.threadLimit:int = threadLimit
+        self.threads = []
+        self.alive = True
+
+        if threadLimit > 2 or threadLimit == -1:
+            self.event = threading.Event()
+            self.cleaner = threading.Thread(target=self.cleaner)
 
     def start(self) -> None:
         if not self.clients[self.fd].listen(): self.close()
@@ -254,6 +275,11 @@ class Processes:
                     bws_sock, proxy_sock = self.clients[fd].accept() 
                     self.clients[bws_sock.fileno()] = bws_sock
                     self.clients[proxy_sock.fileno()] = proxy_sock
+
+                    if threading.active_count() < self.threadLimit or self.threadLimit == -1:
+                        self.threads.extend(self.threadIt(bws_sock, proxy_sock))
+                        continue
+
                     self.epoll.register(bws_sock.fileno(), select.EPOLLIN)
                     self.epoll.register(proxy_sock.fileno(), select.EPOLLIN)
                     continue
@@ -264,27 +290,9 @@ class Processes:
                     except KeyError as e:
                         self.logger.cubanman.warning(f'cubanman: KeyError:{e}. caused by a socket already deleted. Ignore...')
                         continue
-                    match data:
-                        case b'code-20':
-                            #Indicates some type of OSError like ConnectionReset, BrokenPipe, bad FileDescriptor , etc...
-                            self.delPair(self.clients[fd])
-                            continue
-                        case b'code-10':
-                            #This indicates Timeouts that where caught because the server never sent data: data == b''
-                            continue
-                        case b'code-0':
-                            #This indicates necessary omittions in case of expecting an x16 mesage or an SSLWantReadError.
-                            continue
-                        case b'code-50':
-                            #This indicates that cubanman will be shutdown due to an error that needs to be checked.
-                            self.close()
-                            return None
 
-                        case True:
-                            continue
-                        case False:
-                            self.delPair(self.clients[fd])
-                            continue
+                    if not tools.dataFilter(data):
+                        self.delPair(self.clients[fd])
 
                     #if not self.doSockets(self.clients[fd], data): self.delPair(self.clients[fd])
                     #continue
@@ -321,19 +329,48 @@ class Processes:
         del sock.ref_sock
         del sock
 
+    def threadIt(self, bws_sock:Bws_sock, proxy_sock:Proxy_sock):
 
+        bws_sock.threaded()
+        proxy_sock.threaded()
+
+        receiver =  threading.Thread(target=bws_sock.recv(), args=[self.event])
+        fetcher = threading.Thread(target=proxy_sock.recv(), args=[self.event])
+
+        receiver.start()
+        fetcher.start()
+
+        return (receiver, fetcher)
+
+    def cleaner(self):
+        while True:
+            self.event.wait(timeout=60.0)
+
+            for thread in self.threads:
+                thread.join(timeout=0.0)
+
+            self.event.clear()
+            if not alive: break
 
 
     def close(self, *args):
         print('\nkeyboard interrupt received, ending ...')
         self.logger.cubanman.debug('SIGINT signal was detected. ending')
 
+        self.alive = False
+
         if not self.epoll.closed:
             for _, client in self.clients.items():
                 self.epoll.unregister(client.fileno())
                 client.close()
-
             self.epoll.close()
+
+        #RIGHT HERE WE SHOULD FIND A WAY TO CLOSE ALL THE THREADED SOCKETS
+        #FIGURE IT OUT  :,,,,(
+
+        if self.threadLimit > 2 or self.threadLimit == -1:
+            self.cleaner.join()
+
         self.logger.stopListener()
 
         sys.exit(0)
