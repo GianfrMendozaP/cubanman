@@ -23,9 +23,9 @@ def recv(conn, buffsize, ref_sock, logger):
             logger.cubanman.warning(f'timeout. no data was received from: sock{id(conn)}\nhttp-msg: {response}')
             logger.cubanman.debug(f'about http msg: datalength: {dataLength} | totalLength: {totalLength} | msgType: {msgType} | connectionType: {connection}')
             return (response, 0)
-        except SSLWantReadError:
-            logger.cubanman.debug(f'SSLWantReadError was caught and will be ignored')
-            if response == b'': return(b'code-20', -1)
+
+        if proxyConnected: 
+            if not ref_sock.send(data): return (False, 0)
 
         if not data: 
             logger.cubanman.debug('EOF detected... Closing connection')
@@ -43,8 +43,6 @@ def recv(conn, buffsize, ref_sock, logger):
             msgType, totalLength = http.transferType(splitResponse[0])
             connection = http.connectionStatus(splitResponse[0])
 
-        if proxyConnected: 
-            if not ref_sock.send(data): return (False, 0)
 
         print(f'totalReceived: {len(response)} | dataJReceived: {len(data)}')
 
@@ -91,13 +89,14 @@ def httpsRecv(conn, buffsize, ref_sock, logger, https:bool=False):
             print('socket:', id(conn))
             return b'code-20'
 
+        if not ref_sock.send(data): return False
+
         if not data: return False
         
         response += data
         #dataLength += len(data)
     
 
-        if not ref_sock.send(data): return False
 
         #later on call x16Scan on data, and separate data of the previous x16 from the new x16
         #make sure the first byte starts with x16, if not find it and then split data, make sure
@@ -118,7 +117,6 @@ def dataFilter(data) -> bool:
     match data:
         case b'code-20':
             #Indicates some type of OSError like ConnectionReset, BrokenPipe, bad FileDescriptor , etc...
-            self.delPair(self.clients[fd])
             return False
         case b'code-10':
             #This indicates Timeouts that where caught because the server never sent data: data == b''
@@ -129,13 +127,8 @@ def dataFilter(data) -> bool:
         case b'code-50':
             #This indicates that cubanman will be shutdown due to an error that needs to be checked.
             return False
-        case True:
-            return True
-        case False:
-            return False
         case _:
-            return False
-
+            return data
 
 
 
