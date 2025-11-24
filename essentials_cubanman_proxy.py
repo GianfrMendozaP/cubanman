@@ -64,7 +64,7 @@ class Bws_sock:
     def send(self, data):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} sending data')
 
-        attemps = 2
+        attemps = 0
         while True:
             try:
                 bytesSent = self.sock.send(data)
@@ -90,7 +90,7 @@ class Bws_sock:
         return False
 
     def go(self, data):
-        self.settimeout(10)
+        self.settimeout(20)
         return self.ref_sock.go(data)
 
     def connected(self) -> bool:
@@ -171,7 +171,7 @@ class Proxy_sock(Bws_sock):
             return False
 
         self.logger.cubanman.debug('success')
-        self.settimeout(10)
+        self.settimeout(20)
         return True
 
     def send(self, data) -> bool:
@@ -197,7 +197,7 @@ class Thread_bws_sock(Bws_sock):
         super().__init__(logger, sock, buffsize)
 
 
-    def recv(self, event:threading.Event, threads:list):
+    def recv(self, threads:list, allThreadSockets:dict):
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data')
 
         threadProxySockCreated = False
@@ -213,33 +213,34 @@ class Thread_bws_sock(Bws_sock):
                 if not self.ref_sock.x16: self.ref_sock.pastFirstx16()
 
             if threadProxySockCreated == False:
-                self.threadProxySock(event, threads)
+                self.threadProxySock(threads, allThreadSockets)
                 threadProxySockCreated = True
 
             if not tools.dataFilter(data):
-                event.set()
+                self.ref_sock.send(''.encode('utf-8'))
                 self.close()
-                break
+                return None
 
-    def settimeout(self, s:int):
-        self.logger.cubanman.debug(f'a timeout will not be set on {self.name} {id(self.sock)}')
-        return False
+#    def settimeout(self, s:int):
+#        self.logger.cubanman.debug(f'a timeout will not be set on {self.name} {id(self.sock)}')
+#        return False
     
     
-    def threadProxySock(self, event, threads):
-        thread = threading.Thread(target=self.ref_sock.recv, args=[event], daemon=True)
+    def threadProxySock(self, threads, allThreadSockets):
+        thread = threading.Thread(target=self.ref_sock.recv, daemon=True)
         thread.start()
         threads.append(thread)
+        allThreadSockets[id(thread)] = self.ref_sock
 
 class Thread_proxy_sock(Proxy_sock):
 
     def __init__(self, logger, buffsize:int=4098):
         super().__init__(logger, buffsize)
 
-    def recv(self, event):
+    def recv(self):
        
         while not self.x16:
-            sleep(0.1)
+            sleep(0.5)
 
         self.logger.cubanman.debug(f'{self.name} {id(self.sock)} receiving data')
 
@@ -253,13 +254,13 @@ class Thread_proxy_sock(Proxy_sock):
                 data =  tools.httpsRecv(self.sock, self.buffsize, self.ref_sock, self.logger)
 
             if not tools.dataFilter(data):
-                event.set()
+                self.send_back(''.encode('utf-8'), self.name)
                 self.close()
-                break
+                return None
     
-    def settimeout(self, s:int):
-        self.logger.cubanman.debug(f'a timeout will not be set on {self.name} {id(self.sock)}')
-        return False
+#    def settimeout(self, s:int):
+#        self.logger.cubanman.debug(f'a timeout will not be set on {self.name} {id(self.sock)}')
+#        return False
 
 class Proxy_server:
 
@@ -326,11 +327,10 @@ class Processes:
         self.threadLimit:int = threadLimit
         self.threads = []
         self.alive = True
-        self.allThreadSockets = []
+        self.allThreadSockets = {} 
         self.useThreads = False
 
-        if threadLimit > 2 or threadLimit == -1:
-            self.event = threading.Event()
+        if threadLimit > 3 or threadLimit == -1:
             self.useThreads = True
             self.cleaner = threading.Thread(target=self.threadCleaner, daemon=True)
             self.cleaner.start()
@@ -351,8 +351,8 @@ class Processes:
                     bws_sock, proxy_sock = self.clients[fd].accept(self.threadLimit) 
 
                     if isinstance(bws_sock, Thread_bws_sock):
-                        self.allThreadSockets.extend((bws_sock, proxy_sock))
-                        self.threadIt(bws_sock)
+                        addr = id(self.threadIt(bws_sock))
+                        self.allThreadSockets[addr] = bws_sock
                         continue
 
                     self.clients[bws_sock.fileno()] = bws_sock
@@ -373,12 +373,6 @@ class Processes:
                     if not tools.dataFilter(data):
                         self.delPair(self.clients[fd])
 
-                    #if not self.doSockets(self.clients[fd], data): self.delPair(self.clients[fd])
-                    #continue
-
-                #if event & select.EPOLLHUP:
-                #    print('EPOLLHUP FLAG')
-                #    self.delPair(self.clients[fd])
 
     def doSockets(self, client, data) -> bool:
         if not data: return False
@@ -409,33 +403,37 @@ class Processes:
         del sock
 
     def threadIt(self, bws_sock:Thread_bws_sock):
-        self.logger.cubanman.debug(f'threading {bws_sock.name} {id(bws_sock.sock)}')
-        thd =  threading.Thread(target=bws_sock.recv, args=[self.event, self.threads], daemon=True)
+        self.logger.cubanman.debug(f'threading {bws_sock.name} {id(bws_sock)}')
+        thd =  threading.Thread(target=bws_sock.recv, args=[self.threads, self.allThreadSockets], daemon=True)
         thd.start()
-        self.threads.append(thd)        
+        self.threads.append(thd)
+        return thd
 
     def threadCleaner(self):
         self.logger.cubanman.debug('thread cleaner is starting')
         while True:
-            self.event.wait(timeout=90.0)
-            self.event.clear()
-            self.logger.cubanman.debug('cleaner is joining non working threads')
             for i in range((len(self.threads)-1), -1, -1):
                 self.threads[i].join(timeout=0.0)
-                if not self.threads[i].is_alive(): del(self.threads[i])
+                if not self.threads[i].is_alive(): 
+                    addr = id(self.threads[i])
+                    self.logger.cubanman.debug(f'cleaner just joint {id(self.allThreadSockets[addr])} {self.allThreadSockets[addr].name}')
+                    del self.allThreadSockets[addr] 
+                    del self.threads[i]
 
             if not self.alive and len(self.threads) == 0: 
                 self.logger.cubanman.debug('cleaner thread has ended its task')
-                break
+                return None
+            #print(f'number of active thread sockets: {len(self.threads)}\nallThreadSocets: {len(self.allThreadSockets)}')    
+            sleep(0.5)
 
     def broadcastEOF(self):
         self.logger.cubanman.debug('broadcasting EOF to allThreadSockets')
         if len(self.allThreadSockets) > 0:
-            for sock in self.allThreadSockets:
-                sock.send(''.encode())
+            for _, sock in self.allThreadSockets.items():
+                for _ in range(5):
+                    if not sock.send(''.encode()): break
         
-        self.logger.cubanman.debug('setting event')
-        self.event.set()
+        self.logger.cubanman.debug('EOF was broadcast')
 
     def endEpoll(self):
         self.logger.cubanman.debug('ending epolling')
@@ -455,7 +453,7 @@ class Processes:
 
         if self.useThreads:
             self.broadcastEOF()
-            self.cleaner.join()
+            self.cleaner.join(timeout=25.0)
 
         self.logger.stopListener()
         print('bye...')

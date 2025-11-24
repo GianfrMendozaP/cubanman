@@ -22,7 +22,11 @@ def recv(conn, buffsize, ref_sock, logger):
         except TimeoutError:
             logger.cubanman.warning(f'timeout. no data was received from: sock{id(conn)}\nhttp-msg: {response}')
             logger.cubanman.debug(f'about http msg: datalength: {dataLength} | totalLength: {totalLength} | msgType: {msgType} | connectionType: {connection}')
-            return (response, 0)
+            return (False, 0)
+        except OSError as e:
+            logger.cubanman.warning(f'cubanman: {e}')
+            print(response)
+            return (b'code-20', 0)
 
         if proxyConnected: 
             if not ref_sock.send(data): return (False, 0)
@@ -61,12 +65,6 @@ def recv(conn, buffsize, ref_sock, logger):
 
         if headers: headers = False
 
-    #logger.cubanman.debug(f'about http msg: datalength: {dataLength} | totalLength: {totalLength} | msgType: {msgType} | connectionType: {connection}')
-
-    #print(response)
-
-    #if connectHttps: return (ref_sock.go(response), connection)
-    #return (True, connection)
 
 def httpsRecv(conn, buffsize, ref_sock, logger, https:bool=False):
 
@@ -86,7 +84,6 @@ def httpsRecv(conn, buffsize, ref_sock, logger, https:bool=False):
             return b'code-50'
         except OSError as e:
             logger.cubanman.critical(f'cubanman: {e}')
-            print('socket:', id(conn))
             return b'code-20'
 
         if not ref_sock.send(data): return False
@@ -94,23 +91,12 @@ def httpsRecv(conn, buffsize, ref_sock, logger, https:bool=False):
         if not data: return False
         
         response += data
-        #dataLength += len(data)
     
 
 
-        #later on call x16Scan on data, and separate data of the previous x16 from the new x16
-        #make sure the first byte starts with x16, if not find it and then split data, make sure
-        #no more x16s are sent in tls records, if not it might get tricky
         bytesLeft = tlsRec.x16Scan(response)
         print(f'bytesLeft: {bytesLeft} | datalength {len(response)} | loop {loop}')
         if bytesLeft == 0: return True
-
-
-    #kind = response[0] if response else 'disconnect'
-    #logger.cubanman.debug(f'about https msg: messageType: {kind} | datalength: {dataLength}')
-
-    #print(response)
-    #return(response)
 
 
 def dataFilter(data) -> bool:
