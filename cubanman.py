@@ -33,7 +33,7 @@ def set_proxy(args, logger):
     tools.ifProxy(args)
 
     server = proxy.Proxy_server(logger, args.interface[0], args.port, args.buffsize)
-    cubanman = proxy.Processes(logger, server)
+    cubanman = proxy.Processes(logger, server, int(args.threads))
 
     signal.signal(signal.SIGINT, cubanman.close)
 
@@ -51,6 +51,8 @@ def parse() -> dict:
     parser.add_argument('-l', '--listen', help='Listening mode', action='store_true')
 
     parser.add_argument('--proxy', action='store_true', help='HTTP/HTTPS proxy mode')
+
+    parser.add_argument('-x' ,'--threads', nargs='?', type=int, default=-1, help='threads to be used in proxy. -1 == unlimited, 0 == epoll() will be used for all, n (>5) == mixed mode. There always is 2 default threads (main and logger thread)')
 
     parser.add_argument('-v', '--verbosity', action='count', default=0, help='Verbosity level. Max 2 times.')
 
