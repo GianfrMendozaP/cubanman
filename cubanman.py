@@ -32,12 +32,16 @@ def set_client(args, logger):
 def set_proxy(args, logger):
     tools.ifProxy(args)
 
-    server = proxy.Proxy_server(logger, args.interface[0], args.port, args.buffsize)
-    cubanman = proxy.Processes(logger, server, int(args.threads))
-
+    server = proxy.Proxy_server(logger, args.interface[0], args.port, args.buffsize, args.threads, args.threadedEpoll, args.timeout)
+    cubanman = proxy.Processes(logger, server, args.timeout)
     signal.signal(signal.SIGINT, cubanman.close)
-
-    cubanman.start()
+    
+    if args.threads:
+        cubanman.threadedStart()
+    elif args.threadedEpoll:
+        cubanman.threadedEpoll()
+    else:
+        cubanman.epollStart()
 
 def parse() -> dict:
 
@@ -52,7 +56,11 @@ def parse() -> dict:
 
     parser.add_argument('--proxy', action='store_true', help='HTTP/HTTPS proxy mode')
 
-    parser.add_argument('-x' ,'--threads', nargs='?', type=int, default=-1, help='threads to be used in proxy. -1 == unlimited, 0 == epoll() will be used for all, n (>5) == mixed mode. There always is 2 default threads (main and logger thread)')
+    parser.add_argument('--threads', action='store_true', help='If you want the proxy to use threads instead of epoll use this flag: --thread')
+
+    parser.add_argument('--threadedEpoll', action='store_true', help='This combines epoll and threads. You dont get as much speed as with --threads but instead you get a more power efficient mode and faster compered to just epoll')
+
+    parser.add_argument('--timeout', nargs='?', type=int, default=30, help='Timeout to be set on proxy sockets. Recommended only when using threads in proxy. Usually 30s or more is good enough. Threaded proxy is slightly dependant on timeouts to close sockets. Values under 30 wont be allowed!')
 
     parser.add_argument('-v', '--verbosity', action='count', default=0, help='Verbosity level. Max 2 times.')
 

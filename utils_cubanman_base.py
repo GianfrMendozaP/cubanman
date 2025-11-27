@@ -15,8 +15,8 @@ def whichEnc(args:dict) -> int:
 def ifProxy(args:dict) -> None:
     if args.proxy:
         args.static = True
-        if args.buffsize < 1024:
-            args.buffsize = 1024
+        if args.buffsize < 4098:
+            args.buffsize = 4098
 
 def ifStls(args:dict) -> None:
     if args.stls:
