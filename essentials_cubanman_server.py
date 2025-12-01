@@ -4,10 +4,10 @@ import ssl
 import select
 import sys
 import utils_cubanman_base as utils
-
+import utils_cubanman_database as db
 class Sock():
     
-    def __init__(self, logger, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_bundle:str=None, ca_key:str=None):
+    def __init__(self, logger, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_bundle:str=None, ca_key:str=None, locate_socket:bool=False):
 
         self.addr = addr
         self.port = port
@@ -22,6 +22,7 @@ class Sock():
         self.context = None
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
         self.logger = logger
+        self.locate = locate_socket
 
         if self.encryption != 0: self.encrypt()
 
@@ -73,6 +74,13 @@ class Sock():
         self.logger.cubanman.info('a new connection was received')
         conn_sock, details = self.sock.accept()
         self.logger.cubanman.debug(f'connection: {conn_sock}:{details}')
+
+        if self.locate:
+            info = db.getRequest(details[0])
+            #with open('~/location.txt', 'r') as file:
+            #    file.write(info)
+            print(info)
+            return False
 
         if self.encryption != 0:
             self.logger.cubanman.debug('wrapping connection with ssl/tls encryption')
@@ -184,6 +192,7 @@ class Processes:
                     
                     match conn:
                         case None: continue
+                        case False: self.close()
                         case _: self.instances.append(conn)
 
                 elif instance == self.stdin:

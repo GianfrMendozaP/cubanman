@@ -9,7 +9,7 @@ import utils_cubanman_logger as logging
 
 def set_server(args, logger):
 
-    cubanman = server.Sock(logger, args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key)
+    cubanman = server.Sock(logger, args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key, args.locate_socket)
     stdin = server.Input()
     processes = server.Processes(logger, [cubanman, stdin])
 
@@ -53,6 +53,8 @@ def parse() -> dict:
     parser.add_argument('-p', '--port', nargs='?', help='Define a port. The default is 8888', type=int, default=8888)
 
     parser.add_argument('-l', '--listen', help='Listening mode', action='store_true')
+
+    parser.add_argument('--locate-socket', action='store_true', help='ONLY use on server mode. Locates socket PublicIP (JUST FOR SECURITY TESTS)')
 
     parser.add_argument('--proxy', action='store_true', help='HTTP/HTTPS proxy mode')
 
