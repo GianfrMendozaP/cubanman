@@ -1,0 +1,38 @@
+[DEBUG|cubanman|main|107|] 2025-11-30T21:21:56-0500: ----------------------------------------------------------
+[INFO|essentials_cubanman_server|listen|62|] 2025-11-30T21:21:56-0500: binding server to 127.0.0.1 8888
+[INFO|essentials_cubanman_server|listen|70|] 2025-11-30T21:21:56-0500: server is listening for connections
+[DEBUG|essentials_cubanman_server|linker|172|] 2025-11-30T21:21:56-0500: reference to Sock was found
+[DEBUG|essentials_cubanman_server|linker|175|] 2025-11-30T21:21:56-0500: reference to Input was found
+[INFO|essentials_cubanman_server|start|182|] 2025-11-30T21:21:56-0500: starting to listen
+[INFO|essentials_cubanman_server|accept|74|] 2025-11-30T21:22:07-0500: a new connection was received
+[DEBUG|essentials_cubanman_server|accept|76|] 2025-11-30T21:22:07-0500: connection: <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 40632)>:('127.0.0.1', 40632)
+[INFO|essentials_cubanman_server|accept|94|] 2025-11-30T21:22:07-0500: connection stablished
+[DEBUG|essentials_cubanman_server|accept|97|] 2025-11-30T21:22:07-0500: setting timeout on socket
+[DEBUG|essentials_cubanman_server|recv|118|] 2025-11-30T21:22:10-0500: server is receiving data
+[INFO|essentials_cubanman_server|recv|122|] 2025-11-30T21:22:10-0500: a connection was closed
+[DEBUG|essentials_cubanman_server|recv|123|] 2025-11-30T21:22:10-0500: connection: <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 8888), raddr=('127.0.0.1', 40632)>
+[DEBUG|essentials_cubanman_server|close|209|] 2025-11-30T21:22:13-0500: SIGINT signal was received. Ending
+[DEBUG|essentials_cubanman_server|close|214|] 2025-11-30T21:22:13-0500: stopping queue listener
+[DEBUG|cubanman|main|107|] 2025-11-30T21:35:36-0500: ----------------------------------------------------------
+[INFO|essentials_cubanman_server|listen|62|] 2025-11-30T21:35:36-0500: binding server to 127.0.0.1 8888
+[INFO|essentials_cubanman_server|listen|70|] 2025-11-30T21:35:36-0500: server is listening for connections
+[DEBUG|essentials_cubanman_server|linker|172|] 2025-11-30T21:35:36-0500: reference to Sock was found
+[DEBUG|essentials_cubanman_server|linker|175|] 2025-11-30T21:35:36-0500: reference to Input was found
+[INFO|essentials_cubanman_server|start|182|] 2025-11-30T21:35:36-0500: starting to listen
+[DEBUG|essentials_cubanman_server|close|209|] 2025-11-30T21:35:47-0500: SIGINT signal was received. Ending
+[DEBUG|essentials_cubanman_server|close|214|] 2025-11-30T21:35:47-0500: stopping queue listener
+[DEBUG|cubanman|main|107|] 2025-11-30T21:35:52-0500: ----------------------------------------------------------
+[INFO|essentials_cubanman_server|listen|62|] 2025-11-30T21:35:52-0500: binding server to 0.0.0.0 8888
+[INFO|essentials_cubanman_server|listen|70|] 2025-11-30T21:35:52-0500: server is listening for connections
+[DEBUG|essentials_cubanman_server|linker|172|] 2025-11-30T21:35:52-0500: reference to Sock was found
+[DEBUG|essentials_cubanman_server|linker|175|] 2025-11-30T21:35:52-0500: reference to Input was found
+[INFO|essentials_cubanman_server|start|182|] 2025-11-30T21:35:52-0500: starting to listen
+[INFO|essentials_cubanman_server|accept|74|] 2025-11-30T21:36:17-0500: a new connection was received
+[DEBUG|essentials_cubanman_server|accept|76|] 2025-11-30T21:36:17-0500: connection: <socket.socket fd=5, family=2, type=1, proto=0, laddr=('10.0.0.161', 8888), raddr=('10.0.0.53', 49544)>:('10.0.0.53', 49544)
+[INFO|essentials_cubanman_server|accept|94|] 2025-11-30T21:36:17-0500: connection stablished
+[DEBUG|essentials_cubanman_server|accept|97|] 2025-11-30T21:36:17-0500: setting timeout on socket
+[DEBUG|essentials_cubanman_server|recv|118|] 2025-11-30T21:36:21-0500: server is receiving data
+[INFO|essentials_cubanman_server|recv|122|] 2025-11-30T21:36:21-0500: a connection was closed
+[DEBUG|essentials_cubanman_server|recv|123|] 2025-11-30T21:36:21-0500: connection: <socket.socket fd=5, family=2, type=1, proto=0, laddr=('10.0.0.161', 8888), raddr=('10.0.0.53', 49544)>
+[DEBUG|essentials_cubanman_server|close|209|] 2025-11-30T21:36:24-0500: SIGINT signal was received. Ending
+[DEBUG|essentials_cubanman_server|close|214|] 2025-11-30T21:36:24-0500: stopping queue listener
