@@ -101,6 +101,9 @@ def httpVersion(firstLine:bytes) -> bytes:
 
     return values[2]
 
+def getUserAgent(headers:bytes) -> bytes:
+    return None
+
 def osType(firstLine:bytes) -> bytes:
     #HERE ADD LOGIC TO DETECT OS
     pass

@@ -60,6 +60,7 @@ def recv(conn, buffsize, ref_sock, logger):
                 if response.find(b'\r\n0\r\n\r\n') != -1: return (True, connection)
             case 3:
                 #msgType
+                print(response)
                 if proxyConnected: return(True, connection)
                 return (ref_sock.go(response), connection)
 

@@ -27,3 +27,56 @@ def ifStls(args:dict) -> None:
 def clearLogs() -> None:
     #WORK ON THIS LATER ON
     pass
+
+def saveCurrentConfig(config ,filepath:str='./cubanman_conf.json'):
+
+    config = strDictFormatter(namespaceIntoStr(config))
+
+    try:
+        f = open(filepath, 'w')
+    except FileNotFoundError:
+        raise FileNotFoundError('cubanman: such file was not found')
+
+    f.write(config)
+
+def strDictFormatter(conf:str) -> str:
+    for i in range(len(conf)-1, -1, -1):
+        if conf[i] == '}': conf = conf[:i]+'\n'+conf[i:]
+        elif conf[i] == '{': conf = conf[i]+'\n'+conf[i+1:]
+        elif conf[i] == ',': conf = conf[:i+1]+'\n'+conf[i+1:]
+    return conf
+
+def namespaceIntoStr(args:object) -> str:
+    conf = args.__dict__
+    from json import dumps
+    return dumps(conf)
+
+def getConfigArgs(filepath:str) -> dict:
+    try:
+        f = open(filepath, 'r')
+    except FileNotFoundError:
+        raise FileNotFoundError('cubanman: such file was not found')
+    from json import load
+    jsonDict = load(f)
+    del f
+
+    class Args():
+        def __init__(self):
+            pass
+
+    args = Args()
+
+    for key, value in jsonDict.items():
+        setattr(args, key, value)
+
+    return args
+
+
+
+if __name__ == '__main__':
+    conf = getConfigArgs('./cubanman_conf.json')
+    print(conf, type(conf))
+    conf = namespaceIntoStr(conf)
+    print(conf, type(conf))
+    conf = strDictFormatter(conf)
+    print(conf, type(conf))

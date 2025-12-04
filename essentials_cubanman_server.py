@@ -4,7 +4,6 @@ import ssl
 import select
 import sys
 import utils_cubanman_base as utils
-import utils_cubanman_database as db
 class Sock():
     
     def __init__(self, logger, addr:str, port:int, client_count:int, enc_format:str, buffsize:int, static_mode:bool, encryption:int=0, ca_chain:str=None, ca_bundle:str=None, ca_key:str=None):
@@ -22,7 +21,6 @@ class Sock():
         self.context = None
         self.sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
         self.logger = logger
-        self.locate = locate_socket
 
         if self.encryption != 0: self.encrypt()
 

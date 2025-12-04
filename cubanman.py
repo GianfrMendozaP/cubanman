@@ -9,7 +9,7 @@ import utils_cubanman_logger as logging
 
 def set_server(args, logger):
 
-    cubanman = server.Sock(logger, args.interface[0], int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key)
+    cubanman = server.Sock(logger, args.interface, int(args.port), int(args.client_count), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.tls_chain, args.tls_bundle, args.tls_key)
     stdin = server.Input()
     processes = server.Processes(logger, [cubanman, stdin])
 
@@ -21,7 +21,7 @@ def set_client(args, logger):
 
     tools.ifStls(args)  
     
-    cubanman = client.Sock(logger, args.interface[0], int(args.port), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.verify_hostname, args.verify_ca, args.tls_bundle, args.hostname)
+    cubanman = client.Sock(logger, args.interface, int(args.port), args.format, int(args.buffsize), args.static, tools.whichEnc(args), args.verify_hostname, args.verify_ca, args.tls_bundle, args.hostname)
     stdin = client.Input()
     processes = client.Processes(logger, [cubanman, stdin])
 
@@ -32,7 +32,7 @@ def set_client(args, logger):
 def set_proxy(args, logger):
     tools.ifProxy(args)
 
-    server = proxy.Proxy_server(logger, args.interface[0], args.port, args.buffsize, args.threads, args.threadedEpoll, args.timeout)
+    server = proxy.Proxy_server(logger, args.interface, args.port, args.buffsize, args.threads, args.threadedEpoll, args.timeout)
     cubanman = proxy.Processes(logger, server, args.timeout)
     signal.signal(signal.SIGINT, cubanman.close)
     
@@ -48,7 +48,7 @@ def parse() -> dict:
     parser = argparse.ArgumentParser(
             description='cubanman creates a connection between two computers (at least), either by listening for connections, or connecting to a listening machine')
 
-    parser.add_argument('interface', nargs=1, help='Define an address', type=str)
+    parser.add_argument('--interface', type=str, nargs='?', default='127.0.0.1', help='Define the ip address that will be used')
 
     parser.add_argument('-p', '--port', nargs='?', help='Define a port. The default is 8888', type=int, default=8888)
 
@@ -92,6 +92,10 @@ def parse() -> dict:
 
     parser.add_argument('--hostname', nargs='?', default=None, help='Specify the hostname of the server. ONLY as a client')
 
+    parser.add_argument('--config-file', nargs='?', default=None, help='Use a config file instead or setting arguments. Argument must be path to the config file')
+
+    parser.add_argument('--save-current-config', action='store_true', help='Saves current setting of the program. Use alongside --config-file in order to save the config to the desired file')
+
     args = parser.parse_args()
 
     return args
@@ -101,6 +105,12 @@ def parse() -> dict:
 def main():
 
     args = parse()
+
+    if args.save_current_config:
+        if args.config_file != None: tools.saveCurrentConfig(args, args.config_file)
+        else: tools.saveCurrentConfig(args)
+
+    elif args.config_file != None: args = tools.getConfigArgs(args.config_file)
     logger = logging.Logger(appName='cubanman', verbosity=int(args.verbosity), debug=False)
     logger.cubanman.debug('----------------------------------------------------------')
 
